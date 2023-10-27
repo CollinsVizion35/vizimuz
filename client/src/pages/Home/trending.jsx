@@ -1,0 +1,197 @@
+import React, { useEffect, useRef, useState } from "react";
+import { FaVolumeUp } from "react-icons/fa/index";
+
+// import {SiSpotify} from 'react-icons/si/index'
+// import axios from 'axios'
+import { AppPass } from "../../contexts/AppContext";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
+const NewReleases = () => {
+  const {
+    releases,
+    currentSongIndex,
+    isPlaying,
+    setIsPlaying,
+    setDuration,
+    getCurrDuration,
+    playerAudioRef,
+    playerImageRef,
+    playerNameRef,
+    playerArtistRef,
+  } = AppPass();
+
+  const audioEl = useRef(null);
+  audioEl.current = [];
+  const audioToEl = (el) => {
+    if (el && !audioEl.current.includes(el)) {
+      audioEl.current.push(el);
+    }
+  };
+
+  const imageEl = useRef(null);
+  imageEl.current = [];
+  const imageToEl = (el) => {
+    if (el && !imageEl.current.includes(el)) {
+      imageEl.current.push(el);
+    }
+  };
+
+  const musicNameEl = useRef(null);
+  musicNameEl.current = [];
+  const musicNameToEl = (el) => {
+    if (el && !musicNameEl.current.includes(el)) {
+      musicNameEl.current.push(el);
+    }
+  };
+
+  const artistNameEl = useRef(null);
+  artistNameEl.current = [];
+  const artistNameToEl = (el) => {
+    if (el && !artistNameEl.current.includes(el)) {
+      artistNameEl.current.push(el);
+    }
+  };
+
+  const musicBoxEl = useRef(null);
+  musicBoxEl.current = [];
+  const musicBoxToEl = (el) => {
+    if (el && !musicBoxEl.current.includes(el)) {
+      musicBoxEl.current.push(el);
+    }
+  };
+
+  const audioSignEl = useRef(null);
+  audioSignEl.current = [];
+  const audioSignToEl = (el) => {
+    if (el && !audioSignEl.current.includes(el)) {
+      audioSignEl.current.push(el);
+    }
+  };
+// swipper containers
+const getSlidesPerView = () => {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 992) {
+    return 7;
+  } else if (screenWidth >= 768) {
+    return 4;
+  } else {
+    return 2.5;
+  }
+};
+
+const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
+
+const handleResize = () => {
+  setSlidesPerView(getSlidesPerView());
+};
+
+useEffect(() => {
+  // Update slidesPerView on window resize
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
+
+
+  return (
+    <>
+      <div className="flex flex-col bg-[#1D2123] lg:w-[90vw] w-[95vw] max-w-[1440px] lg:px-4 float-right text-white">
+      <div className="flex flex-row justify-between w-[100%] pt-4 items-baseline">
+        <h1 className="font-black">Trends</h1>
+        <h1 className="opacity-70 text-[0.8em]">View more</h1>
+        </div>
+
+        <div className="flex flex-row justify-between py-4 pt-2 lg:w-[90%] w-[95vw]">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={slidesPerView}
+          >
+            {releases.map((release, index) => {
+              return (
+                <SwiperSlide>
+                  <>
+                    <div
+                      key={index}
+                      ref={musicBoxToEl}
+                      onClick={() => {
+                        console.log(imageEl.current);
+                        console.log(audioEl.current[index]);
+                        console.log(musicNameEl.current[index]);
+                        console.log(artistNameEl.current[index]);
+                        console.log(releases[currentSongIndex].name);
+                        // musicBoxEl.current[0].style.display = 'none'
+                        // musicBoxEl.current[0].style.scale = '0'
+                        console.log(isPlaying);
+
+                        console.log(playerAudioRef.current.currentSrc);
+                        console.log(playerImageRef.current.outerHTML);
+                        console.log(imageEl);
+                        console.log(playerNameRef.current.innerHTML);
+                        console.log(playerArtistRef.current.innerHTML);
+                        isPlaying === true
+                          ? setIsPlaying(isPlaying)
+                          : setIsPlaying(!isPlaying);
+                        playerAudioRef.current.src = audioEl.current[index].src;
+                        playerImageRef.current.src = imageEl.current[index].src;
+                        console.log(audioSignEl.current[index]);
+                        console.log(audioSignEl.current);
+                        // !audioSignEl.current[index] === true ? audioSignEl.current.style.display = 'none' : audioSignEl.current.style.display = 'block'
+                        // audioSignEl.current[index].style.display = 'block'
+                        playerNameRef.current.innerHTML =
+                          musicNameEl.current[index].innerHTML;
+                        playerArtistRef.current.innerHTML =
+                          artistNameEl.current[index].innerHTML;
+                      }}
+                      className="flex flex-col relative text-left my-3 mx-auto cursor-pointer"
+                    >
+                      <audio
+                        src={release.audio}
+                        ref={audioToEl}
+                        onTimeUpdate={getCurrDuration}
+                        onLoadedData={(e) => {
+                          setDuration(e.currentTarget.duration.toFixed(2));
+                        }}
+                      ></audio>
+                      <img
+                        className="lg:w-[200px] w-[150px] h-[150px] rounded-[5px] mb-2"
+                        title={release.img}
+                        ref={imageToEl}
+                        src={release.img}
+                        alt="artist"
+                      />
+                      <h2
+                        ref={musicNameToEl}
+                        className="text-white text-[1em]"
+                      >
+                        {release.name}
+                      </h2>
+                      <h5
+                        ref={artistNameToEl}
+                        className="text-white text-[.6em]"
+                      >
+                        {release.artist}
+                      </h5>
+                    </div>
+                    <div
+                      ref={audioSignToEl}
+                      className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
+                    >
+                      <FaVolumeUp />
+                    </div>
+                  </>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default NewReleases;

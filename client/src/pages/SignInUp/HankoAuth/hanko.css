@@ -1,0 +1,93 @@
+hanko-auth,
+hanko-profile {
+  /* Color Scheme */
+  --color: #e5e6ef;
+  --color-shade-1: #8f9095;
+  --color-shade-2: #e5e6ef;
+
+  --brand-color: #9600ffcc;
+  --brand-color-shade-1: #6b84fb;
+  --brand-contrast-color: white;
+
+  --background-color: #1D2123;
+  --error-color: #e82020;
+  --link-color: #9600ffcc;
+
+  --width: 100vw;
+
+  /* Font Styles */
+  --font-weight: 400;
+  --font-size: 16px;
+  --font-family: sans-serif;
+
+  /* Border Styles */
+  --border-radius: 8px;
+  --border-style: solid;
+  --border-width: 1px;
+
+  /* Item Styles */
+  --item-height: 34px;
+  --item-margin: 0.5rem 0;
+
+  /* Container Styles */
+  --container-padding: 30px;
+  --container-max-width: 410px;
+
+  /* Headline Styles */
+  --headline1-font-size: 24px;
+  --headline1-font-weight: 600;
+  --headline1-margin: 0 0 1rem;
+
+  --headline2-font-size: 16px;
+  --headline2-font-weight: 600;
+  --headline2-margin: 1rem 0 0.5rem;
+
+  /* Divider Styles */
+  --divider-padding: 0 42px;
+  --divider-visibility: visible;
+
+  /* Link Styles */
+  --link-text-decoration: none;
+  --link-text-decoration-hover: underline;
+
+  /* Input Styles */
+  --input-min-width: 14em;
+
+  /* Button Styles */
+  --button-min-width: max-content;
+}
+
+hanko-auth::part(container) {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+}
+
+hanko-profile::part(container) {
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-bottom: 1px white solid;
+  position: fixed;
+    top: 10%;
+}
+
+/* hanko-auth::part(button),
+hanko-profile::part(button) {
+  background-color: #9600ffcc;
+} */
+hanko-auth::part(primary-button):hover ,
+hanko-profile::part(primary-button):hover  {
+  background-color: #A4C7C6;
+  color: #fcfcfc;
+  border-color: #1D2123;
+}
+
+hanko-auth::part(secondary-button):hover ,
+hanko-profile::part(secondary-button):hover  {
+  background-color: #A4C7C6;
+  color: #1D2123;
+  border-color: #1D2123;
+}
