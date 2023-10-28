@@ -198,13 +198,13 @@ const MusicDetails = () => {
       <div className='bg-inherit'>
         {combinedMusic ? (
           <>
-            <div className='flex flex-col items-center mt-[20vh] space-y-8'>
+            <div className='flex flex-col items-center mt-[20vh] space-y-8 lg:mb-16'>
               <img
                 className='w-[80vw] lg:w-[300px] h-[80vw] lg:h-[300px] rounded-[50%] glowing-img'
                 src={combinedMusic[currentSongIndex]?.image}
                 alt='Music '
               />
-              <div className='flex flex-row w-[100%] justify-between items-end'>
+              <div className='flex flex-row w-[100%] lg:w-[50%] justify-between items-end'>
                 <div className='flex flex-col space-y-1'>
                   <p className='items-start'>
                     {combinedMusic[currentSongIndex]?.musicName}
@@ -229,7 +229,7 @@ const MusicDetails = () => {
                   </button>
                   <div>
                     {showShareDiv && (
-                      <div className=' flex flex-col bg-white rounded-t-lg fixed bottom-16 justify-center items-center right-0 h-[60vh] w-[100vw] lg:[60vw] z-[999999999999]'>
+                      <div className=' flex flex-col bg-white rounded-t-lg fixed bottom-16 lg:bottom-0 justify-center items-center right-0 h-[60vh] w-[100vw] lg:[60vw] z-[999999999999]'>
                         <p className='text-[#1A1E1F] pt-2'>Share with</p>
                         <div
                           ref={shareDivRef}
@@ -406,12 +406,12 @@ const MusicDetails = () => {
               Your browser does not support the audio element.
             </audio> */}
               </div>
-              <p className='items-start text-[0.8em] font-bold'>
-                {combinedMusic[currentSongIndex]?.category}
+              <p className='items-start text-[0.8em] font-bold p-1 w-fit rounded-[5px] bg-[#c77dfccc]'>
+                #{combinedMusic[currentSongIndex]?.category}
               </p>
-              <p className='items-start text-[0.8em]'>
+              {/* <p className='items-start text-[0.8em]'>
                 Total plays: {combinedMusic[currentSongIndex]?.play}
-              </p>
+              </p> */}
             </>
           ) : (
             <div>Loading...</div>
