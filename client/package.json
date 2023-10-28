@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.4",
     "@teamhanko/hanko-elements": "^0.8.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -24,7 +23,6 @@
     "react-awesome-reveal": "^4.1.0",
     "react-burger-menu": "^3.0.8",
     "react-dom": "^18.2.0",
-    "react-google-font-loader": "^1.1.0",
     "react-h5-audio-player": "^3.8.6",
     "react-hook-search": "^1.2.8",
     "react-howler": "^5.2.0",
