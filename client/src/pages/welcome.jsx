@@ -24,7 +24,7 @@ const Welcome = () => {
 
   return (
     <>
-      <div className="welcome bg-[#1D2123] text-white">
+      <div className="welcome bg-[#0F1732] text-white">
         <div className="h-screen w-screen flex flex-col items-center justify-center mx-auto my-auto">
           <div className="flex flex-col items-center justify-center">
             <JackInTheBox triggerOnce={false}>

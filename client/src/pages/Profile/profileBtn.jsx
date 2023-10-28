@@ -118,7 +118,7 @@ const InfoProfileImg = () => {
                           FULL NAME
                         </label>
                         <br />
-                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#1A1E1F] flex items-center lg:p-2">
+                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
                           {info.firstName} {info.lastName}
                         </h1>
                       </div>
@@ -128,7 +128,7 @@ const InfoProfileImg = () => {
                           FIRST NAME
                         </label>
                         <br />
-                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#1A1E1F] flex items-center lg:p-2">
+                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#040C25] flex items-center lg:p-2">
                           {info.firstName}
                         </h1>
                       </div>
@@ -138,7 +138,7 @@ const InfoProfileImg = () => {
                           LAST NAME
                         </label>
                         <br />
-                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#1A1E1F] flex items-center lg:p-2">
+                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
                           {info.lastName}
                         </h1>
                       </div>
@@ -148,7 +148,7 @@ const InfoProfileImg = () => {
                           PHONE NUMBER
                         </label>
                         <br />
-                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#1A1E1F] flex items-center lg:p-2">
+                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#040C25] flex items-center lg:p-2">
                           {info.phoneNumber.length > 0
                             ? `+${info.phoneNumber}`
                             : info.phoneNumber}
@@ -160,7 +160,7 @@ const InfoProfileImg = () => {
                           GENDER
                         </label>
                         <br />
-                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#1A1E1F] flex items-center lg:p-2">
+                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
                           {info.gender}
                         </h1>
                       </div>
@@ -170,7 +170,7 @@ const InfoProfileImg = () => {
                           USER'S COUNTRY
                         </label>
                         <br />
-                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#1A1E1F] flex items-center lg:p-2">
+                        <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
                           {info.userCountry}
                         </h1>
                       </div>

@@ -253,8 +253,8 @@ const Tomorrow = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="bg-[#1A1E1F] bg-opacity-[50%] text-white flex flex-col min-h-screen">
-      <div className="bg-[#1A1E1F] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
+      <div className="bg-[#040C25] bg-opacity-[50%] text-white flex flex-col min-h-screen">
+      <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
             <img src={logo} alt="home icon" />
 
@@ -274,7 +274,7 @@ const Tomorrow = () => {
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#1A1E1F] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className="flex flex-col justify-between bg-[#040C25] mx-4 w-[4vw] rounded-[50px] py-4">
               {options.map((option, index) => {
                 return (
                   <>
@@ -294,7 +294,7 @@ const Tomorrow = () => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#1A1E1F] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className="flex flex-col justify-between mt-3 bg-[#040C25] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill

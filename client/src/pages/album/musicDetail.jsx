@@ -166,7 +166,7 @@ const AlbumMusicDetails = () => {
                   <div>
                     {showShareDiv && (
                       <div className=' flex flex-col bg-white rounded-t-lg fixed bottom-16 lg:bottom-0 justify-center items-center right-0 h-[60vh] w-[100vw] lg:[60vw] z-[999999999999]'>
-                        <p className='text-[#1A1E1F] pt-2'>Share with</p>
+                        <p className='text-[#040C25] pt-2'>Share with</p>
                         <div
                           ref={shareDivRef}
                           className='blue-div grid grid-cols-3 h-full w-full'

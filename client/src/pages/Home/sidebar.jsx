@@ -109,7 +109,7 @@
 //         className={
 //           !isActive
 //             ? "hidden"
-//             : "block absolute top-0 left-0 w-[100vw] h-screen mt-[4em] bg-[#1D2123] text-white z-[999999]"
+//             : "block absolute top-0 left-0 w-[100vw] h-screen mt-[4em] bg-[#0F1732] text-white z-[999999]"
 //         }
 //       >
 //         {options.map((option) => {
@@ -188,13 +188,13 @@ function Sidebar() {
 
   return (
     <>
-     <div className="fixed top-0 left-0 p-6 flex items-center justify-center bg-[#1A1E1F] w-screen z-[99999999999]">
+     <div className="fixed top-0 left-0 p-6 flex items-center justify-center bg-[#040C25] w-screen z-[99999999999]">
            
            <img src={logo} alt="home icon" />
          </div>
 
 
-      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw] rounded-t-md bg-[#1A1E1F] border-t-1 border-[#9600ffcc] py-4 z-[99999999999]">
+      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw] rounded-t-md bg-[#040C25] border-t-1 border-[#9600ffcc] py-4 z-[99999999999]">
         <Link to="/home">
           <div 
             className={`flex flex-col text-[1em] items-center space-y-1 ${

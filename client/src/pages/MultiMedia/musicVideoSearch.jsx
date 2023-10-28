@@ -48,7 +48,7 @@ const MusicVideoSearch = () => {
 
   return (
     <>
-      <div className="bg-[#1D2123] text-white">
+      <div className="bg-[#0F1732] text-white">
         <div>
           {/* {token ? */}
           <form
@@ -59,7 +59,7 @@ const MusicVideoSearch = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search music video"
-              className=" bg-[#1D2123] lg:px-20 w-[95vw] ml-[1.5vw] px-10 py-2 rounded-[50px]"
+              className=" bg-[#0F1732] lg:px-20 w-[95vw] ml-[1.5vw] px-10 py-2 rounded-[50px]"
             />
             <img
               src={searchIcon}

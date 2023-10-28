@@ -145,7 +145,7 @@ const handleUpload = async () => {
     value={musicDetails.artist}
     name="artist"
     onChange={handleInputChange}
-    className="p-3 rounded-[20px] text-[#1D2123]"
+    className="p-3 rounded-[20px] text-[#0F1732]"
   />
 </div>
 
@@ -157,7 +157,7 @@ const handleUpload = async () => {
           value={musicDetails.musicName}
           name="musicName"
           onChange={handleInputChange}
-          className="p-3 rounded-[20px] text-[#1D2123]"
+          className="p-3 rounded-[20px] text-[#0F1732]"
         />
       </div>
 
@@ -167,15 +167,15 @@ const handleUpload = async () => {
           value={musicDetails.category}
           name="category"
           onChange={handleInputChange}
-          className="bg-[#1D2123] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
+          className="bg-[#0F1732] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
         >
-          <option className="bg-[#1D2123]" disabled>Select a music category</option>
-          <option className="bg-[#1D2123]">AfroBeats</option>
-          <option className="bg-[#1D2123]">R & B</option>
-          <option className="bg-[#1D2123]">Hip Hop</option>
-          <option className="bg-[#1D2123]">Pop</option>
-          <option className="bg-[#1D2123]">Gospel</option>
-          <option className="bg-[#1D2123]">Classical</option>
+          <option className="bg-[#0F1732]" disabled>Select a music category</option>
+          <option className="bg-[#0F1732]">AfroBeats</option>
+          <option className="bg-[#0F1732]">R & B</option>
+          <option className="bg-[#0F1732]">Hip Hop</option>
+          <option className="bg-[#0F1732]">Pop</option>
+          <option className="bg-[#0F1732]">Gospel</option>
+          <option className="bg-[#0F1732]">Classical</option>
         </select>
       </div>
 

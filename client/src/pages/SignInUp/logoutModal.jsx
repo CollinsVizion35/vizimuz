@@ -42,7 +42,7 @@ const LogoutModal = ({ open }) => {
         className="fixed top-1/2 left-1/2 p-10 z-[10000]"
         style={{ transform: "translate(-50%, -50%)" }}
       >
-        <div className="w-[17rem] h-[15rem] lg:w-[28rem] lg:h-[16.5rem]  bg-[#1A1E1F] flex flex-col justify-center items-center">
+        <div className="w-[17rem] h-[15rem] lg:w-[28rem] lg:h-[16.5rem]  bg-[#040C25] flex flex-col justify-center items-center">
           {/* <div className='flex justify-items-end justify-end cursor-pointer'>
                   <img className='text-[#777] h-4' onClick={() => setShowLogoutModal(false)} src={closeModalIcon} alt="close icon"/>
                 </div> */}

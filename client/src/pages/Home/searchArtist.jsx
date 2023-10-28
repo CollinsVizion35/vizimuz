@@ -72,7 +72,7 @@ const SearchArtist = () => {
 
   return (
     <>
-      <div className="bg-[#1A1E1F] text-white">
+      <div className="bg-[#040C25] text-white">
         <div>
           <form
             className="relative lg:w-[30vw] lg:mx-auto items-center justify-center"
@@ -82,7 +82,7 @@ const SearchArtist = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search artists"
-              className=" bg-[#1A1E1F] lg:px-20 px-10 py-2 rounded-[50px]"
+              className=" bg-[#040C25] lg:px-20 px-10 py-2 rounded-[50px]"
             />
             <img
               src={searchIcon}
@@ -93,7 +93,7 @@ const SearchArtist = () => {
           </form>
         </div>
 
-        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#1A1E1F] absolute top-0 z-[100000000] mt-20 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#040C25] absolute top-0 z-[100000000] mt-20 gap-8">
           {renderArtists()}
         </div>
       </div>

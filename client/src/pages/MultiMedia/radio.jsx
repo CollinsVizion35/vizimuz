@@ -95,8 +95,8 @@ function Radio() {
 
   return (
     <>
-      <div className="bg-[#1D2123] text-white flex flex-col min-h-screen">
-      <div className="bg-[#1A1E1F] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
+      <div className="bg-[#0F1732] text-white flex flex-col min-h-screen">
+      <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
             <img src={logo} alt="home icon" />
 
@@ -110,13 +110,13 @@ function Radio() {
           </button>
         </div>
 
-        <div className="bg-[#1D2123] text-white flex lg:flex-row flex-col w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
+        <div className="bg-[#0F1732] text-white flex lg:flex-row flex-col w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#1A1E1F] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className="flex flex-col justify-between bg-[#040C25] mx-4 w-[4vw] rounded-[50px] py-4">
               {options.map((option, index) => {
                 return (
                   <>
@@ -136,7 +136,7 @@ function Radio() {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#1A1E1F] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className="flex flex-col justify-between mt-3 bg-[#040C25] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
@@ -172,7 +172,7 @@ function Radio() {
             </div>
           </div>
 
-          <div className="flex flex-col lg:ml-[5vw] lg:pl-8 items-center justify-center text-center float-right  w-[90%] relative bg-[#1D2123] text-white">
+          <div className="flex flex-col lg:ml-[5vw] lg:pl-8 items-center justify-center text-center float-right  w-[90%] relative bg-[#0F1732] text-white">
             <div className="text-3xl p-2 text-[#9600ffcc] flex w-screen items-center justify-center">
               VizMuz <span className="text-[#95B4B3]">Radio</span>
             </div>

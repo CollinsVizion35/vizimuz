@@ -16,7 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-color: #1A1E1F;
+  background-color: #040C25;
   color: #f8f8f9;
 }
 
@@ -72,7 +72,7 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #1a1e1f;
+  background-color: #040C25;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -91,7 +91,7 @@ code {
   /* Our sidebar item styling */
   text-decoration: none;
   margin-bottom: 10px;
-  color: #1d2123;
+  color: #0F1732;
   transition: color 0.2s;
 }
 
@@ -104,7 +104,7 @@ code {
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  background-color: #1d2123;
+  background-color: #0F1732;
   position: fixed;
   width: 25px;
   height: 20px;
@@ -143,7 +143,7 @@ code {
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: #1d2123;
+  color: #0F1732;
 }
 
 /* Styling of overlay */

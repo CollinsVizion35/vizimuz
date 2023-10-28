@@ -72,17 +72,18 @@ const TopChart = () => {
 
   return (
     <>
-      <div className="w-[95vw] lg:w-[35%] lg:ml-[5vw] flex flex-col">
+      <div className="w-[95vw] lg:w-[25vw] flex flex-col mx-auto">
         <div className="flex flex-row justify-between pt-4 w-[100%] items-baseline">
         <h1 className="font-black">Top Album</h1>
         <h1 className=" opacity-70 text-[0.8em]">View more</h1>
         </div>
 
-        <div className="hidden lg:grid pt-2 grid-cols-2">
+        <div className="hidden lg:grid pt-2 grid-cols-2 xl:grid-col-3">
           {albumInfo ? (
             albumList ? (
               albumList.map((newAlbum, index) => (
                 <div
+                key={index}
                   onClick={() => {
                     setCurrentAlbumIndex(index);
                     console.log("currentAlbumIndex:", currentAlbumIndex, index);
@@ -92,15 +93,15 @@ const TopChart = () => {
                     to={`/album/${newAlbum.artist}/${newAlbum.name}/${albumInfo.id}`}
                   >
                     <div className="mb-2 rounded-[5px] group hover:scale-105">
-                      <div className="p-3 flex flex-col items-start">
+                      <div className="py-3 pr-3 flex flex-col items-start">
                         <div className="relative ">
                           <img
-                            className="rounded-[2px] w-[150px] h-[150px] absolute top-0 right-[-40%]"
+                            className=" w-[150px] h-[150px] absolute top-0 right-[-40%]"
                             src={disc}
                             alt="album"
                           />
                           <img
-                            className="relative rounded-[2px] w-[150px] h-[150px] z-[9999]"
+                            className="relative w-[150px] h-[150px] z-[9999]"
                             src={newAlbum.image}
                             alt="album"
                           />
@@ -156,7 +157,7 @@ const TopChart = () => {
                                 alt="album"
                               />
                               <img
-                                className="relative rounded-[2px] w-[150px] h-[150px] z-[9999]"
+                                className="relative w-[150px] h-[150px] z-[9999]"
                                 src={newAlbum.image}
                                 alt="album"
                               />

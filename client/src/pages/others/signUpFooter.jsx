@@ -3,7 +3,7 @@ import logo from "../../imgs/logo.svg";
 
 function SignUpFooter() {
   return (
-    <div className="absolute lg:fixed bottom-[-10vh] left-1/2 p-10 bg-[#1D2123] space-y-3 flex flex-col items-center w-[100%] z-[999999999]"
+    <div className="absolute lg:fixed bottom-[-10vh] left-1/2 p-10 bg-[#0F1732] space-y-3 flex flex-col items-center w-[100%] z-[999999999]"
     style={{ transform: "translate(-50%, -50%)" }}>
       <div className='flex flex-row items-center space-x-2'>
       <img src={logo} alt="home icon" />

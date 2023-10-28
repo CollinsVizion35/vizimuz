@@ -9,7 +9,7 @@ hanko-profile {
   --brand-color-shade-1: #6b84fb;
   --brand-contrast-color: white;
 
-  --background-color: #1D2123;
+  --background-color: #0F1732;
   --error-color: #e82020;
   --link-color: #9600ffcc;
 
@@ -82,12 +82,12 @@ hanko-auth::part(primary-button):hover ,
 hanko-profile::part(primary-button):hover  {
   background-color: #A4C7C6;
   color: #fcfcfc;
-  border-color: #1D2123;
+  border-color: #0F1732;
 }
 
 hanko-auth::part(secondary-button):hover ,
 hanko-profile::part(secondary-button):hover  {
   background-color: #A4C7C6;
-  color: #1D2123;
-  border-color: #1D2123;
+  color: #0F1732;
+  border-color: #0F1732;
 }

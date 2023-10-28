@@ -158,7 +158,7 @@ const [albumData, setAlbumData] = useState([]);
           value={albumDetails.name}
           name="name"
           onChange={handleInputChange}
-          className="p-3 rounded-[20px] text-[#1D2123]"
+          className="p-3 rounded-[20px] text-[#0F1732]"
         />
 
         <label>Artist</label>
@@ -168,7 +168,7 @@ const [albumData, setAlbumData] = useState([]);
           value={albumDetails.artist}
           name="artist"
           onChange={handleInputChange}
-          className="p-3 rounded-[20px] text-[#1D2123]"
+          className="p-3 rounded-[20px] text-[#0F1732]"
         />
 
         <div className="flex flex-col items-start lg:w-[50vw] w-[80vw] space-y-2">
@@ -193,29 +193,29 @@ const [albumData, setAlbumData] = useState([]);
               placeholder={`Enter track ${index + 1} name`}
               value={track.name}
               onChange={(e) => handleTrackInputChange(e, index, "name")}
-              className="p-3 rounded-[20px] text-[#1D2123]"
+              className="p-3 rounded-[20px] text-[#0F1732]"
             /><label>{`Track ${index + 1} Artist`}</label>
             <input
               type="text"
               placeholder={`Enter track ${index + 1} artist`}
               value={track.artist}
               onChange={(e) => handleTrackInputChange(e, index, "artist")}
-              className="p-3 rounded-[20px] text-[#1D2123]"
+              className="p-3 rounded-[20px] text-[#0F1732]"
             />
             <label>{`Track ${index + 1} category`}</label>
             <select
           value={track.category}
           name="category"
           onChange={(e) => handleTrackInputChange(e, index, "category")}
-          className="bg-[#1D2123] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
+          className="bg-[#0F1732] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
         >
-          <option className="bg-[#1D2123]" disabled>{`Select track ${index + 1} category`}</option>
-          <option className="bg-[#1D2123]">AfroBeats</option>
-          <option className="bg-[#1D2123]">R & B</option>
-          <option className="bg-[#1D2123]">Hip Hop</option>
-          <option className="bg-[#1D2123]">Pop</option>
-          <option className="bg-[#1D2123]">Gospel</option>
-          <option className="bg-[#1D2123]">Classical</option>
+          <option className="bg-[#0F1732]" disabled>{`Select track ${index + 1} category`}</option>
+          <option className="bg-[#0F1732]">AfroBeats</option>
+          <option className="bg-[#0F1732]">R & B</option>
+          <option className="bg-[#0F1732]">Hip Hop</option>
+          <option className="bg-[#0F1732]">Pop</option>
+          <option className="bg-[#0F1732]">Gospel</option>
+          <option className="bg-[#0F1732]">Classical</option>
         </select>
             <label>{`Track ${index + 1} Audio`}</label>
             <input

@@ -56,7 +56,7 @@ function Header() {
   SwiperCore.use([Autoplay]);
 
   return (
-    <>
+    <div className=" lg:px-4">
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -71,7 +71,7 @@ function Header() {
         }}
         modules={[EffectCoverflow]}
         autoplay={true}
-        className="mySwiper w-[100vw] lg:w-[40vw] h-[200px] lg:h-[40vh] mt-6 lg:mt-16 mx-auto"
+        className="mySwiper w-[100vw] lg:w-[40vw] h-[200px] lg:h-[40vh] mt-6 lg:mt-16 lg:mx-auto"
       >
         {playlists.map((playlist, index) => {
           return (
@@ -91,7 +91,7 @@ function Header() {
           );
         })}
       </Swiper>
-    </>
+    </div>
   );
 }
 

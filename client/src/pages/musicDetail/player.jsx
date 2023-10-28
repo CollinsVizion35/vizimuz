@@ -221,7 +221,7 @@ function Player() {
   return (
     <>
     {combinedMusic ? (
-    <div className="flex flex-col z-[999999999] w-[90vw] max-w-[1440px] mx-auto my-0 bg-[#1A1E1F] bg-opacity-[95%] mt-3 text-white">
+    <div className="flex flex-col z-[999999999] w-[90vw] max-w-[1440px] mx-auto my-0 bg-[#040C25] bg-opacity-[95%] mt-3 text-white">
       <audio
   src={combinedMusic[currentSongIndex]?.audio}  // Use optional chaining
   ref={playerAudioRef}

@@ -308,7 +308,7 @@ const ProfileEditBtn = () => {
         <div className="w-full py-8">
           <form>
             <div className="flex flex-col space-y-4">
-              <label className="text-[#1D2123]  font-normal text-sm md:text-base inline opacity-30 text-left">
+              <label className="text-[#0F1732]  font-normal text-sm md:text-base inline opacity-30 text-left">
                 User information
               </label>
               <div>
@@ -321,7 +321,7 @@ const ProfileEditBtn = () => {
                   placeholder="first name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#1D2123]"
+                  className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#0F1732]"
                 />
               </div>
 
@@ -335,7 +335,7 @@ const ProfileEditBtn = () => {
                   placeholder="last name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#1D2123]"
+                  className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#0F1732]"
                 />
               </div>
 
@@ -349,7 +349,7 @@ const ProfileEditBtn = () => {
                   placeholder="user name"
                   value={userName}
                   onChange={(e) => setUserName(e.target.value)}
-                  className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#1D2123]"
+                  className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#0F1732]"
                 />
               </div>
 
@@ -361,7 +361,7 @@ const ProfileEditBtn = () => {
                 <select
                   value={userCountry}
                   onChange={(e) => setUserCountry(e.target.value)}
-                  className="lg:w-[60%] w-[70vw] h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#1D2123]"
+                  className="lg:w-[60%] w-[70vw] h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#0F1732]"
                 >
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Albania">Albania</option>
@@ -718,7 +718,7 @@ const ProfileEditBtn = () => {
                     onChange={(e) => {
                       setPhoneNumber(e.target.value);
                     }}
-                    className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#1D2123]"
+                    className="lg:w-[60%] w-auto h-[2.5rem] rounded-[5px] p-2 text-sm  border-b border-[#95B4B3] text-[#0F1732]"
                   />
                 </div>
               </div>
@@ -731,7 +731,7 @@ const ProfileEditBtn = () => {
           <div className="my-8 w-[90vw] flex items-center justify-center">
             <button
               onClick={handleEditBtn}
-              className="p-3 bg-[#95B4B3] text-[#1D2123] mb-8 flex items-center justify-center"
+              className="p-3 bg-[#95B4B3] text-[#0F1732] mb-8 flex items-center justify-center"
             >
               Save
             </button>
@@ -743,7 +743,7 @@ const ProfileEditBtn = () => {
             className="fixed top-1/2 left-1/2 p-10 z-[1000]"
             style={{ transform: "translate(-50%, -50%)", display: "none" }}
           >
-            <div className="w-[21rem] lg:w-[29.875rem] h-[18.6487rem] bg-[#1A1E1F] flex flex-col justify-center items-center rounded-md">
+            <div className="w-[21rem] lg:w-[29.875rem] h-[18.6487rem] bg-[#040C25] flex flex-col justify-center items-center rounded-md">
               <MdOutlineVerifiedUser className="p-3 text-[#42cf42] text-7xl" />
               <h3 className="text-xl leading-[2.5rem] text-center font-medium text-[#95B4B3] mb-3">
                 Are you sure you want to save new Informations

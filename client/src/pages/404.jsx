@@ -10,7 +10,7 @@ const PageNotFound = () => {
   return (
     <>
       <div className="text-center flex h-screen">
-        <div id="page-wrap" className="w-full bg-[#1D2123]">
+        <div id="page-wrap" className="w-full bg-[#0F1732]">
           <div className="flex">
             <div className="w-full py-8 px-8 md:px-14">
               <div className="flex flex-col justify-center items-center min-h-screen">
