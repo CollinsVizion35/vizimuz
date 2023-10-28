@@ -47,10 +47,10 @@ const Welcome = () => {
 
           <Fade delay={2000}>
             <div
-              className="bg-[#1DD05D] cursor-pointer p-2 px-4 rounded-[50px] w-max flex flex-row gap-2 items-center"
+              className="bg-[#FF2E4C] cursor-pointer p-2 px-4 rounded-[50px] w-max flex flex-row gap-2 items-center"
               // href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
             >
-              Authorized with <SiSpotify className="pl-2" />
+              Authorized with HANKO.io
             </div>
           </Fade>
         </div>
