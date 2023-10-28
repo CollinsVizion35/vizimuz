@@ -79,7 +79,7 @@ function Header() {
             
         <SwiperSlide>
           <div className="relative rounded-[5px]">
-          <img className="lg:w-[40vh] w-[200px] lg:h-[40vh] h-[200px] rounded-[5px]" src={playlist.img} />
+          <img className="lg:w-[40vw] w-[200px] lg:h-[40vh] h-[200px] rounded-[5px]" src={playlist.img} />
           <div className="absolute bottom-2 left-0 p-2">
           <div className="text-[0.8em]">{playlist.name}</div>
           <div className="text-[0.5em] w-[80%]">{playlist.desc}</div>
