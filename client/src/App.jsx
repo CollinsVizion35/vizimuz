@@ -38,6 +38,7 @@ import SettingsBox from "./pages/SignInUp/HankoAuth/boxSettings";
 import { ProfileContextPage } from "./contexts/ProfileContext";
 import AlbumDetail from "./pages/album/albumDetail";
 import AlbumMusicDetailBox from "./pages/album/musicDetailBox";
+import NewJamComponent from "./pages/homeSection/newJams";
 
 export const AppContext = createContext();
 // export const PhoneContext = createContext();
@@ -124,6 +125,13 @@ function App() {
               path="/album/:artist/:name/:id"
               element={<AlbumDetail />}
             />
+
+            <Route
+              path="/newest_jams"
+              element={<NewJamComponent />}
+            />
+
+
 
             <Route path="/signup" element={<SignInBox />} />
 

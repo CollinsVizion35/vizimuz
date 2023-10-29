@@ -73,9 +73,9 @@ function Header() {
         autoplay={true}
         className="mySwiper w-[100vw] lg:w-[40vw] h-[200px] lg:h-[40vh] mt-6 lg:mt-16 lg:mx-auto"
       >
-        {playlists.map((playlist, index) => {
+        {playlists.map((playlist, playlistIndex) => {
           return (
-            <div key={index}>
+            <div key={playlistIndex}>
             
         <SwiperSlide>
           <div className="relative rounded-[5px]">

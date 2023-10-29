@@ -10,48 +10,96 @@ import Sidebar from "../Home/sidebar";
 import "../../index.css";
 import LogoutModal from "../SignInUp/logoutModal";
 
-import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
+import { MdArrowForward, MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
 import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
 import { HiFilm } from "react-icons/hi/index";
 import { BsFillPersonFill } from "react-icons/bs/index";
 
-import gkmc from "../../imgs/gkmcLamar.jpg";
-import dangerous from "../../imgs/dangerous.jpg";
-import sheriff from "../../imgs/I_Shot_the_Sheriff_by_Bob_Marley_and_the_Wailers_German_vinyl.jpg";
-import pSquare from "../../imgs/p-square.jpeg";
+import a from "/afrobeat.jpg";
+import b from "/reggae.jpg";
+import c from "/2.jpg";
+import d from "/4.jpg";
+import e from "/5.jpg";
+import f from "/6.jpg";
+import g from "/7.jpg";
+import h from "/8.jpg";
+import i from "/9.jpg";
+import j from "/10.jpg";
+import k from "/11.jpg";
+import l from "/12.jpg";
 
-const releases = [
+const Genres = [
   {
     id: 0,
-    artist: "P-Square",
-    img: pSquare,
-    name: "Ihe Geme",
-    audio: "P-Square_-_Jaiye_Ihe_Geme__@BaseNaija.com.mp3",
-    album: "Singles",
+    img: a,
+    category: "Afrobeat",
+    link: "",
   },
   {
     id: 1,
-    artist: "Bob Marley",
-    img: sheriff,
-    name: "I Shot The Sheriff",
-    audio: "Bob Marley - I Shot The Sheriff.mp3",
-    album: "Singles",
+    img: b,
+    category: "Reggae",
+    link: "",
   },
   {
     id: 2,
-    artist: "Michael Jackson",
-    img: dangerous,
-    name: "Dangerous",
-    audio: "Michael Jackson - Dangerous (1995) _ Studio Version _.mp3",
-    album: "Dangerous",
+    img: c,
+    category: "Hip Hop",
+    link: "",
   },
   {
     id: 3,
-    artist: "Kendrick Lamar",
-    img: gkmc,
-    name: "Backstreet Freestyle",
-    audio: "03 - Backstreet Freestyle.mp3",
-    album: "good kid, m.A.A.d city",
+    img: d,
+    category: "Gospel",
+    link: "",
+  },
+  {
+    id: 4,
+    img: e,
+    category: "Jazz",
+    link: "",
+  },
+  {
+    id: 5,
+    img: f,
+    category: "Pop",
+    link: "",
+  },
+  {
+    id: 6,
+    img: g,
+    category: "R&B",
+    link: "",
+  },
+  {
+    id: 7,
+    img: h,
+    category: "Trap",
+    link: "",
+  },
+  {
+    id: 8,
+    img: i,
+    category: "Grime",
+    link: "",
+  },
+  {
+    id: 9,
+    img: j,
+    category: "Soul",
+    link: "",
+  },
+  {
+    id: 10,
+    img: k,
+    category: "Electronics",
+    link: "",
+  },
+  {
+    id: 11,
+    img: l,
+    category: "Metal",
+    link: "",
   },
 ];
 
@@ -171,7 +219,7 @@ const Collection = () => {
           </button>
         </div>
 
-        <div className="bg-[#0F1732] text-white flex flex-col lg:flex-row w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-28">
+        <div className="bg-[#0F1732] text-white flex flex-col lg:flex-row w-[95vw] mx-auto max-w-[1440px] my-0 lg:mt-32 mt-24">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
@@ -233,91 +281,41 @@ const Collection = () => {
             </div>
           </div>
 
-          <div className="Body w-[90vw] flex flex-col lg:ml-[5vw] lg:pl-8">
-            <div className="lg:flex lg:flex-row grid grid-cols-2 mx-auto lg:mx-[0px]">
-              <Link to="/collection">
-                <button className=" lg:w-max w-[35vw] px-3 py-2 rounded-[20px]  text-[#4F524F] bg-[#9600ffcc] mr-2">
-                  My Collection
-                </button>
-              </Link>
-              <Link to="/likes">
-                <button className=" lg:w-max w-[35vw] px-3 py-2 rounded-[20px] border border-[#4F524F] text-[#4F524F]">
-                  Likes
-                </button>
-              </Link>
+          <div className="Body w-[95vw] flex flex-col lg:ml-[5vw] mx-auto lg:pl-8 mb-12">
+            <div className="flex w-[100vw] items-center justify-center">
+                <div className="items-center  px-3 py-2 rounded-[20px] font-bold text-[1.2em] text-[#fcfcfc] mr-2">
+                  Genre
+                </div>
             </div>
 
-            <div className="flex lg:flex-row flex-col py-4">
-              {releases.map((release, index) => {
+            <div className="grid grid-cols-2 lg:grid-cols-4 py-4 w-full lg:max-w-[1440px] mx-auto">
+              {Genres.map((genre, index) => {
                 return (
                   <>
+                  <Link to={genre.link}>
                     <div
                       key={index}
-                      ref={musicBoxToEl}
-                      onClick={() => {
-                        console.log(imageEl.current);
-                        console.log(audioEl.current[index]);
-                        console.log(musicNameEl.current[index]);
-                        console.log(artistNameEl.current[index]);
-                        console.log(releases[currentSongIndex].name);
-                        // musicBoxEl.current[0].style.display = 'none'
-                        // musicBoxEl.current[0].style.scale = '0'
-                        console.log(isPlaying);
-
-                        console.log(playerAudio2Ref.current.currentSrc);
-                        console.log(playerImage2Ref.current.outerHTML);
-                        console.log(imageEl);
-                        console.log(playerName2Ref.current.innerHTML);
-                        console.log(playerArtist2Ref.current.innerHTML);
-                        isPlaying === true
-                          ? setIsPlaying(isPlaying)
-                          : setIsPlaying(!isPlaying);
-                        playerAudio2Ref.current.src =
-                          audioEl.current[index].src;
-                        playerImage2Ref.current.src =
-                          imageEl.current[index].src;
-
-                        playerName2Ref.current.innerHTML =
-                          musicNameEl.current[index].innerHTML;
-                        playerArtist2Ref.current.innerHTML =
-                          artistNameEl.current[index].innerHTML;
-                      }}
-                      onFocus={() => {
-                        musicNameEl.current[index].style.scale = "1.5";
-                      }}
-                      className="flex flex-col relative group text-left my-3 mx-auto lg:mr-4 cursor-pointer"
+                      className="flex flex-col items-center relative group text-left my-3 mx-auto lg:mr-4 cursor-pointer"
                     >
-                      <audio
-                        src={release.audio}
-                        ref={audioToEl}
-                        onTimeUpdate={getCurrDuration}
-                        onLoadedData={(e) => {
-                          setDuration(e.currentTarget.duration.toFixed(2));
-                        }}
-                      ></audio>
                       <img
-                        className="lg:w-[150px]  group-hover:scale-[1.1] lg:h-[150px] w-[90vw] h-[200px] rounded-[5px]"
-                        title={release.img}
+                        className=" group-hover:scale-[1.1] lg:h-[250px] lg:w-[250px] w-[40vw] h-[40vw] rounded-[5px]"
+                        title={genre.img}
                         ref={imageToEl}
-                        src={release.img}
+                        src={genre.img}
                         alt="artist"
                       />
 
-                      <div className="absolute bottom-0 left-0 pl-2 pb-2">
                         <h2
                           ref={musicNameToEl}
-                          className="text-white opacity-[70%] text-[0.9em]"
+                          className="absolute text-white opacity-[70%] text-[0.9em] left-8 bottom-2 opacity-80"
                         >
-                          {release.name}
+                          {genre.category}
                         </h2>
-                        <h5
-                          ref={artistNameToEl}
-                          className="text-white opacity-[70%] text-[.6em]"
-                        >
-                          {release.artist}
-                        </h5>
-                      </div>
+                        <div className="border border-[#fcfcfc] p-1 rounded-[50%] absolute left-8 top-2 opacity-80">
+                          <MdArrowForward/>
+                        </div>
                     </div>
+                    </Link>
                   </>
                 );
               })}
@@ -325,19 +323,6 @@ const Collection = () => {
           </div>
         </div>
       </div>
-
-      <footer className="fixed lg:bottom-0 bottom-12 z-[99999] w-screen left-0">
-        {canShow ? (
-          <Player
-            currentSongIndex={currentSongIndex}
-            setCurrentSongIndex={setCurrentSongIndex}
-            nextSongIndex={nextSongIndex}
-            releases={releases}
-          />
-        ) : (
-          <> </>
-        )}
-      </footer>
     </>
   );
 };
