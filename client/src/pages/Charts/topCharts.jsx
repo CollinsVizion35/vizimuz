@@ -129,7 +129,7 @@ const TopChart = () => {
         </div>
 
         <div className="flex flex-row justify-between py-4 pt-2 w-[95vw]">
-          <Swiper spaceBetween={10} slidesPerView={1.8} className="lg:hidden">
+          <Swiper spaceBetween={10} slidesPerView={1.9} className="lg:hidden">
             {/* <div className="hidden h-[30vh] lg:flex"> */}
             {albumInfo ? (
               albumList ? (
