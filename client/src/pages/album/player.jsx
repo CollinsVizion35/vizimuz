@@ -24,6 +24,10 @@ useEffect(() => {
       // Check if 'i' is within the valid range before setting the state
       if (i >= 0 && i < musicData.length) {
         setMusicList(musicData[i].musicData);
+        const allMusicList = musicData.map((musicDoc) => musicDoc.musicData);
+        setMusicList(allMusicList.flat());
+
+        console.log(musicList);
       }
     } catch (error) {
       console.error("Error fetching music data: ", error);

@@ -33,7 +33,13 @@ function PlayerControls(props) {
         // Check if 'i' is within the valid range before setting the state
         if (i >= 0 && i < musicData.length) {
           setMusicList(musicData[i].musicData);
-          setMusicInfo(musicData[i])
+          const allMusicList = musicData.map((musicDoc) => musicDoc.musicData);
+          setMusicList(allMusicList.flat());
+          
+          const allMusicInfo = musicData.map((musicDoc) => musicDoc);
+          setMusicInfo(allMusicInfo.flat());
+  
+          console.log(musicList);
         }
       } catch (error) {
         console.error("Error fetching music data: ", error);
@@ -60,10 +66,21 @@ function PlayerControls(props) {
         });
   
         // Check if 'i' is within the valid range before setting the state
-        if (i >= 0 && i < albumData.length) {
+        // if (i >= 0 && i < albumData.length) {
+        //   setAlbumList(albumData[j].albumData);
+        //   setAlbumInfo(albumData[j]);
+        //   console.log(albumData[j].albumData);
+        // }
+  
+        if (j >= 0 && j < albumData.length) {
           setAlbumList(albumData[j].albumData);
-          setAlbumInfo(albumData[j]);
-          console.log(albumData[j].albumData);
+          const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData);
+          setAlbumList(allAlbumList.flat());
+            
+          const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
+          setAlbumInfo(allAlbumInfo.flat());
+  
+          console.log(albumList);
         }
       } catch (error) {
         console.error("Error fetching album data: ", error);

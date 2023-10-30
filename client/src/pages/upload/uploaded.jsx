@@ -29,6 +29,9 @@ useEffect(() => {
         setMusicList(musicData[i].musicData);
         const allMusicList = musicData.map((musicDoc) => musicDoc.musicData);
         setMusicList(allMusicList.flat());
+          
+        const allMusicInfo = musicData.map((musicDoc) => musicDoc);
+        setMusicInfo(allMusicInfo.flat());
 
         console.log(musicList);
       }
@@ -47,7 +50,7 @@ const j = 0; // Define the index 'i' here
 
 useEffect(() => {
   const fetchData = async () => {
-    try {
+    try { 
       const albumCollectionRef = collection(db, "album");
       const querySnapshot = await getDocs(albumCollectionRef);
 
@@ -55,12 +58,16 @@ useEffect(() => {
       querySnapshot.forEach((doc) => {
         albumData.push({ id: doc.id, ...doc.data() });
       });
-
-      // Check if 'i' is within the valid range before setting the state
-      if (i >= 0 && i < albumData.length) {
+  
+      if (j >= 0 && j < albumData.length) {
         setAlbumList(albumData[j].albumData);
-        setAlbumInfo(albumData[j]);
-        console.log(albumData[j].albumData);
+        const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData);
+        setAlbumList(allAlbumList.flat());
+          
+        const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
+        setAlbumInfo(allAlbumInfo.flat());
+
+        console.log(albumList);
       }
     } catch (error) {
       console.error("Error fetching album data: ", error);
@@ -79,7 +86,7 @@ const mergedData = albumList.map((item) => {
 
 const mergedMusic = [...mergedData, musicList]
 
-const combinedMusic = mergedMusic.flat().slice(0, 5);
+const combinedMusic = mergedMusic.flat();
 
 useEffect(() => {
   console.log(mergedMusic)
@@ -286,7 +293,7 @@ useEffect(() => {
           
           <div className="flex flex-col lg:hidden">
 
-{combinedMusic.map((newMusic, index) => (
+{combinedMusic.slice(0, 5).map((newMusic, index) => (
     <div className="flex flex-row justify-between items-center w-[90vw]"  key={index}>
     <div className="flex flex-col lg:hidden">
         <>

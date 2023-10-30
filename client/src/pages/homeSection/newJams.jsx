@@ -318,14 +318,14 @@ const NewJamComponent = () => {
                     </div>
 
                     <div className="flex flex-col bg-[#0F1732] min-h-max lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white mb-10">
-                        <div className="flex flex-row justify-between w-[100%] pt-4 items-baseline">
+                        <div className="flex flex-row w-[95vw] max-w-[1440px] justify-start lg:w-[60vw] mx-auto pt-4 items-baseline">
                             <h1 className="font-black">New jams</h1>
                         </div>
-                        <div className="flex flex-row justify-between py-4 pt-2 w-[90%]">
+                        <div className="flex flex-row justify-between py-4 pt-2 w-[90%] max-w-[1440px] lg:w-[60vw] mx-auto">
                             <Swiper
                                 spaceBetween={10}
                                 slidesPerView={slidesPerView}
-                                className="hidden lg:block"
+                                className="hidden"
                             >
                                 {combinedMusic.map((newMusic, index) => (
                                     <SwiperSlide className="hidden lg:block" key={index}>
@@ -417,11 +417,11 @@ const NewJamComponent = () => {
                                 ))}
                             </Swiper>
 
-                            <div className="flex flex-col lg:hidden">
+                            <div className="flex flex-col">
 
                                 {combinedMusic.map((newMusic, index) => (
-                                    <div className="flex flex-row justify-between items-center w-[90vw]"  key={index}>
-                                    <div className="flex flex-col lg:hidden">
+                                    <div className="flex flex-row justify-between items-center w-[90vw] max-w-[1440px] lg:w-[60vw] ml-auto"  key={index}>
+                                    <div className="flex flex-col">
                                         <>
                                             <div className="flex flex-row items-center relative text-left my-3 space-x-3 cursor-pointer">
                                                 <audio

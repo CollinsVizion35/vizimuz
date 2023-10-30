@@ -91,12 +91,16 @@ const AlbumDetail = () => {
         querySnapshot.forEach((doc) => {
           albumData.push({ id: doc.id, ...doc.data() });
         });
-
-        // Check if 'i' is within the valid range before setting the state
+  
         if (i >= 0 && i < albumData.length) {
           setAlbumList(albumData[i].albumData);
-          setAlbumInfo(albumData[i]);
-          console.log(albumData[i].albumData);
+          const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData);
+          setAlbumList(allAlbumList.flat());
+            
+          const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
+          setAlbumInfo(allAlbumInfo.flat());
+  
+          console.log(albumList);
         }
       } catch (error) {
         console.error("Error fetching album data: ", error);
@@ -384,7 +388,7 @@ const AlbumDetail = () => {
                                 >
                                   <h2
                                     ref={musicNameToEl}
-                                    className="lg:w-[50%] text-left lg:text-center text-white text-[.6em] md:text-[.7em] opacity-[70%]"
+                                    className="lg:w-[100%] text-left lg:text-center text-white text-[.6em] md:text-[.7em] opacity-[70%]"
                                   >
                                     {track.musicName} - {track.artist}
                                   </h2>

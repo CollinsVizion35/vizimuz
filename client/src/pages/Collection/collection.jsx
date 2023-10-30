@@ -281,8 +281,8 @@ const Collection = () => {
             </div>
           </div>
 
-          <div className="Body w-[95vw] flex flex-col lg:ml-[5vw] mx-auto lg:pl-8 mb-12">
-            <div className="flex w-[100vw] items-center justify-center">
+          <div className="Body w-[95vw] max-w-[1440px] flex flex-col lg:ml-[5vw] mx-auto lg:pl-8 mb-12">
+            <div className="flex w-[95vw] max-w-[1440px] items-center justify-center">
                 <div className="items-center  px-3 py-2 rounded-[20px] font-bold text-[1.2em] text-[#fcfcfc] mr-2">
                   Genre
                 </div>
@@ -307,11 +307,11 @@ const Collection = () => {
 
                         <h2
                           ref={musicNameToEl}
-                          className="absolute text-white opacity-[70%] text-[0.9em] left-8 bottom-2 opacity-80"
+                          className="absolute text-white text-[0.9em] xl:left-16 left-8 bottom-2 opacity-80"
                         >
                           {genre.category}
                         </h2>
-                        <div className="border border-[#fcfcfc] p-1 rounded-[50%] absolute left-8 top-2 opacity-80">
+                        <div className="border border-[#fcfcfc] p-1 rounded-[50%] absolute xl:left-16 left-8 top-2 opacity-80">
                           <MdArrowForward/>
                         </div>
                     </div>

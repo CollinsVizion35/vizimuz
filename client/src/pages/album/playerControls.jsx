@@ -30,12 +30,16 @@ function PlayerControls(props) {
         querySnapshot.forEach((doc) => {
           albumData.push({ id: doc.id, ...doc.data() });
         });
-
-        // Check if 'i' is within the valid range before setting the state
+  
         if (i >= 0 && i < albumData.length) {
           setAlbumList(albumData[i].albumData);
-          setAlbumInfo(albumData[i]);
-          console.log(albumData[i].albumData);
+          const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData);
+          setAlbumList(allAlbumList.flat());
+            
+          const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
+          setAlbumInfo(allAlbumInfo.flat());
+  
+          console.log(albumList);
         }
       } catch (error) {
         console.error("Error fetching album data: ", error);

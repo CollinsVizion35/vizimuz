@@ -84,11 +84,22 @@ const AlbumMusicDetails = () => {
           albumData.push({ id: doc.id, ...doc.data() });
         });
 
-        // Check if 'i' is within the valid range before setting the state
+        // // Check if 'i' is within the valid range before setting the state
+        // if (i >= 0 && i < albumData.length) {
+        //   setAlbumList(albumData[i].albumData[i].tracks);
+        //   setAlbumInfo(albumData[i]);
+        //   console.log(albumData[i].albumData[i].tracks);
+        // }
+  
         if (i >= 0 && i < albumData.length) {
-          setAlbumList(albumData[i].albumData[i].tracks);
-          setAlbumInfo(albumData[i]);
-          console.log(albumData[i].albumData[i].tracks);
+          setAlbumList(albumData[i].albumData);
+          const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData[i].tracks);
+          setAlbumList(allAlbumList.flat());
+            
+          const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
+          setAlbumInfo(allAlbumInfo.flat());
+  
+          console.log(albumList);
         }
       } catch (error) {
         console.error("Error fetching album data: ", error);
