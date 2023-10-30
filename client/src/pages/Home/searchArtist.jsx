@@ -82,7 +82,7 @@ const SearchArtist = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search "
-              className=" bg-[#040C25] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border-4 border-[#0F1732]"
+              className=" bg-[#040C25] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border-2 border-[#0F1732]"
             />
             <img
               src={searchIcon}

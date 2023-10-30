@@ -202,7 +202,7 @@ function Sidebar() {
            </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className="w-fit relative bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer"
+            className="w-fit relative bg-[#9600ffcc] p-2 rounded-[20px] cursor-pointer"
           >
             Upload
           </button>
