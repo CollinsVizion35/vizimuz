@@ -75,19 +75,20 @@ const SearchArtist = () => {
       <div className="bg-[#040C25] text-white">
         <div>
           <form
-            className="relative lg:w-[30vw] lg:mx-auto items-center justify-center"
+            className="relative lg:w-[30vw] w-[40vw] lg:mx-auto items-center justify-center"
             onSubmit={searchArtists}
           >
             <input
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
-              placeholder="search artists"
-              className=" bg-[#040C25] lg:px-20 px-10 py-2 rounded-[50px]"
+              placeholder="search "
+              className=" bg-[#040C25] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border-4 border-[#0F1732]"
             />
             <img
               src={searchIcon}
               onClick={searchArtists}
-              className="w-[20px] absolute top-0 left-0 py-2 ml-3 cursor-pointer"
+              className="w-[20px] py-2 ml-3 cursor-pointer absolute top-1/2 left-2 z-[1000]"
+              style={{ transform: "translate(-50%, -50%)"}}
               alt="search icon"
             />
           </form>

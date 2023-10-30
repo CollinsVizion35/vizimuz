@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UseAuth } from "../../contexts/AuthContext";
 import { AppPass } from "../../contexts/AppContext";
 
-import logo from "../../imgs/logo.svg";
+import logo from "../../imgs/vizimuz_logo.png";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa/index";
 
@@ -128,7 +128,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
         style={{ display: "none" }}
       >
         <div className="p-4 w-[40vw] pb-8 hidden lg:flex flex-row justify-between">
-          <img src={logo} alt="home icon" />
+          <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
         </div>
 
         <div className="bg-[#0F1732] text-white flex lg:flex-row flex-col">

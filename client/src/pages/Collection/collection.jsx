@@ -3,7 +3,7 @@ import SearchArtist from "../Home/searchArtist";
 import { AppPass } from "../../contexts/AppContext";
 import Player from "../Players/CollectionPlayer/player";
 
-import logo from "../../imgs/logo.svg";
+import logo from "../../imgs/vizimuz_logo.png";
 
 import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Home/sidebar";
@@ -207,7 +207,7 @@ const Collection = () => {
       <div className="bg-[#0F1732] text-white flex flex-col min-h-screen">
       <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
-            <img src={logo} alt="home icon" />
+            <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
             <SearchArtist />
           </div>

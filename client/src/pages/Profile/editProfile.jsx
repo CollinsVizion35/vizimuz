@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import logo from "../../imgs/logo.svg";
+import logo from "../../imgs/vizimuz_logo.png";
 
 import Sidebar from "../Home/sidebar";
 import "../../index.css";
@@ -58,7 +58,7 @@ const EditProfile = () => {
       <div className="bg-[#0F1732] text-white flex flex-col min-h-screen overflow-x-hidden">
       <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
-            <img src={logo} alt="home icon" />
+            <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
             <SearchArtist />
           </div>

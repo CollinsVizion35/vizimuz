@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 // import notAvailable from '../imgs/No-Photo-Available.jpg'
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
 
-import logo from "../imgs/logo.svg";
+import logo from "../imgs/vizimuz_logo.png";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Welcome = () => {
           <div className="flex flex-col items-center justify-center">
             <JackInTheBox triggerOnce={false}>
               <img
-                src={logo}
+                src={logo} className="w-[35px] h-[35px]"
                 alt="home icon"
                 className="bg-[#000] p-4 rounded-[50%] bg-opacity-[30%]"
               />

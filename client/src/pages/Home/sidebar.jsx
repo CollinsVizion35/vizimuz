@@ -6,7 +6,7 @@
 // import musicVidIcon from "../../imgs/videos.svg";
 // import profileIcon from "../../imgs/profile.svg";
 // import logoutIcon from "../../imgs/Logout.svg";
-// import logo from "../../imgs/logo.svg";
+// import logo from "../../imgs/vizimuz_logo.png";
 
 // import { TbMenu, TbSearch } from "react-icons/tb/index";
 
@@ -87,7 +87,7 @@
 //           <button onClick={handleClick} className="mr-3">
 //             <TbMenu />
 //           </button>
-//           <img src={logo} alt="home icon" />
+//           <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 //         </div>
 
 //         <button onClick={handleShowSearchBar} className="w-[10vw] float-right">
@@ -169,10 +169,11 @@ import {
 } from "react-icons/md";
 import { HiOutlineDotsVertical, HiOutlineTable } from "react-icons/hi";
 import { FaRegUser, FaRegUserCircle } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { GiSoccerKick } from "react-icons/gi";
-import logo from "../../imgs/logo.svg";
+import logo from "../../imgs/vizimuz_logo.png";
 import { RiMovieFill } from "react-icons/ri";
+import SearchArtist from "./searchArtist";
 
 function Sidebar() {
   
@@ -186,11 +187,26 @@ function Sidebar() {
     return location.pathname === route;
   };
 
+  
+  const navigate = useNavigate();
+
   return (
     <>
-     <div className="fixed top-0 left-0 p-6 flex items-center justify-center bg-[#040C25] w-screen z-[99999999999]">
+     <div className="fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between bg-[#040C25] w-screen z-[99999999999]">
            
-           <img src={logo} alt="home icon" />
+           <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
+
+           <div className="flex flex-row w-[65vw] items-center justify-between">
+            <div className="w-[50vw]">
+           <SearchArtist />
+           </div>
+          <button
+            onClick={() => navigate("/upload_music")}
+            className="w-fit relative bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer"
+          >
+            Upload
+          </button>
+           </div>
          </div>
 
 
