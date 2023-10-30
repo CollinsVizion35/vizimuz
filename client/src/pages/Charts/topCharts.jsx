@@ -72,13 +72,13 @@ const TopChart = () => {
 
   return (
     <>
-      <div className="w-[95vw] lg:w-[30vw] flex flex-col mx-auto">
+      <div className="w-[95vw] lg:w-[40%] flex flex-col ">
         <div className="flex flex-row justify-between pt-4 w-[100%] items-baseline">
         <h1 className="font-black">Top Album</h1>
         <h1 className=" opacity-70 text-[0.8em]">View more</h1>
         </div>
 
-        <div className="hidden lg:grid pt-2 grid-cols-3 xl:grid-col-4">
+        <div className="hidden lg:grid pt-2 grid-cols-2 xl:grid-cols-3">
           {albumInfo ? (
             albumList ? (
               albumList.map((newAlbum, index) => (

@@ -189,7 +189,7 @@ useEffect(() => {
   return (
     <>
       <div className="flex flex-col bg-[#0F1732] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white mb-10">
-      <div className="flex flex-row justify-between w-[100%] pt-4 items-baseline">
+      <div className="flex flex-row justify-between w-[100%] lg:w-[90%] pt-4 items-baseline">
         <h1 className="font-black">New jams</h1>
         <Link to="/newest_jams">
         <h1 className=" opacity-70 text-[0.8em] cursor-pointer">View more</h1></Link>
