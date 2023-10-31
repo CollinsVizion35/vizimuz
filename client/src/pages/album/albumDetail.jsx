@@ -132,7 +132,7 @@ const AlbumDetail = () => {
 
         // Check if 'i' is within the valid range before setting the state
         if (j >= 0 && j < musicData.length) {
-          setMusicList(musicData[j].musicData);
+          setMusicList(musicData[currentAlbumIndex]?.musicData);
         }
       } catch (error) {
         console.error("Error fetching music data: ", error);

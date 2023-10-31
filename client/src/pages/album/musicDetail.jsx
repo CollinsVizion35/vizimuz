@@ -66,7 +66,7 @@ const AlbumMusicDetails = () => {
     return () => clearTimeout(timer);
   });
 
-  const { currentSongIndex, setCurrentSongIndex, nextSongIndex } = AppPass();
+  const { currentAlbumIndex, setCurrentAlbumIndex, currentSongIndex, setCurrentSongIndex, nextSongIndex } = AppPass();
 
  
   const [albumList, setAlbumList] = useState([]);
@@ -91,16 +91,16 @@ const AlbumMusicDetails = () => {
         //   console.log(albumData[i].albumData[i].tracks);
         // }
   
-        if (i >= 0 && i < albumData.length) {
-          setAlbumList(albumData[i].albumData);
-          const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData[i].tracks);
+        // if (i >= 0 && i < albumData.length) {
+          setAlbumList(albumData[currentAlbumIndex]?.albumData);
+          const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData[currentAlbumIndex]?.tracks);
           setAlbumList(allAlbumList.flat());
             
           const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
           setAlbumInfo(allAlbumInfo[i]);
   
           console.log(albumList);
-        }
+        // }
       } catch (error) {
         console.error("Error fetching album data: ", error);
       }
@@ -111,6 +111,7 @@ const AlbumMusicDetails = () => {
 
   useEffect(() => {
     console.log("currentSongIndex2:", currentSongIndex);
+    console.log("currentAlbumIndex2:", currentAlbumIndex);
     console.log("musicList:", musicList);
   }, [currentSongIndex]);
 
