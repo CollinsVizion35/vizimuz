@@ -177,11 +177,19 @@ const handleUpload = async () => {
           <option value="Gospel" className="bg-[#0F1732]">Gospel</option>
           <option value="Jazz" className="bg-[#0F1732]">Jazz</option>
           <option value="Reggae" className="bg-[#0F1732]">Reggae</option>
-          <option value="Trap" className="bg-[#0F1732]">Trap</option>
-          <option value="Grime" className="bg-[#0F1732]">Grime</option>
+          <option value="Rock" className="bg-[#0F1732]">Rock</option>
+          <option value="K-Pop" className="bg-[#0F1732]">K-Pop</option>
           <option value="Soul" className="bg-[#0F1732]">Soul</option>
-          <option value="Electronics" className="bg-[#0F1732]">Electronics</option>
+          <option value="EDM" className="bg-[#0F1732]">Electronics Dance Music</option>
           <option value="Classical" className="bg-[#0F1732]">Classical</option>
+          <option value="Dancehall" className="bg-[#0F1732]">Dancehall</option>
+          <option value="Latin" className="bg-[#0F1732]">Latin</option>
+          <option value="Country" className="bg-[#0F1732]">Country</option>
+          <option value="Blues" className="bg-[#0F1732]">Blues</option>
+          <option value="Folk" className="bg-[#0F1732]">Folk</option>
+          <option value="Punk" className="bg-[#0F1732]">Punk</option>
+          <option value="Classical crossover" className="bg-[#0F1732]">Classical crossover</option>
+          <option value="Indie" className="bg-[#0F1732]">Indie</option>
         </select>
       </div>
 

@@ -48,7 +48,7 @@ const options = [
     },
 ];
 
-const NewJamComponent = () => {
+const Afrobeat = () => {
     const [showLogoutModal, setShowLogoutModal] = useState(false);
 
 
@@ -83,11 +83,17 @@ const NewJamComponent = () => {
 
                 // Check if 'i' is within the valid range before setting the state
                 if (i >= 0 && i < musicData.length) {
-                    setMusicList(musicData[i].musicData);
                     const allMusicList = musicData.map((musicDoc) => musicDoc.musicData);
-                    setMusicList(allMusicList.flat());
+                    setMusicInfo(allMusicList.flat());
 
-                    console.log(musicList);
+                    console.log(musicInfo);
+                    // Add the following code to filter the music list to only include Afrobeat music
+                    const afrobeatMusic = musicInfo.filter(
+                        (musicObject) => musicObject.category === "Afrobeat"
+                    );
+
+                    // Set the state with the list of documents with only the "category" == "Afrobeat"
+                    setMusicList(afrobeatMusic);
                 }
             } catch (error) {
                 console.error("Error fetching music data: ", error);
@@ -95,10 +101,10 @@ const NewJamComponent = () => {
         };
 
         fetchData();
+
     }, []);
 
-
-
+    
     const [albumList, setAlbumList] = useState([]);
     const [albumInfo, setAlbumInfo] = useState([]);
     const [mergedData, setMergedData] = useState([]);
@@ -121,16 +127,13 @@ const NewJamComponent = () => {
                     setAlbumInfo(albumData[j]);
                     console.log(albumData[j].albumData);
                     const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData).flat();
-                    const allAlbumInfo = allAlbumList.map((album) => album.tracks)
-                    setAlbumInfo(allAlbumList);
+                    const allAlbumInfo = allAlbumList.map((album) => album.tracks).flat();
+                    setAlbumInfo(allAlbumInfo);
 
 
-                    const mergedMusic = albumInfo.map((item) => {
-                        return (
-                            item.tracks
-
-                        );
-                    });
+                    const mergedMusic = albumInfo.filter(
+                        (item) => item.category === "Afrobeat"
+                    );
 
                     setMergedData(mergedMusic)
                     console.log(albumInfo, allAlbumInfo, mergedMusic)
@@ -142,6 +145,7 @@ const NewJamComponent = () => {
 
         fetchData();
     }, []);
+
 
     const mergedMusic = [...mergedData, musicList]
 
@@ -328,108 +332,15 @@ const NewJamComponent = () => {
 
                     <div className="flex flex-col bg-[#0F1732] min-h-[100vh] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white">
                         <div className="flex flex-row w-[95vw] max-w-[1440px] justify-start lg:w-[60vw] mx-auto pt-4 items-baseline">
-                            <h1 className="font-black">New jams</h1>
+                            <h1 className="font-black">Afrobeat</h1>
                         </div>
                         <div className="flex flex-row justify-between py-4 pt-2 w-[90%] max-w-[1440px] lg:w-[60vw]">
-                            <Swiper
-                                spaceBetween={10}
-                                slidesPerView={slidesPerView}
-                                className="hidden"
-                            >
-                                {combinedMusic.map((newMusic, index) => (
-                                    <SwiperSlide className="hidden lg:block" key={index}>
-                                        <>
-                                            <div className="flex flex-col relative text-left my-3 mx-auto cursor-pointer">
-                                                <audio
-                                                    src={newMusic.audio}
-                                                    ref={audioToEl}
-                                                    onTimeUpdate={getCurrDuration}
-                                                    onLoadedData={(e) => {
-                                                        setDuration(e.currentTarget.duration.toFixed(2));
-                                                    }}
-                                                ></audio>
-                                                <div
-                                                    key={index}
-                                                    ref={musicBoxToEl}
-                                                    onClick={() => {
-                                                        console.log(imageEl.current);
-                                                        console.log(audioEl.current[index]);
-                                                        console.log(musicNameEl.current[index]);
-                                                        console.log(artistNameEl.current[index]);
-                                                        console.log(musicList[currentSongIndex].musicName);
-                                                        // musicBoxEl.current[0].style.display = 'none'
-                                                        // musicBoxEl.current[0].style.scale = '0'
-                                                        console.log(isPlaying);
 
-                                                        console.log(playerAudioRef.current.currentSrc);
-                                                        console.log(playerImageRef.current.outerHTML);
-                                                        console.log(imageEl);
-                                                        console.log(playerNameRef.current.innerHTML);
-                                                        console.log(playerArtistRef.current.innerHTML);
-                                                        isPlaying === true
-                                                            ? setIsPlaying(isPlaying)
-                                                            : setIsPlaying(!isPlaying);
-                                                        playerAudioRef.current.src =
-                                                            audioEl.current[index].src;
-                                                        playerImageRef.current.src =
-                                                            imageEl.current[index].src;
-                                                        console.log(audioSignEl.current[index]);
-                                                        console.log(audioSignEl.current);
-                                                        // !audioSignEl.current[index] === true ? audioSignEl.current.style.display = 'none' : audioSignEl.current.style.display = 'block'
-                                                        // audioSignEl.current[index].style.display = 'block'
-                                                        playerNameRef.current.innerHTML =
-                                                            musicNameEl.current[index].innerHTML;
-                                                        playerArtistRef.current.innerHTML =
-                                                            artistNameEl.current[index].innerHTML;
-                                                    }}
-                                                >
-                                                    <img
-                                                        className="w-[200px] h-[150px] rounded-[5px] mb-2"
-                                                        title={newMusic.image}
-                                                        ref={imageToEl}
-                                                        src={newMusic.image}
-                                                        alt="artist"
-                                                    />
-                                                </div>
-                                                <div
-                                                    onClick={() => {
-                                                        setCurrentSongIndex(index);
-                                                        console.log("currentSongIndex:", currentSongIndex);
-                                                    }}
-                                                >
-                                                    <Link to={`/music/${newMusic.artist}/${newMusic.musicName}/${newMusic.id}`}>
-                                                        <div>
-                                                            <h2
-                                                                ref={musicNameToEl}
-                                                                className="text-white text-[1em]"
-                                                            >
-                                                                {newMusic.musicName}
-                                                            </h2>
-                                                            <h5
-                                                                ref={artistNameToEl}
-                                                                className="text-white text-[.6em]"
-                                                            >
-                                                                {newMusic.artist}
-                                                            </h5>
-                                                        </div>
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                            <div
-                                                ref={audioSignToEl}
-                                                className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
-                                            >
-                                                <FaVolumeUp />
-                                            </div>
-                                        </>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
 
                             <div className="flex flex-col mb-40">
 
                                 {combinedMusic.map((newMusic, index) => (
-                                    <div className="flex flex-row justify-between items-center w-[90vw] max-w-[1440px] lg:w-[60vw] ml-auto" key={index}>
+                                    <div className="flex flex-row justify-between items-center w-[90vw] max-w-[1440px] lg:w-[60vw]" key={index}>
                                         <div className="flex flex-col">
                                             <>
                                                 <div className="flex flex-row items-center relative text-left my-3 space-x-3 cursor-pointer">
@@ -550,4 +461,4 @@ const NewJamComponent = () => {
     );
 };
 
-export default NewJamComponent;
+export default Afrobeat;

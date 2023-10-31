@@ -28,78 +28,135 @@ import j from "/10.jpg";
 import k from "/11.jpg";
 import l from "/12.jpg";
 
+import dancehall from "/dancehall.jpg";
+import punk from "/punk.jpg";
+import folk from "/folk.jpg";
+import country from "/country.jpg";
+import indie from "/indie.jpg";
+import latin from "/latin.webp";
+import classicalCross from "/classicalCross.webp";
+import blues from "/blues.jpg";
+
 const Genres = [
   {
     id: 0,
     img: a,
     category: "Afrobeat",
-    link: "",
+    link: "/genre/afrobeat",
   },
   {
     id: 1,
     img: b,
     category: "Reggae",
-    link: "",
+    link: "/genre/reggae",
   },
   {
     id: 2,
     img: c,
     category: "Hip Hop",
-    link: "",
+    link: "/genre/hip_hop",
   },
   {
     id: 3,
     img: d,
     category: "Gospel",
-    link: "",
+    link: "/genre/gospel",
   },
   {
     id: 4,
     img: e,
     category: "Jazz",
-    link: "",
+    link: "/genre/jazz",
   },
   {
     id: 5,
     img: f,
     category: "Pop",
-    link: "",
+    link: "/genre/pop",
   },
   {
     id: 6,
     img: g,
     category: "R&B",
-    link: "",
+    link: "/genre/r&b",
   },
   {
     id: 7,
     img: h,
-    category: "Trap",
-    link: "",
+    category: "Rock",
+    link: "/genre/rock",
   },
   {
     id: 8,
     img: i,
-    category: "Grime",
-    link: "",
+    category: "K-Pop",
+    link: "/genre/k_pop",
   },
   {
     id: 9,
     img: j,
     category: "Soul",
-    link: "",
+    link: "/genre/soul",
   },
   {
     id: 10,
     img: k,
-    category: "Electronics",
-    link: "",
+    category: "EDM",
+    link: "/genre/edm",
   },
   {
     id: 11,
     img: l,
     category: "Classical",
-    link: "",
+    link: "/genre/classical",
+  },
+  {
+    id: 12,
+    img: dancehall,
+    category: "Dancehall",
+    link: "/genre/dancehall",
+  },
+  {
+    id: 13,
+    img: latin,
+    category: "Latin",
+    link: "/genre/latin",
+  },
+  {
+    id: 14,
+    img: country,
+    category: "Country",
+    link: "/genre/country",
+  },
+  {
+    id: 15,
+    img: blues,
+    category: "Blues",
+    link: "/genre/blues",
+  },
+  {
+    id: 16,
+    img: folk,
+    category: "Folk",
+    link: "/genre/folk",
+  },
+  {
+    id: 17,
+    img: punk,
+    category: "Punk",
+    link: "/genre/punk",
+  },
+  {
+    id: 18,
+    img: classicalCross,
+    category: "Classical crossover",
+    link: "/genre/classical_crossover",
+  },
+  {
+    id: 19,
+    img: indie,
+    category: "Indie",
+    link: "/genre/indie",
   },
 ];
 

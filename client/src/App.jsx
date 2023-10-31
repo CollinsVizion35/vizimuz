@@ -39,6 +39,8 @@ import { ProfileContextPage } from "./contexts/ProfileContext";
 import AlbumDetail from "./pages/album/albumDetail";
 import AlbumMusicDetailBox from "./pages/album/musicDetailBox";
 import NewJamComponent from "./pages/homeSection/newJams";
+import Afrobeat from "./pages/genre/afrobeat";
+import HipHop from "./pages/genre/hipHop";
 
 export const AppContext = createContext();
 // export const PhoneContext = createContext();
@@ -131,6 +133,16 @@ function App() {
               element={<NewJamComponent />}
             />
 
+            {/* Genre --------------------------------------------------------------------------------------- */}
+
+            <Route
+              path="/genre/afrobeat"
+              element={<Afrobeat />}
+            />
+            <Route
+              path="/genre/hip_hop"
+              element={<HipHop />}
+            />
 
 
             <Route path="/signup" element={<SignInBox />} />
