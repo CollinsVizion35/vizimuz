@@ -303,7 +303,7 @@ const audioSignToEl = (el) => {
           </form>
         </div>
 
-        <div className="bg-[#040C25] fixed h-screen w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32"
+        <div className="bg-[#040C25] fixed h-0  w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32"
         
         style={{ transform: "translate(-50%, -50%)"}}
         >
