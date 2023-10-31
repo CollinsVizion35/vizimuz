@@ -75,6 +75,8 @@ const AlbumDetail = () => {
     playerArtist6Ref,
   } = AppPass();
 
+  
+  const [minuteDuration, setMinuteDuration] = useState(false);
   const [canShow, setCanShow] = useState(false);
 
   const [albumList, setAlbumList] = useState([]);
@@ -86,17 +88,21 @@ const AlbumDetail = () => {
       try {
         const albumCollectionRef = collection(db, "album");
         const querySnapshot = await getDocs(albumCollectionRef);
-
+  
         const albumData = [];
+  
         querySnapshot.forEach((doc) => {
           albumData.push({ id: doc.id, ...doc.data() });
         });
   
         if (i >= 0 && i < albumData.length) {
-          setAlbumList(albumData[i].albumData);
+          // Slice the first 5 albums from albumData
+          const first5Albums = albumData.slice(i, i + 4);
+          setAlbumList(first5Albums.map((albumDoc) => albumDoc.albumData));
+  
           const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData);
           setAlbumList(allAlbumList.flat());
-            
+  
           const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
           setAlbumInfo(allAlbumInfo.flat());
   
@@ -106,7 +112,7 @@ const AlbumDetail = () => {
         console.error("Error fetching album data: ", error);
       }
     };
-
+  
     fetchData();
   }, []);
 
@@ -296,7 +302,7 @@ const AlbumDetail = () => {
               </div>
 
               <div className="goldenAge flex flex-col lg:w-full h-screen w-[90vw] mx-auto lg:ml-[5vw] lg:pl-8 pb-16 lg:pb-12">
-                <div className="flex lg:flex-row flex-col mb-8 items-end items-left p-2 pb-4">
+                <div className="flex lg:flex-row flex-col mb-8 items-end items-left p-2 pb-4 pt-8">
                   <img
                     src={albumList[currentAlbumIndex]?.image}
                     alt="music cover"
@@ -363,6 +369,8 @@ const AlbumDetail = () => {
                             onTimeUpdate={getCurrDuration}
                             onLoadedData={(e) => {
                               setDuration(e.currentTarget.duration.toFixed(2));
+                              const durationInMinutes = (duration / 60).toFixed(2);
+                              setMinuteDuration(durationInMinutes);
                             }}
                           ></audio>
                           <img
@@ -399,7 +407,7 @@ const AlbumDetail = () => {
                           </div>
                           <div className="lg:w-[21%] w-[10%] flex flex-col lg:flex-row text-center items-center">
                             <h2 className="lg:w-[50%] text-center text-white text-[.6em] md:text-[.7em] opacity-[70%]">
-                              {track.category}
+                            {minuteDuration}
                             </h2>
 
                             <div key={track.musicName}>

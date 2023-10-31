@@ -97,7 +97,7 @@ const AlbumMusicDetails = () => {
           setAlbumList(allAlbumList.flat());
             
           const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
-          setAlbumInfo(allAlbumInfo.flat());
+          setAlbumInfo(allAlbumInfo[i]);
   
           console.log(albumList);
         }

@@ -52,19 +52,20 @@ const MusicVideoSearch = () => {
         <div>
           {/* {token ? */}
           <form
-            className="relative w-[30vw] float-left pl-2 pb-3 mx-auto items-center justify-center"
+            className="relative w-[30vw] float-left pl-2 pb-3 mx-auto items-center justify-center mt-12 lg:mt-24"
             onSubmit={searchVideos}
           >
             <input
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search music video"
-              className=" bg-[#0F1732] lg:px-20 w-[95vw] ml-[1.5vw] px-10 py-2 rounded-[50px]"
+              className=" bg-[#0F1732] lg:px-20 w-[75vw] lg:w-[60vw] lg:ml-[1.5vw] px-12 py-2 rounded-[50px] lg:border border-2 border-[#040C25]"
             />
             <img
               src={searchIcon}
               onClick={searchVideos}
-              className="w-[20px] absolute top-0 left-0 py-2 ml-3 cursor-pointer"
+              className="w-[20px] py-2 ml-3 cursor-pointer absolute top-1/3 lg:left-12 left-4 z-[1000]"
+              style={{ transform: "translate(-50%, -50%)"}}
               alt="search icon"
             />
           </form>
@@ -93,7 +94,7 @@ const MusicVideoSearch = () => {
               );
             })
           ) : (
-            <div className="h-screen w-full mx-auto text-center items-center pt-[4em] lg:my-auto">
+            <div className="h-screen w-full mx-auto text-center items-center pt-40 lg:my-auto">
               Search For a Music Video and get your result
             </div>
           )}

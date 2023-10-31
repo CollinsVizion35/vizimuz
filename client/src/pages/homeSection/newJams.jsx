@@ -317,7 +317,7 @@ const NewJamComponent = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col bg-[#0F1732] min-h-max lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white mb-10">
+                    <div className="flex flex-col bg-[#0F1732] min-h-max lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white">
                         <div className="flex flex-row w-[95vw] max-w-[1440px] justify-start lg:w-[60vw] mx-auto pt-4 items-baseline">
                             <h1 className="font-black">New jams</h1>
                         </div>
@@ -417,7 +417,7 @@ const NewJamComponent = () => {
                                 ))}
                             </Swiper>
 
-                            <div className="flex flex-col">
+                            <div className="flex flex-col mb-40">
 
                                 {combinedMusic.map((newMusic, index) => (
                                     <div className="flex flex-row justify-between items-center w-[90vw] max-w-[1440px] lg:w-[60vw] ml-auto"  key={index}>

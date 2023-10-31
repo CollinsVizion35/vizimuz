@@ -210,12 +210,18 @@ const [albumData, setAlbumData] = useState([]);
           className="bg-[#0F1732] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
         >
           <option className="bg-[#0F1732]" disabled>{`Select track ${index + 1} category`}</option>
-          <option className="bg-[#0F1732]">AfroBeats</option>
-          <option className="bg-[#0F1732]">R & B</option>
-          <option className="bg-[#0F1732]">Hip Hop</option>
-          <option className="bg-[#0F1732]">Pop</option>
-          <option className="bg-[#0F1732]">Gospel</option>
-          <option className="bg-[#0F1732]">Classical</option>
+          <option value="AfroBeats" className="bg-[#0F1732]">AfroBeats</option>
+          <option value="R & B" className="bg-[#0F1732]">R & B</option>
+          <option value="Hip Hop" className="bg-[#0F1732]">Hip Hop</option>
+          <option value="Pop" className="bg-[#0F1732]">Pop</option>
+          <option value="Gospel" className="bg-[#0F1732]">Gospel</option>
+          <option value="Jazz" className="bg-[#0F1732]">Jazz</option>
+          <option value="Reggae" className="bg-[#0F1732]">Reggae</option>
+          <option value="Trap" className="bg-[#0F1732]">Trap</option>
+          <option value="Grime" className="bg-[#0F1732]">Grime</option>
+          <option value="Soul" className="bg-[#0F1732]">Soul</option>
+          <option value="Electronics" className="bg-[#0F1732]">Electronics</option>
+          <option value="Classical" className="bg-[#0F1732]">Classical</option>
         </select>
             <label>{`Track ${index + 1} Audio`}</label>
             <input

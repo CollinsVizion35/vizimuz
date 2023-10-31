@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { collection, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore'
 import { db } from '../../firebase'
@@ -87,10 +87,10 @@ const MusicDetails = () => {
         setMusicList(allMusicList.flat());
           
         const allMusicInfo = musicData.map((musicDoc) => musicDoc);
-        setMusicInfo(allMusicInfo.flat());
+        setMusicInfo(musicData[i]);
 
 
-        console.log(musicList);
+        console.log(musicInfo);
       }
     } catch (error) {
       console.error("Error fetching music data: ", error);
@@ -133,16 +133,24 @@ const MusicDetails = () => {
     fetchData()
   }, [])
 
-  const mergedData = albumList.map(item => {
-    return item.tracks
-  })
-
-  const mergedMusic = [...mergedData, musicList]
-
-  const combinedMusic = mergedMusic.flat()
+  const [combinedMusic, setCombinedMusic] = useState([]);
 
   useEffect(() => {
+    const mergedData = albumList.map(item => {
+      return item.tracks;
+    });
+
+    const mergedMusic = [...mergedData, musicList];
+
+    const combinedMusicData = mergedMusic.flat();
+    
+    setCombinedMusic(combinedMusicData);
+    
     console.log(mergedMusic)
+  }, [albumList, musicList]);
+
+  useEffect(() => {
+    // console.log(mergedMusic)
     console.log(combinedMusic)
   }, [])
 

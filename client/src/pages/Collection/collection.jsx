@@ -98,7 +98,7 @@ const Genres = [
   {
     id: 11,
     img: l,
-    category: "Metal",
+    category: "Classical",
     link: "",
   },
 ];

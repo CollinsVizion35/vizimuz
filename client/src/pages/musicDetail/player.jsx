@@ -76,19 +76,25 @@ function Player() {
     fetchData();
   }, []);
   
-  const mergedData = albumList.map((item) => {
-    return (
-      item.tracks
-      
-    );
-  });
   
-  const mergedMusic = [...mergedData, musicList]
-  
-  const combinedMusic = mergedMusic.flat();
-  
+  const [combinedMusic, setCombinedMusic] = useState([]);
+
   useEffect(() => {
+    const mergedData = albumList.map(item => {
+      return item.tracks;
+    });
+
+    const mergedMusic = [...mergedData, musicList];
+
+    const combinedMusicData = mergedMusic.flat();
+    
+    setCombinedMusic(combinedMusicData);
+    
     console.log(mergedMusic)
+  }, [albumList, musicList]);
+
+  useEffect(() => {
+    // console.log(mergedMusic)
     console.log(combinedMusic)
   }, [])
   const {
