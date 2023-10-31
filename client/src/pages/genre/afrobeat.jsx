@@ -89,7 +89,7 @@ const Afrobeat = () => {
                     console.log(musicInfo);
                     // Add the following code to filter the music list to only include Afrobeat music
                     const afrobeatMusic = musicInfo.filter(
-                        (musicObject) => musicObject.category === "Afrobeat"
+                        (musicObject) => musicObject.category === "AfroBeats"
                     );
 
                     // Set the state with the list of documents with only the "category" == "Afrobeat"
@@ -102,9 +102,9 @@ const Afrobeat = () => {
 
         fetchData();
 
-    }, []);
+    }, [musicInfo]);
 
-    
+
     const [albumList, setAlbumList] = useState([]);
     const [albumInfo, setAlbumInfo] = useState([]);
     const [mergedData, setMergedData] = useState([]);
@@ -132,7 +132,7 @@ const Afrobeat = () => {
 
 
                     const mergedMusic = albumInfo.filter(
-                        (item) => item.category === "Afrobeat"
+                        (item) => item.category === "AfroBeats"
                     );
 
                     setMergedData(mergedMusic)
@@ -144,7 +144,7 @@ const Afrobeat = () => {
         };
 
         fetchData();
-    }, []);
+    }, [albumInfo]);
 
 
     const mergedMusic = [...mergedData, musicList]

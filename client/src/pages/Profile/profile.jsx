@@ -15,6 +15,7 @@ import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
 import { HiFilm } from "react-icons/hi/index";
 import { BsFillPersonFill } from "react-icons/bs/index";
 import SearchArtist from "../Home/searchArtist";
+import ProfileBtn from "./profileBtn";
 
 const options = [
   {
@@ -61,7 +62,7 @@ const Profile = () => {
       <div
         ref={profileRef}
         className="bg-[#0F1732] text-white flex flex-col min-h-screen overflow-x-hidden"
-        style={{ display: flex }}
+        // style={{ display: flex }}
       >
         <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
@@ -145,7 +146,7 @@ const Profile = () => {
                 Profile
               </h2>
               <div className="flex flex-col justify-center items-center">
-                <InfoProfileImg />
+                <ProfileBtn />
               </div>
             </div>
           </div>

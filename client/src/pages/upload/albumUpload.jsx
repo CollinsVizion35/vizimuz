@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { collection, addDoc, doc, updateDoc, query, where, documentId, getDocs } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc, query, where, documentId, getDocs, setDoc, getDoc } from "firebase/firestore";
 import { storage, db } from "../../firebase";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { serverTimestamp } from "firebase/firestore";
@@ -10,6 +10,7 @@ const UploadAlbum = () => {
 
   const [usersInfo, setUsersInfo] = useState([]);
 const [userName, setUserName] = useState("");
+const [userImage, setUserImage] = useState("");
 
 useEffect(() => {
   async function fetchData() {
@@ -28,6 +29,7 @@ useEffect(() => {
       const data2 = doc.data();
 
       setUserName(data2.userName);
+      setUserImage(data2.userImage);
     });
   }
   fetchData();
@@ -118,6 +120,7 @@ const [albumData, setAlbumData] = useState([]);
 
       albumData.push({
         userName: userName,
+        userImage: userImage,
         image: imageUrl,
         name,
         artist,
@@ -137,8 +140,18 @@ const [albumData, setAlbumData] = useState([]);
     setAlbumData([...albumData]);
 
        // Update the Firestore document with the updated musicData object
-    const albumCollectionRef = doc(db, "album", user.uid + "album");
-    await updateDoc(albumCollectionRef, { albumData });
+       const albumCollectionRef = doc(db, "album", user.uid + "album");
+
+       // Check if the document exists
+       const albumDoc = await getDoc(albumCollectionRef);
+       
+       if (albumDoc.exists()) {
+         // The document already exists, so update it
+         await updateDoc(albumCollectionRef, { albumData });
+       } else {
+         // The document does not exist, so create it
+         await setDoc(albumCollectionRef, { albumData });
+       }
 
       alert("Album added successfully!");
     } catch (error) {
@@ -217,11 +230,19 @@ const [albumData, setAlbumData] = useState([]);
           <option value="Gospel" className="bg-[#0F1732]">Gospel</option>
           <option value="Jazz" className="bg-[#0F1732]">Jazz</option>
           <option value="Reggae" className="bg-[#0F1732]">Reggae</option>
-          <option value="Trap" className="bg-[#0F1732]">Trap</option>
-          <option value="Grime" className="bg-[#0F1732]">Grime</option>
+          <option value="Rock" className="bg-[#0F1732]">Rock</option>
+          <option value="K-Pop" className="bg-[#0F1732]">K-Pop</option>
           <option value="Soul" className="bg-[#0F1732]">Soul</option>
-          <option value="Electronics" className="bg-[#0F1732]">Electronics</option>
+          <option value="EDM" className="bg-[#0F1732]">Electronics Dance Music</option>
           <option value="Classical" className="bg-[#0F1732]">Classical</option>
+          <option value="Dancehall" className="bg-[#0F1732]">Dancehall</option>
+          <option value="Latin" className="bg-[#0F1732]">Latin</option>
+          <option value="Country" className="bg-[#0F1732]">Country</option>
+          <option value="Blues" className="bg-[#0F1732]">Blues</option>
+          <option value="Folk" className="bg-[#0F1732]">Folk</option>
+          <option value="Punk" className="bg-[#0F1732]">Punk</option>
+          <option value="Classical crossover" className="bg-[#0F1732]">Classical crossover</option>
+          <option value="Indie" className="bg-[#0F1732]">Indie</option>
         </select>
             <label>{`Track ${index + 1} Audio`}</label>
             <input

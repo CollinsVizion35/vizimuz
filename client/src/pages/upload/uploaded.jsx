@@ -44,53 +44,58 @@ useEffect(() => {
 }, []);
 
 
+
 const [albumList, setAlbumList] = useState([]);
 const [albumInfo, setAlbumInfo] = useState([]);
+const [mergedData, setMergedData] = useState([]);
 const j = 0; // Define the index 'i' here
 
 useEffect(() => {
-  const fetchData = async () => {
-    try { 
-      const albumCollectionRef = collection(db, "album");
-      const querySnapshot = await getDocs(albumCollectionRef);
+    const fetchData = async () => {
+        try {
+            const albumCollectionRef = collection(db, "album");
+            const querySnapshot = await getDocs(albumCollectionRef);
 
-      const albumData = [];
-      querySnapshot.forEach((doc) => {
-        albumData.push({ id: doc.id, ...doc.data() });
-      });
-  
-      if (j >= 0 && j < albumData.length) {
-        setAlbumList(albumData[j].albumData);
-        const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData);
-        setAlbumList(allAlbumList.flat());
-          
-        const allAlbumInfo = albumData.map((albumDoc) => albumDoc);
-        setAlbumInfo(allAlbumInfo.flat());
+            const albumData = [];
+            querySnapshot.forEach((doc) => {
+                albumData.push({ id: doc.id, ...doc.data() });
+            });
 
-        console.log(albumList);
-      }
-    } catch (error) {
-      console.error("Error fetching album data: ", error);
-    }
-  };
+            // Check if 'i' is within the valid range before setting the state
+            if (i >= 0 && i < albumData.length) {
+                // setAlbumList(albumData[j].albumData);
+                // setAlbumInfo(albumData[j]);
+                console.log(albumData[j].albumData);
+                const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData).flat();
+                const allAlbumInfo = allAlbumList.map((album) => album.tracks).flat()
+                setAlbumInfo(allAlbumList);
 
-  fetchData();
+
+                const mergedMusic = albumInfo.map((item) => {
+                    return (
+                        item.tracks
+
+                    );
+                });
+
+                setMergedData(mergedMusic)
+                console.log(albumInfo, allAlbumInfo, mergedMusic)
+            }
+        } catch (error) {
+            console.error("Error fetching album data: ", error);
+        }
+    };
+
+    fetchData();
 }, []);
-
-const mergedData = albumList.map((item) => {
-  return (
-    item.tracks
-    
-  );
-});
 
 const mergedMusic = [...mergedData, musicList]
 
 const combinedMusic = mergedMusic.flat();
 
 useEffect(() => {
-  console.log(mergedMusic)
-  console.log(combinedMusic)
+    console.log(mergedMusic)
+    console.log(combinedMusic)
 }, [])
 
   const {

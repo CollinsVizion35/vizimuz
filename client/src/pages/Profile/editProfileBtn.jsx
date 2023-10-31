@@ -182,19 +182,19 @@ const ProfileEditBtn = () => {
         image: imageUrl,
       };
   
-      const data2 = {
-        userName: userName,
-        userImage: imageUrl,
-      };
+      // const data2 = {
+      //   userName: userName,
+      //   userImage: imageUrl,
+      // };
 
       
   
-      const data3 = {
-        userName: userName,
-        userImage: imageUrl,
-      };
+      // const data3 = {
+      //   userName: userName,
+      //   userImage: imageUrl,
+      // };
   
-      console.log(data2);
+      // console.log(data2, data3);
       console.log(user.uid + "GW1");
   
       const q = query(
@@ -208,20 +208,20 @@ const ProfileEditBtn = () => {
         // Create a new document for the user in the collection
         const docRef = doc(db, "Users", user.uid + "user");
         await setDoc(docRef, data);
-        const docRef2 = doc(db, "music", user.uid + "music");
-        await setDoc(docRef2, data2);
-        const docRef3 = doc(db, "album", user.uid + "album");
-        await setDoc(docRef3, data3);
+        // const docRef2 = doc(db, "music", user.uid + "music");
+        // await setDoc(docRef2, data2);
+        // const docRef3 = doc(db, "album", user.uid + "album");
+        // await setDoc(docRef3, data3);
         storeInformationToDB(data);
   
         // console.log("First login! User document created:", docRef.id);
       } else {
         const docRef = doc(db, "Users", user.uid + "user");
-        const docRef2 = doc(db, "music", user.uid + "music");
-        const docRef3 = doc(db, "album", user.uid + "album");
+        // const docRef2 = doc(db, "music", user.uid + "music");
+        // const docRef3 = doc(db, "album", user.uid + "album");
         await updateDoc(docRef, data);
-        await updateDoc(docRef2, data2);
-        await updateDoc(docRef3, data3);
+        // await updateDoc(docRef2, data2);
+        // await updateDoc(docRef3, data3);
       }
       storeInformationToDB(data);
       confirmedRef.current.style.display = "flex";

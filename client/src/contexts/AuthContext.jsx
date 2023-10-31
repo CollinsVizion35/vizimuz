@@ -9,7 +9,8 @@ import { createUserWithEmailAndPassword,
          EmailAuthProvider,
          reauthenticateWithCredential,
 GoogleAuthProvider,
-signInWithPopup
+signInWithPopup,
+signInWithRedirect
          } from "firebase/auth";
 import { auth, storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
@@ -65,10 +66,20 @@ export const AuthContextProvider = ({children}) => {
         console.log("User deleted successfully");
     }
 
-    const signInWithGoogle = () => {
-        const provider = new GoogleAuthProvider();
-        return signInWithPopup(auth, provider);
-      };
+    // const signInWithGoogle = () => {
+    //     const provider = new GoogleAuthProvider();
+    //     return signInWithPopup(auth, provider);
+    //   };
+
+    
+const signInWithGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithRedirect(auth, provider);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

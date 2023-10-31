@@ -413,18 +413,15 @@ const MusicDetails = () => {
         {musicInfo ? (
           combinedMusic ? (
             <>
-              <div className='flex flex-row items-center space-x-2 my-4 '>
+              {/* <div className='flex flex-row items-center space-x-2 my-4 '>
                 <img
                   className='w-[50px] h-[50px] lg:w-[50px] lg:h-[50px] rounded-[50%]'
                   src={musicInfo?.userImage}
                   alt='user '
                 />
                 <p className='items-start'>{musicInfo?.userName}</p>
-                {/* <audio controls>
-              <source src={musicInfo.audio} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio> */}
-              </div>
+                
+              </div> */}
               <p className='items-start text-[0.8em] font-bold p-1 w-fit rounded-[5px] bg-[#c77dfccc]'>
                 #{combinedMusic[currentSongIndex]?.category}
               </p>

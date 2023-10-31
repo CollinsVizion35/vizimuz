@@ -120,9 +120,9 @@ const NewJamComponent = () => {
                     setAlbumList(albumData[j].albumData);
                     setAlbumInfo(albumData[j]);
                     console.log(albumData[j].albumData);
-                    const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData).flat();
-                    const allAlbumInfo = allAlbumList.map((album) => album.tracks)
-                    setAlbumInfo(allAlbumList);
+                    const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData)
+                    const allAlbumInfo = allAlbumList.map((album) => album.tracks).flat()
+                    setAlbumInfo(allAlbumList.flat());
 
 
                     const mergedMusic = albumInfo.map((item) => {

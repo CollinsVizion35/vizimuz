@@ -6,7 +6,7 @@ import "../HankoAuth/hanko.css"
 
 export default function HankoAuth() {
   const navigate = useNavigate();
-  const { auth, user, signInWithGoogle } = UseAuth();
+  const { user, signInWithGoogle } = UseAuth();
   const hankoApi = "https://648fc619-1158-423c-a7cf-5fb5053314d5.hanko.io";
   const hanko = useMemo(() => new Hanko(hankoApi), []);
 

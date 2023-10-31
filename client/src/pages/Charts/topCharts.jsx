@@ -30,9 +30,13 @@ const TopChart = () => {
 
         // Check if 'i' is within the valid range before setting the state
         if (i >= 0 && i < albumData.length) {
+          // setAlbumList(albumData[i].albumData);
           setAlbumList(albumData[i].albumData);
-          setAlbumInfo(albumData[i]);
-          console.log(albumData[i].albumData);
+                    setAlbumInfo(albumData[i]);
+                    console.log(albumData[i].albumData);
+                    const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData).flat();
+                    const allAlbumInfo = allAlbumList.map((album) => album.tracks).flat()
+                    setAlbumList(allAlbumList);
         }
       } catch (error) {
         console.error("Error fetching album data: ", error);
