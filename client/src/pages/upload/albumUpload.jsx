@@ -4,6 +4,7 @@ import { storage, db } from "../../firebase";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { serverTimestamp } from "firebase/firestore";
 import { UseAuth } from "../../contexts/AuthContext";
+import { ColorRing } from "react-loader-spinner";
 
 const UploadAlbum = () => {
   const { user } = UseAuth();
@@ -92,6 +93,10 @@ const [albumData, setAlbumData] = useState([]);
     });
   };
 
+  
+
+  const [isUpdating, setIsUpdating] = useState(false);
+
   const handleUpload = async () => {
     const { name, artist, image, tracks } = albumDetails;
 
@@ -104,6 +109,9 @@ const [albumData, setAlbumData] = useState([]);
       alert("Please fill in all the fields for the album and tracks.");
       return;
     }
+
+    
+    setIsUpdating(true);
 
     try {
       const imageRef = ref(storage, `images/${image.name}`);
@@ -157,12 +165,14 @@ const [albumData, setAlbumData] = useState([]);
     } catch (error) {
       console.error("Error adding album:", error);
       alert("An error occurred while adding the album.");
+    } finally {
+      setIsUpdating(false); // Hide the "Updating" message
     }
   };
 
   return (
     <div className="flex flex-col items-center justify-center w-screen space-y-6">
-      <div>Album upload</div>
+      <div className="font-black text-[1.3em]">Album upload</div>
       <div className="flex flex-col items-start lg:w-[50vw] w-[80vw] space-y-2">
         <label>Album Name</label>
         <input
@@ -268,6 +278,22 @@ const [albumData, setAlbumData] = useState([]);
       >
         Upload Album
       </button>
+
+      
+      <div>
+        {isUpdating ? <div className="fixed top-1/2 left-1/2 p-10 z-[1000] bg-[#0F1732] opacity-60"
+            style={{ transform: "translate(-50%, -50%)" }}>
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={['#9600ffcc', '#95B4B3', '#f8b26a', '#9600ffcc', '#95B4B3']}
+          />
+        </div> : null}
+      </div>
     </div>
   );
 };

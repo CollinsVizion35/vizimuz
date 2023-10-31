@@ -5,6 +5,7 @@ import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { serverTimestamp } from "firebase/firestore";
 import PlayMusic from "./uploaded"; // Import the PlayMusic component
 import { UseAuth } from "../../contexts/AuthContext";
+import { Audio, ColorRing } from 'react-loader-spinner'
 
 const UploadMusic = () => {
   const { user } = UseAuth();
@@ -62,6 +63,9 @@ const UploadMusic = () => {
     });
   };
 
+
+  const [isUpdating, setIsUpdating] = useState(false);
+
   const handleUpload = async () => {
     const { image, audio, musicName, category, artist } = musicDetails;
 
@@ -71,6 +75,7 @@ const UploadMusic = () => {
     }
 
     const timestamp = serverTimestamp();
+    setIsUpdating(true);
 
     try {
       // Upload audio and image files
@@ -107,8 +112,11 @@ const UploadMusic = () => {
       // Check if the document exists
       const musicDoc = await getDoc(musicCollectionRef);
 
+
+
       if (musicDoc.exists()) {
-        // The document already exists, so update it
+
+
         await updateDoc(musicCollectionRef, { musicData });
       } else {
         // The document does not exist, so create it
@@ -119,13 +127,15 @@ const UploadMusic = () => {
     } catch (error) {
       console.error("Error uploading music:", error);
       alert("An error occurred while uploading the music.");
+    } finally {
+      setIsUpdating(false); // Hide the "Updating" message
     }
   };
 
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen space-y-6 mb-10">
-      <div>Music upload {userName}</div>
+    <div className="flex flex-col items-center justify-center w-screen space-y-6 mt-12 mb-10">
+      <div className="font-black text-[1.3em]">Music upload</div>
       <div className="flex flex-col items-start lg:w-[50vw] w-[80vw] space-y-2">
         <label>Add image</label>
         <input
@@ -180,7 +190,7 @@ const UploadMusic = () => {
           onChange={handleInputChange}
           className="bg-[#0F1732] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
         >
-          <option className="bg-[#0F1732]" disabled>Select a music category</option>
+          <option className="bg-[#0F1732]" selected disabled>Select a music category</option>
           <option value="AfroBeats" className="bg-[#0F1732]">AfroBeats</option>
           <option value="R & B" className="bg-[#0F1732]">R & B</option>
           <option value="Hip Hop" className="bg-[#0F1732]">Hip Hop</option>
@@ -207,6 +217,21 @@ const UploadMusic = () => {
       <button onClick={handleUpload} className="bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer">
         Upload Music
       </button>
+
+      <div>
+        {isUpdating ? <div className="fixed top-1/2 left-1/2 p-10 z-[1000] bg-[#0F1732] opacity-60"
+            style={{ transform: "translate(-50%, -50%)" }}>
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={['#9600ffcc', '#95B4B3', '#f8b26a', '#9600ffcc', '#95B4B3']}
+          />
+        </div> : null}
+      </div>
     </div>
   );
 };

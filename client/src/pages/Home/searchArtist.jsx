@@ -52,7 +52,8 @@ const SearchArtist = () => {
   const j = 0; // Define the index 'i' here
   const i = 0; // Define the index 'i' here
 
-      const searchArtists = async () => {
+      const searchArtists = async (e) => {
+          e.preventDefault();
           try {
               const musicCollectionRef = collection(db, "music");
               const querySnapshot = await getDocs(musicCollectionRef);
@@ -191,7 +192,10 @@ const audioSignToEl = (el) => {
   const renderArtists = () => {
     return (
       
-      <div className="flex flex-col mb-40">
+      <div className="bg-[#040C25] flex flex-col mb-40 fixed h-0 w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32"
+        
+      style={{ transform: "translate(-50%, -50%)"}}
+      >
 
       {combinedMusic.map((newMusic, index) => (
           <div className="flex flex-row justify-between items-center w-[90vw] max-w-[1440px] " key={index}>
@@ -303,10 +307,7 @@ const audioSignToEl = (el) => {
           </form>
         </div>
 
-        <div className="bg-[#040C25] fixed h-0  w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32"
-        
-        style={{ transform: "translate(-50%, -50%)"}}
-        >
+        <div className="bg-[#040C25]">
           {renderArtists()}
         </div>
       </div>
