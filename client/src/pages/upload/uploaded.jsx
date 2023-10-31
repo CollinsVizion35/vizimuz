@@ -33,7 +33,7 @@ useEffect(() => {
         const allMusicInfo = musicData.map((musicDoc) => musicDoc);
         setMusicInfo(allMusicInfo.flat());
 
-        console.log(musicList);
+        // console.log(musicList);
       }
     } catch (error) {
       console.error("Error fetching music data: ", error);
@@ -41,7 +41,7 @@ useEffect(() => {
   };
 
   fetchData();
-}, []);
+}, [musicList]);
 
 
 
@@ -65,7 +65,7 @@ useEffect(() => {
             if (i >= 0 && i < albumData.length) {
                 // setAlbumList(albumData[j].albumData);
                 // setAlbumInfo(albumData[j]);
-                console.log(albumData[j].albumData);
+                // console.log(albumData[j].albumData);
                 const allAlbumList = albumData.map((albumDoc) => albumDoc.albumData).flat();
                 const allAlbumInfo = allAlbumList.map((album) => album.tracks).flat()
                 setAlbumInfo(allAlbumList);
@@ -79,7 +79,7 @@ useEffect(() => {
                 });
 
                 setMergedData(mergedMusic)
-                console.log(albumInfo, allAlbumInfo, mergedMusic)
+                // console.log(albumInfo, allAlbumInfo, mergedMusic)
             }
         } catch (error) {
             console.error("Error fetching album data: ", error);
@@ -87,7 +87,7 @@ useEffect(() => {
     };
 
     fetchData();
-}, []);
+}, [albumInfo]);
 
 const mergedMusic = [...mergedData, musicList]
 
