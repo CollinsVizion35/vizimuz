@@ -95,7 +95,7 @@ const NewJamComponent = () => {
         };
 
         fetchData();
-    }, []);
+    }, [musicList]);
 
 
 
@@ -141,7 +141,7 @@ const NewJamComponent = () => {
         };
 
         fetchData();
-    }, []);
+    }, [albumInfo]);
 
     const mergedMusic = [...mergedData, musicList]
 

@@ -102,7 +102,7 @@ const HipHop = () => {
 
         fetchData();
 
-    }, []);
+    }, [musicInfo]);
 
     const [albumList, setAlbumList] = useState([]);
     const [albumInfo, setAlbumInfo] = useState([]);
@@ -143,7 +143,7 @@ const HipHop = () => {
         };
 
         fetchData();
-    }, []);
+    }, [albumInfo]);
 
 
     const mergedMusic = [...mergedData, musicList]
