@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import axios from 'axios'
 // import notAvailable from '../imgs/No-Photo-Available.jpg'
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
-import { FaXTwitter } from "react-icons/fa/index";
+import { FaXTwitter } from "react-icons/fa6";
 
 import logo from "../imgs/vizimuz_logo.png";
 
@@ -51,7 +51,7 @@ const Welcome = () => {
               className="bg-[#E7E9EA] text-[#000000] cursor-pointer p-2 px-4 rounded-[50px] w-max flex flex-row gap-2 items-center"
               // href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
             >
-              Inspired by <FaXTwitter size={24} />
+              Inspired by <FaXTwitter size={16} />
             </div>
           </Fade>
         </div>
