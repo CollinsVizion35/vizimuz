@@ -210,7 +210,7 @@ function Sidebar() {
          </div>
 
 
-      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw] rounded-t-md bg-[#000000] border-b border-t border-[#2F3336] border-t-1 border-[#E7E9EA] py-4 z-[99999999999]">
+      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw]  bg-[#000000] border-b border-t border-[#2F3336]  py-4 z-[99999999999]">
         <Link to="/home">
           <div 
             className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
