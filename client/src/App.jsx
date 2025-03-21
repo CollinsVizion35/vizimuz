@@ -145,7 +145,7 @@ function App() {
             />
 
 
-            <Route path="/signup" element={<SignInBox />} />
+            <Route path="/signup" element={<SignInUp />} /> {/* SignInBox */}
 
             <Route path="/signOut" element={<HankoLogOut />} />
 

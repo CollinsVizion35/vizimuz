@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UseAuth } from "../../contexts/AuthContext";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../../firebase";
+
 import { AppPass } from "../../contexts/AppContext";
 
 import logo from "../../imgs/vizimuz_logo.png";
@@ -17,7 +20,7 @@ import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
 import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
 import { HiFilm } from "react-icons/hi/index";
 import { BsFillPersonFill } from "react-icons/bs/index";
-
+import { FcGoogle } from "react-icons/fc/index";
 const options = [
   {
     id: 0,
@@ -55,7 +58,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
   });
   const [error, setError] = useState(false);
   const navigate = useNavigate();
-  const { signIn, user } = UseAuth();
+  const { signIn, user, signInWithGoogle } = UseAuth();
   const rememberMeRef = useRef();
 
   const { none, setNone, flex, setFlex, signInRef, signUpRef, profileRef } =
@@ -120,24 +123,34 @@ const SignIn = ({ isOpen, setIsOpen }) => {
     // profileRef.current.style.display = "none";
   };
 
+
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, GoogleAuthProvider);
+      console.log("User Info:", result.user);
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+    }
+  };
+
   return (
     <>
       <div
         ref={signInRef}
-        className="bg-[#0F1732] text-white flex flex-col min-h-screen overflow-x-hidden"
+        className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col min-h-screen overflow-x-hidden"
         style={{ display: "none" }}
       >
         <div className="p-4 w-[40vw] pb-8 hidden lg:flex flex-row justify-between">
           <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
         </div>
 
-        <div className="bg-[#0F1732] text-white flex lg:flex-row flex-col">
+        <div className="bg-[#000000] border-b border-[#2F3336] text-white flex lg:flex-row flex-col">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#040C25] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
               {options.map((option, index) => {
                 return (
                   <>
@@ -157,12 +170,12 @@ const SignIn = ({ isOpen, setIsOpen }) => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#040C25] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
                     className="mx-auto w-[40px] hover:scale-[1.2]"
-                    style={{ color: "#9600ffcc" }}
+                    style={{ color: "#E7E9EA" }}
                   />
                 </div>
               </Link>
@@ -198,7 +211,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
               <h4 className="text-[#95B4B3] font-extrabold text-[1.5rem] leading-[2.25rem] text-left">
                 Sign in
               </h4>
-              <p className="text-[#9600ffcc] font-bold leading-[1.6875rem] text-lg">
+              <p className="text-[#E7E9EA] font-bold leading-[1.6875rem] text-lg">
                 Welcome back to VizMuz
               </p>
               <form
@@ -255,8 +268,8 @@ const SignIn = ({ isOpen, setIsOpen }) => {
                 <button
                   onClick={handleButtonClick}
                   type="submit"
-                  className="bg-[#95B4B3] rounded-md my-5 px-8 lg:px-12 py-3 md:py-4 w-[18rem] lg:w-[19.6875rem] text-white"
-                >
+                  className="bg-[#E7E9EA] text-[#000000] rounded-md my-5 px-8 lg:px-12 py-3 md:py-4 w-[18rem] lg:w-[19.6875rem] text-white"
+                > {/* #95B4B3 */}
                   Sign in
                 </button>
                 {error === false && (
@@ -274,7 +287,15 @@ const SignIn = ({ isOpen, setIsOpen }) => {
                   />
                 )}
               </form>
-              <p className="text-sm leading-[3.125rem] cursor-pointer text-[#9600ffcc] text-center font-semibold">
+
+              <button
+                onClick={signInWithGoogle}
+                className="flex items-center justify-center w-full max-w-xs mx-auto px-4 py-2 border border-gray-300 rounded-lg shadow-md hover:bg-gray-100 transition duration-200"
+              >
+                <FcGoogle className="text-2xl mr-2" />
+                <span className="text-gray-700 font-medium">Sign in with Google</span>
+              </button>
+              <p className="text-sm leading-[3.125rem] cursor-pointer text-[#E7E9EA] text-center font-semibold">
                 {" "}
                 <div onClick={handleGoToSignUp}>
                   Dont have an account? create an account.

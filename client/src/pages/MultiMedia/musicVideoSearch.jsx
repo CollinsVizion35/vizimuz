@@ -48,7 +48,7 @@ const MusicVideoSearch = () => {
 
   return (
     <>
-      <div className="bg-[#0F1732] text-white">
+      <div className="bg-[#000000] border-b border-[#2F3336] text-white">
         <div>
           {/* {token ? */}
           <form
@@ -59,7 +59,7 @@ const MusicVideoSearch = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search music video"
-              className=" bg-[#0F1732] lg:px-20 w-[75vw] lg:w-[60vw] lg:ml-[1.5vw] px-12 py-2 rounded-[50px] lg:border border-2 border-[#040C25]"
+              className=" bg-[#000000] border-b border-[#2F3336] lg:px-20 w-[75vw] lg:w-[60vw] lg:ml-[1.5vw] px-12 py-2 rounded-[50px] lg:border border-2 border-[#040C25]"
             />
             <img
               src={searchIcon}
@@ -85,7 +85,7 @@ const MusicVideoSearch = () => {
                       src={`https://www.youtube.com/embed/${video.video.videoId}`}
                       title={video.video.title}
                     ></iframe>
-                    <div className="text-[#9600ffcc]">{video.video.title}</div>
+                    <div className="text-[#E7E9EA]">{video.video.title}</div>
                     <div className="text-[#95B4B3]">
                       {video.video.publishedTimeText}
                     </div>

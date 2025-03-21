@@ -251,8 +251,8 @@ const GoldenAge = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="bg-[#040C25] bg-opacity-[50%] text-white flex flex-col min-h-screen">
-      <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
+      <div className="bg-[#000000] border-b border-[#2F3336] bg-opacity-[50%] text-white flex flex-col min-h-screen">
+      <div className="bg-[#000000] border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
             <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
@@ -260,7 +260,7 @@ const GoldenAge = () => {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className="w-fit  bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer"
+            className="w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer"
           >
             Upload Music
           </button>
@@ -272,7 +272,7 @@ const GoldenAge = () => {
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#040C25] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
               {options.map((option, index) => {
                 return (
                   <>
@@ -292,7 +292,7 @@ const GoldenAge = () => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#040C25] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
@@ -354,11 +354,11 @@ const GoldenAge = () => {
                       setIsPlaying(!isPlaying);
                     }}
                   >
-                    <BsFillPlayCircleFill className="text-[#9600ffcc] w-[1em] mr-2" />{" "}
+                    <BsFillPlayCircleFill className="text-[#E7E9EA] w-[1em] mr-2" />{" "}
                     Play all
                   </button>
                   <button className="rounded-[20px] w-max p-2 bg-[#262A2D] text-[.7em] lg:text-[1em] flex flex-row mr-3 items-center">
-                    <MdCollectionsBookmark className="text-[#9600ffcc] w-[1em] mr-2" />{" "}
+                    <MdCollectionsBookmark className="text-[#E7E9EA] w-[1em] mr-2" />{" "}
                     Add to collection
                   </button>
                   <button className="rounded-[20px] w-max p-2 bg-[#262A2D] text-[.7em] lg:text-[1em] flex flex-row mr-3 items-center">
@@ -441,7 +441,7 @@ const GoldenAge = () => {
                               toggleOpen(release.name);
                             }}
                           >
-                           {isOpen[release.name] ? <MdClose  className="text-[#9600ffcc] lg:w-[100%] z-[100]" /> : <BsThreeDotsVertical className="text-[#9600ffcc] lg:w-[100%] z-[100]" />}
+                           {isOpen[release.name] ? <MdClose  className="text-[#E7E9EA] lg:w-[100%] z-[100]" /> : <BsThreeDotsVertical className="text-[#E7E9EA] lg:w-[100%] z-[100]" />}
                           </button>
 
                           {isOpen[release.name] && (

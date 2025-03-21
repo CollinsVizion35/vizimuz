@@ -1,25 +1,30 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword,
-         signInWithEmailAndPassword, 
-         signOut, 
-         sendPasswordResetEmail,
-         onAuthStateChanged, 
-         updateProfile,
-         deleteUser,
-         EmailAuthProvider,
-         reauthenticateWithCredential,
-GoogleAuthProvider,
-signInWithPopup,
-signInWithRedirect
-         } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    sendPasswordResetEmail,
+    onAuthStateChanged,
+    updateProfile,
+    deleteUser,
+    EmailAuthProvider,
+    reauthenticateWithCredential,
+    GoogleAuthProvider,
+    signInWithPopup,
+    signInWithRedirect
+} from "firebase/auth";
 import { auth, storage } from "../firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
 
 
 const UserContext = createContext();
 
-export const AuthContextProvider = ({children}) => {
+export const AuthContextProvider = ({ children }) => {
+
     
+      const navigate = useNavigate();
+
     const [user, setUser] = useState({});
 
     const createUser = (name, email, password, phone_number) => {
@@ -43,7 +48,7 @@ export const AuthContextProvider = ({children}) => {
 
         const photoURL = await getDownloadURL(fileRef);
 
-        updateProfile(user, {photoURL});
+        updateProfile(user, { photoURL });
 
         setLoading(false);
 
@@ -71,15 +76,27 @@ export const AuthContextProvider = ({children}) => {
     //     return signInWithPopup(auth, provider);
     //   };
 
-    
-const signInWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithRedirect(auth, provider);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+
+    // ✅ Fixed Google Sign-In (popup version)
+    const signInWithGoogle = async () => {
+        const provider = new GoogleAuthProvider();
+        try {
+            const result = await signInWithPopup(auth, provider).then(() => navigate("/profile"));
+            console.log("Google Sign-In Successful:", result.user);
+        } catch (error) {
+            console.error("Google Sign-In Error:", error);
+        }
+    };
+
+    // sign out
+    const signOutUser = async () => {
+        try {
+          await signOut(auth).then(() => navigate("/home"));
+          console.log("User signed out successfully");
+        } catch (error) {
+          console.error("Error signing out:", error);
+        }
+      };
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -92,11 +109,11 @@ const signInWithGoogle = async () => {
     }, [])
 
     return (
-        <UserContext.Provider value={{ createUser, user, signIn, forgotPassword, uploadPicture, deleteSignedUser, signInWithGoogle }}>
+        <UserContext.Provider value={{ createUser, user, signIn, forgotPassword, uploadPicture, deleteSignedUser, signInWithGoogle, signOutUser }}>
             {children}
         </UserContext.Provider>
     )
-}   
+}
 
 export const UseAuth = () => {
     return useContext(UserContext);

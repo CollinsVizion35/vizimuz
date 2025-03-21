@@ -118,7 +118,7 @@ const TopChart = () => {
                         </div>
                         <div className="w-[10%]">
                           {/* <div className="border border-gray p-2 rounded-[50%] w-fit">
-                    <FaRegHeart className="text-[#9600ffcc] group-hover:text-[#EE4B2B]" />
+                    <FaRegHeart className="text-[#E7E9EA] group-hover:text-[#EE4B2B]" />
                   </div> */}
                         </div>
                       </div>

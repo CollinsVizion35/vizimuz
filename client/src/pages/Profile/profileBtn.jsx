@@ -109,7 +109,7 @@ const ProfileBtn = () => {
                     USER NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.userName}
                   </h1>
                 </div>
@@ -119,7 +119,7 @@ const ProfileBtn = () => {
                     FIRST NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#040C25] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.firstName}
                   </h1>
                 </div>
@@ -129,7 +129,7 @@ const ProfileBtn = () => {
                     LAST NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.lastName}
                   </h1>
                 </div>
@@ -139,7 +139,7 @@ const ProfileBtn = () => {
                     PHONE NUMBER
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#040C25] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.phoneNumber.length > 0
                       ? `+${info.phoneNumber}`
                       : info.phoneNumber}
@@ -151,7 +151,7 @@ const ProfileBtn = () => {
                     GENDER
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.gender}
                   </h1>
                 </div>
@@ -161,7 +161,7 @@ const ProfileBtn = () => {
                     USER'S COUNTRY
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#040C25] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.userCountry}
                   </h1>
                 </div>

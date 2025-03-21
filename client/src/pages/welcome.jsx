@@ -24,7 +24,7 @@ const Welcome = () => {
 
   return (
     <>
-      <div className="welcome bg-[#0F1732] text-white">
+      <div className="welcome bg-[#000000] border-b border-[#2F3336] text-white">
         <div className="h-screen w-screen flex flex-col items-center justify-center mx-auto my-auto">
           <div className="flex flex-col items-center justify-center">
             <JackInTheBox triggerOnce={false}>
@@ -37,7 +37,7 @@ const Welcome = () => {
 
             <h1 className="mb-2 flex flex-row items-baseline">
               <Slide direction="left">
-                <span className="text-[4em] text-[#9600ffcc]">Vizi</span>
+                <span className="text-[4em] text-[#E7E9EA]">Vizi</span>
               </Slide>
               <Slide direction="right">
                 <span className="text-[#95B4B3] text-[2em]">Muz</span>

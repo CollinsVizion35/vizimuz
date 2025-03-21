@@ -167,7 +167,7 @@ function PlayerControls(props) {
       <div className="flex flex-row items-center w-[100vw] justify-evenly  mb-12">
         <button
           className={
-            shuffle ? "block" : "block text-[#9600ffcc]"
+            shuffle ? "block" : "block text-[#E7E9EA]"
           }
           onClick={() => {
             setShuffle(!shuffle);
@@ -183,7 +183,7 @@ function PlayerControls(props) {
           <FaStepBackward />
         </button>
         <button
-          className="p-3 bg-[#9600ffcc] rounded-[50%]"
+          className="p-3 bg-[#E7E9EA] text-[#000000] rounded-[50%]"
           onClick={() => props.setIsPlaying(!props.isPlaying)}
         >
           {props.isPlaying ? <FaPause /> : <FaPlay />}
@@ -193,7 +193,7 @@ function PlayerControls(props) {
         </button>
         <button
           className={
-            repeat ? "block" : "block text-[#9600ffcc]"
+            repeat ? "block" : "block text-[#E7E9EA]"
           }
           onClick={() => {
             setRepeat(!repeat);

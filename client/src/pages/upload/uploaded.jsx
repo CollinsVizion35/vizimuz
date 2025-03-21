@@ -193,7 +193,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className="flex flex-col bg-[#0F1732] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white mb-10">
+      <div className="flex flex-col bg-[#000000] border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white mb-10">
       <div className="flex flex-row justify-between w-[100%] lg:w-[90%] pt-4 items-baseline">
         <h1 className="font-black">New jams</h1>
         <Link to="/newest_jams">
@@ -286,7 +286,7 @@ useEffect(() => {
                     </div>
                     <div
                       ref={audioSignToEl}
-                      className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
+                      className="w-max p-2 bg-[#E7E9EA] text-[#000000] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
                     >
                       <FaVolumeUp />
                     </div>
@@ -386,7 +386,7 @@ useEffect(() => {
             </div>
             <div
                 ref={audioSignToEl}
-                className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
+                className="w-max p-2 bg-[#E7E9EA] text-[#000000] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
             >
                 <FaVolumeUp />
             </div>

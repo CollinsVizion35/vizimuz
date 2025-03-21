@@ -3,7 +3,7 @@ import { AppPass } from "../../contexts/AppContext";
 import { Link, useNavigate } from "react-router-dom";
 // import Otp from './otp-page';
 import { auth } from "../../firebase";
-import { updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import { UseAuth } from "../../contexts/AuthContext";
 import { db } from "../../firebase";
 import { collection, addDoc } from "firebase/firestore";
@@ -21,6 +21,7 @@ import LogoutModal from "./logoutModal";
 
 import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
 import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
+import { FcGoogle } from "react-icons/fc/index";
 import { HiFilm } from "react-icons/hi/index";
 import { BsFillPersonFill } from "react-icons/bs/index";
 
@@ -99,7 +100,7 @@ const SignUp = ({ isOpen, setIsOpen }) => {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { createUser } = UseAuth();
+  const { createUser, signInWithGoogle } = UseAuth();
 
   const { none, setNone, flex, setFlex, signInRef, signUpRef, profileRef } =
     AppPass();
@@ -184,24 +185,25 @@ const SignUp = ({ isOpen, setIsOpen }) => {
     setIsOpen(!isOpen);
   };
 
+
   return (
     <>
       <div
         ref={signUpRef}
-        className="bg-[#0F1732] text-white flex flex-col min-h-screen overflow-x-hidden"
+        className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col min-h-screen overflow-x-hidden"
         style={{ display: none }}
       >
         <div className="p-4 w-[40vw] pb-8 hidden lg:flex flex-row justify-between">
           <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
         </div>
 
-        <div className="bg-[#0F1732] text-white flex lg:flex-row flex-col">
+        <div className="bg-[#000000] border-b border-[#2F3336] text-white flex lg:flex-row flex-col">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#040C25] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
               {options.map((option, index) => {
                 return (
                   <>
@@ -221,12 +223,12 @@ const SignUp = ({ isOpen, setIsOpen }) => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#040C25] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
                     className="mx-auto w-[40px] hover:scale-[1.2]"
-                    style={{ color: "#9600ffcc" }}
+                    style={{ color: "#E7E9EA" }}
                   />
                 </div>
               </Link>
@@ -262,7 +264,7 @@ const SignUp = ({ isOpen, setIsOpen }) => {
               <h4 className="text-[#95B4B3] font-extrabold text-xl md:text-[1.5rem] leading-[2.25rem] text-left">
                 Sign up
               </h4>
-              <p className="text-[#9600ffcc] font-bold leading-[1.6875rem] text-base md:text-lg">
+              <p className="text-[#E7E9EA] font-bold leading-[1.6875rem] text-base md:text-lg">
                 Welcome back to ViziMuz
               </p>
               <form
@@ -349,7 +351,7 @@ const SignUp = ({ isOpen, setIsOpen }) => {
                 <button
                   onClick={handleButtonClick}
                   type="submit"
-                  className="bg-[#95B4B3] rounded-md mt-7 px-auto w-[90%] items-center mb-4 px-12 py-4 text-white w-[19.6875rem]"
+                  className="bg-[#E7E9EA] text-[#000000] rounded-md mt-7 px-auto w-[90%] items-center mb-4 px-12 py-4 text-white w-[19.6875rem]"
                 >
                   Sign up
                 </button>
@@ -368,7 +370,15 @@ const SignUp = ({ isOpen, setIsOpen }) => {
                   />
                 )}
               </form>
-              <p className="text-sm text-center mr-4 leading-[3.125rem] cursor-pointer text-[#9600ffcc] text-left font-semibold">
+
+              <button
+                onClick={signInWithGoogle}
+                className="flex items-center justify-center w-full max-w-xs mx-auto px-4 py-2 border border-gray-300 rounded-lg shadow-md hover:bg-gray-100 transition duration-200"
+              >
+                <FcGoogle className="text-2xl mr-2" />
+                <span className="text-gray-700 font-medium">Sign in with Google</span>
+              </button>
+              <p className="text-sm text-center mr-4 leading-[3.125rem] cursor-pointer text-[#E7E9EA] text-left font-semibold">
                 <div onClick={handleGoToSignIn}>
                   Already have an account? Login.
                 </div>

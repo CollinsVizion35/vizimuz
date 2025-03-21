@@ -743,7 +743,7 @@ const ProfileEditBtn = () => {
             className="fixed top-1/2 left-1/2 p-10 z-[1000]"
             style={{ transform: "translate(-50%, -50%)", display: "none" }}
           >
-            <div className="w-[21rem] lg:w-[29.875rem] h-[18.6487rem] bg-[#040C25] flex flex-col justify-center items-center rounded-md">
+            <div className="w-[21rem] lg:w-[29.875rem] h-[18.6487rem] bg-[#000000] border-b border-[#2F3336] flex flex-col justify-center items-center rounded-md">
               <MdOutlineVerifiedUser className="p-3 text-[#42cf42] text-7xl" />
               <h3 className="text-xl leading-[2.5rem] text-center font-medium text-[#95B4B3] mb-3">
                 Are you sure you want to save new Informations

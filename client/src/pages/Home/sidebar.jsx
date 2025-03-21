@@ -109,7 +109,7 @@
 //         className={
 //           !isActive
 //             ? "hidden"
-//             : "block absolute top-0 left-0 w-[100vw] h-screen mt-[4em] bg-[#0F1732] text-white z-[999999]"
+//             : "block absolute top-0 left-0 w-[100vw] h-screen mt-[4em] bg-[#000000] border-b border-t border-[#2F3336] text-white z-[999999]"
 //         }
 //       >
 //         {options.map((option) => {
@@ -145,7 +145,7 @@
 //           )}
 //         </div>
 
-//         <button  onClick={() => navigate('/upload_music')} className="w-fit ml-4 mt-16 bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer">
+//         <button  onClick={() => navigate('/upload_music')} className="w-fit ml-4 mt-16 bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer">
 //             Upload Music
 //           </button>
 //       </div>
@@ -192,7 +192,7 @@ function Sidebar() {
 
   return (
     <>
-     <div className="fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between bg-[#040C25] w-screen z-[99999999999]">
+     <div className="fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between bg-[#000000] border-b border-t border-[#2F3336] w-screen z-[99999999999]">
            
            <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
@@ -202,7 +202,7 @@ function Sidebar() {
            </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className="w-fit relative bg-[#9600ffcc] p-2 rounded-[20px] cursor-pointer"
+            className="w-fit relative bg-[#E7E9EA] text-[#000000] p-2 rounded-[20px] cursor-pointer"
           >
             Upload
           </button>
@@ -210,14 +210,14 @@ function Sidebar() {
          </div>
 
 
-      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw] rounded-t-md bg-[#040C25] border-t-1 border-[#9600ffcc] py-4 z-[99999999999]">
+      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw] rounded-t-md bg-[#000000] border-b border-t border-[#2F3336] border-t-1 border-[#E7E9EA] py-4 z-[99999999999]">
         <Link to="/home">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 ${
+            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
               isPageInRoute("/home") ||
               isPageInRoute("/music/:artist/:text/:id")
-                ? "text-[#9600ffcc]"
-                : "text-[#fcfcfc]"
+                ? "font-black"
+                : "font-light"
             }`}
           >
           <MdHeadphones/>
@@ -228,11 +228,11 @@ function Sidebar() {
 
         <Link to="/collection">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 ${
+            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
               isPageInRoute("/collection") ||
               isPageInRoute("/likes")
-                ? "text-[#9600ffcc]"
-                : "text-[#fcfcfc]"
+                ? "font-black"
+                : "font-light"
             }`}
           >
 
@@ -243,10 +243,10 @@ function Sidebar() {
 
         <Link to="/radio">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 ${
+            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
               isPageInRoute("/radio") 
-                ? "text-[#9600ffcc]"
-                : "text-[#fcfcfc]"
+                ? "font-black"
+                : "font-light"
             }`}
           >
 
@@ -258,10 +258,10 @@ function Sidebar() {
         
         <Link to="/musicvideos">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 ${
+            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
               isPageInRoute("/musicvideos") 
-                ? "text-[#9600ffcc]"
-                : "text-[#fcfcfc]"
+                ? "font-black"
+                : "font-light"
             }`}
           >
           <RiMovieFill/>
@@ -273,13 +273,13 @@ function Sidebar() {
 
 <Link to="/profile">
   <div 
-    className={`flex flex-col text-[1em] items-center space-y-1 ${
+    className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
       isPageInRoute("/profile") ||
       isPageInRoute("/editprofile") ||
       isPageInRoute("/signup") ||
       isPageInRoute("/signOut") 
-        ? "text-[#9600ffcc]"
-        : "text-[#fcfcfc]"
+        ? "font-black"
+        : "font-light"
     }`}
   >
 
@@ -291,10 +291,10 @@ function Sidebar() {
 
         <Link to="/settings">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 ${
+            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
               isPageInRoute("/settings") 
-                ? "text-[#9600ffcc]"
-                : "text-[#fcfcfc]"
+                ? "font-black"
+                : "font-light"
             }`}
           >
 

@@ -2,10 +2,13 @@ import React, { useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
+import { UseAuth } from "../../contexts/AuthContext";
 
 const Logout = ({ open, showLogoutModal, setShowLogoutModal }) => {
   const auth = getAuth();
   const navigate = useNavigate();
+
+  const { signOutUser } = UseAuth()
 
   const logoutRef = useRef();
 
@@ -24,7 +27,8 @@ const Logout = ({ open, showLogoutModal, setShowLogoutModal }) => {
   }, [])
 
   const handleHideModal = () => {
-    logoutRef.current.style.display = "none"
+    logoutRef.current.style.display = "none",
+    navigate("/home")
   }
   
 
@@ -56,7 +60,7 @@ const Logout = ({ open, showLogoutModal, setShowLogoutModal }) => {
               No
             </button>
             <button
-              onClick={handleLogout}
+              onClick={signOutUser}
               className="rounded-md bg-[#EBEAFD] hover:bg-[#63636354] px-7 py-2 text-black hover:text-white"
             >
               Yes

@@ -25,7 +25,7 @@
 
 /* Custom Progress Bar */
 .progress-bar-cover {
-  background-color: #9600ffcc;
+  background-color: #E7E9EA;
   width: 0%;
   height: var(--progress-bar-height);
   display: block;

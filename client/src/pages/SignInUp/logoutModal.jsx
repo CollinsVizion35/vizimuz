@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import HankoLogOut from "./HankoAuth/hankoLogOut";
+import Logout from "./logout";
 
 const LogoutModal = ({ open }) => {
 
@@ -42,14 +43,14 @@ const LogoutModal = ({ open }) => {
         className="fixed top-1/2 left-1/2 p-10 z-[10000]"
         style={{ transform: "translate(-50%, -50%)" }}
       >
-        <div className="w-[17rem] h-[15rem] lg:w-[28rem] lg:h-[16.5rem]  bg-[#040C25] flex flex-col justify-center items-center">
+        <div className="w-[17rem] h-[15rem] lg:w-[28rem] lg:h-[16.5rem]  bg-[#000000] border-b border-[#2F3336] flex flex-col justify-center items-center">
           {/* <div className='flex justify-items-end justify-end cursor-pointer'>
                   <img className='text-[#777] h-4' onClick={() => setShowLogoutModal(false)} src={closeModalIcon} alt="close icon"/>
                 </div> */}
           <h3 className="text-2xl leading-[2.5rem] text-center text-[#95B4B3] font-bold">
             Log out
           </h3>
-          <p className="font-normal text-base leading-5 text-center text-[#9600ffcc] mt-2">
+          <p className="font-normal text-base leading-5 text-center text-[#E7E9EA] mt-2">
             Are you sure you want to log out?
           </p>
           <div className="mt-6">
@@ -59,7 +60,7 @@ const LogoutModal = ({ open }) => {
             >
               No
             </button>
-            <HankoLogOut/>
+            <Logout/>
           </div>
         </div>
         {/* text-[#000000A6] */}

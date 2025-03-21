@@ -192,7 +192,7 @@ const audioSignToEl = (el) => {
   const renderArtists = () => {
     return (
       
-      <div className="bg-[#040C25] flex flex-col mb-40 fixed h-0 w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32"
+      <div className="bg-[#000000] border-[#2F3336] flex flex-col mb-40 fixed h-0 w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32"
         
       style={{ transform: "translate(-50%, -50%)"}}
       >
@@ -269,7 +269,7 @@ const audioSignToEl = (el) => {
                       </div>
                       <div
                           ref={audioSignToEl}
-                          className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
+                          className="w-max p-2 bg-[#E7E9EA] text-[#000000] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
                       >
                           <FaVolumeUp />
                       </div>
@@ -285,7 +285,7 @@ const audioSignToEl = (el) => {
 
   return (
     <>
-      <div className="bg-[#040C25] text-white relative">
+      <div className="bg-[#000000] border-[#2F3336] text-white relative">
         <div>
           <form
             className="relative lg:w-[30vw] w-[40vw] lg:mx-auto items-center justify-center"
@@ -295,7 +295,7 @@ const audioSignToEl = (el) => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search "
-              className=" bg-[#040C25] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border-2 border-[#0F1732]"
+              className=" bg-[#000000] border-[#2F3336] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border-2 border-[#0F1732]"
             />
             <img
               src={searchIcon}
@@ -307,7 +307,7 @@ const audioSignToEl = (el) => {
           </form>
         </div>
 
-        <div className="bg-[#040C25]">
+        <div className="bg-[#000000] border-[#2F3336]">
           {renderArtists()}
         </div>
       </div>

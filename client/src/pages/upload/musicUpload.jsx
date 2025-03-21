@@ -188,38 +188,38 @@ const UploadMusic = () => {
           value={musicDetails.category}
           name="category"
           onChange={handleInputChange}
-          className="bg-[#0F1732] border-[#9600ffcc] border-[1px] p-3 rounded-[20px]"
+          className="bg-[#000000] border-b border-[#2F3336] border-[#E7E9EA] border-[1px] p-3 rounded-[20px]"
         >
-          <option className="bg-[#0F1732]" selected disabled>Select a music category</option>
-          <option value="AfroBeats" className="bg-[#0F1732]">AfroBeats</option>
-          <option value="R & B" className="bg-[#0F1732]">R & B</option>
-          <option value="Hip Hop" className="bg-[#0F1732]">Hip Hop</option>
-          <option value="Pop" className="bg-[#0F1732]">Pop</option>
-          <option value="Gospel" className="bg-[#0F1732]">Gospel</option>
-          <option value="Jazz" className="bg-[#0F1732]">Jazz</option>
-          <option value="Reggae" className="bg-[#0F1732]">Reggae</option>
-          <option value="Rock" className="bg-[#0F1732]">Rock</option>
-          <option value="K-Pop" className="bg-[#0F1732]">K-Pop</option>
-          <option value="Soul" className="bg-[#0F1732]">Soul</option>
-          <option value="EDM" className="bg-[#0F1732]">Electronics Dance Music</option>
-          <option value="Classical" className="bg-[#0F1732]">Classical</option>
-          <option value="Dancehall" className="bg-[#0F1732]">Dancehall</option>
-          <option value="Latin" className="bg-[#0F1732]">Latin</option>
-          <option value="Country" className="bg-[#0F1732]">Country</option>
-          <option value="Blues" className="bg-[#0F1732]">Blues</option>
-          <option value="Folk" className="bg-[#0F1732]">Folk</option>
-          <option value="Punk" className="bg-[#0F1732]">Punk</option>
-          <option value="Classical crossover" className="bg-[#0F1732]">Classical crossover</option>
-          <option value="Indie" className="bg-[#0F1732]">Indie</option>
+          <option className="bg-[#000000] border-b border-[#2F3336]" selected disabled>Select a music category</option>
+          <option value="AfroBeats" className="bg-[#000000] border-b border-[#2F3336]">AfroBeats</option>
+          <option value="R & B" className="bg-[#000000] border-b border-[#2F3336]">R & B</option>
+          <option value="Hip Hop" className="bg-[#000000] border-b border-[#2F3336]">Hip Hop</option>
+          <option value="Pop" className="bg-[#000000] border-b border-[#2F3336]">Pop</option>
+          <option value="Gospel" className="bg-[#000000] border-b border-[#2F3336]">Gospel</option>
+          <option value="Jazz" className="bg-[#000000] border-b border-[#2F3336]">Jazz</option>
+          <option value="Reggae" className="bg-[#000000] border-b border-[#2F3336]">Reggae</option>
+          <option value="Rock" className="bg-[#000000] border-b border-[#2F3336]">Rock</option>
+          <option value="K-Pop" className="bg-[#000000] border-b border-[#2F3336]">K-Pop</option>
+          <option value="Soul" className="bg-[#000000] border-b border-[#2F3336]">Soul</option>
+          <option value="EDM" className="bg-[#000000] border-b border-[#2F3336]">Electronics Dance Music</option>
+          <option value="Classical" className="bg-[#000000] border-b border-[#2F3336]">Classical</option>
+          <option value="Dancehall" className="bg-[#000000] border-b border-[#2F3336]">Dancehall</option>
+          <option value="Latin" className="bg-[#000000] border-b border-[#2F3336]">Latin</option>
+          <option value="Country" className="bg-[#000000] border-b border-[#2F3336]">Country</option>
+          <option value="Blues" className="bg-[#000000] border-b border-[#2F3336]">Blues</option>
+          <option value="Folk" className="bg-[#000000] border-b border-[#2F3336]">Folk</option>
+          <option value="Punk" className="bg-[#000000] border-b border-[#2F3336]">Punk</option>
+          <option value="Classical crossover" className="bg-[#000000] border-b border-[#2F3336]">Classical crossover</option>
+          <option value="Indie" className="bg-[#000000] border-b border-[#2F3336]">Indie</option>
         </select>
       </div>
 
-      <button onClick={handleUpload} className="bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer">
+      <button onClick={handleUpload} className="bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer">
         Upload Music
       </button>
 
       <div>
-        {isUpdating ? <div className="fixed top-1/2 left-1/2 p-10 z-[1000] bg-[#0F1732] opacity-60"
+        {isUpdating ? <div className="fixed top-1/2 left-1/2 p-10 z-[1000] bg-[#000000] border-b border-[#2F3336] opacity-60"
             style={{ transform: "translate(-50%, -50%)" }}>
           <ColorRing
             visible={true}
@@ -228,7 +228,7 @@ const UploadMusic = () => {
             ariaLabel="blocks-loading"
             wrapperStyle={{}}
             wrapperClass="blocks-wrapper"
-            colors={['#9600ffcc', '#95B4B3', '#f8b26a', '#9600ffcc', '#95B4B3']}
+            colors={['#E7E9EA', '#95B4B3', '#f8b26a', '#E7E9EA', '#95B4B3']}
           />
         </div> : null}
       </div>

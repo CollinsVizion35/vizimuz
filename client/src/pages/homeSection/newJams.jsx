@@ -26,7 +26,7 @@ const options = [
         id: 0,
         img: MdHomeFilled,
         navigate: "/home",
-        color: "#9600ffcc",
+        color: "#E7E9EA",
     },
     {
         id: 1,
@@ -249,8 +249,8 @@ const NewJamComponent = () => {
 
     return (
         <>
-            <div className="bg-[#0F1732] text-white flex flex-col h-max overflow-y-auto overflow-x-hidden">
-                <div className="bg-[#040C25] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
+            <div className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col h-max overflow-y-auto overflow-x-hidden">
+                <div className="bg-[#000000] border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
                     <div className="flex flex-row items-center justify-between w-[40vw]">
                         <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
@@ -258,19 +258,19 @@ const NewJamComponent = () => {
                     </div>
                     <button
                         onClick={() => navigate("/upload_music")}
-                        className="w-fit  bg-[#9600ffcc] p-3 rounded-[20px] cursor-pointer"
+                        className="w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer"
                     >
                         Upload Music
                     </button>
                 </div>
 
-                <div className="bg-[#0F1732] text-white flex flex-col lg:flex-row max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
+                <div className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col lg:flex-row max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
                     <div className="sidebar-sm lg:hidden">
                         <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
                     </div>
 
                     <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-                        <div className="flex flex-col justify-between bg-[#040C25] mx-4 w-[4vw] rounded-[50px] py-4">
+                        <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
                             {options.map((option, index) => {
                                 return (
                                     <>
@@ -290,7 +290,7 @@ const NewJamComponent = () => {
                             })}
                         </div>
 
-                        <div className="flex flex-col justify-between mt-3 bg-[#040C25] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+                        <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
                             <Link to="/profile">
                                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                                     <BsFillPersonFill
@@ -326,7 +326,7 @@ const NewJamComponent = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col bg-[#0F1732] min-h-[100vh] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white">
+                    <div className="flex flex-col bg-[#000000] border-b border-[#2F3336] min-h-[100vh] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white">
                         <div className="flex flex-row w-[95vw] max-w-[1440px] justify-start lg:w-[60vw] mx-auto pt-4 items-baseline">
                             <h1 className="font-black">New jams</h1>
                         </div>
@@ -417,7 +417,7 @@ const NewJamComponent = () => {
                                             </div>
                                             <div
                                                 ref={audioSignToEl}
-                                                className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
+                                                className="w-max p-2 bg-[#E7E9EA] text-[#000000] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
                                             >
                                                 <FaVolumeUp />
                                             </div>
@@ -516,7 +516,7 @@ const NewJamComponent = () => {
                                                 </div>
                                                 <div
                                                     ref={audioSignToEl}
-                                                    className="w-max p-2 bg-[#9600ffcc] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
+                                                    className="w-max p-2 bg-[#E7E9EA] text-[#000000] absolute mt-4 mr-4 rounded-[5px] top-0 left-0 hidden"
                                                 >
                                                     <FaVolumeUp />
                                                 </div>
