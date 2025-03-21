@@ -143,7 +143,7 @@ function Player() {
   };
 
   return (
-    <div className="flex flex-col z-[999999999] w-screen bg-[#000000] border-b border-t border-[#2F3336] bg-opacity-[95%] px-2 mt-12 text-white">
+    <div className="flex flex-col z-[999999999] w-screen bg-[#000000] border-b border-t border-[#2F3336] bg-opacity-[95%] px-2 mt-12 pb-4 text-white">
       <audio
         src={releases[currentSongIndex].audio}
         ref={playerAudioRef}
