@@ -67,7 +67,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <> 
       <div className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col h-max overflow-y-auto overflow-x-hidden">
         <div className="bg-[#000000] border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
           <div className="flex flex-row items-center justify-between w-[40vw]">
