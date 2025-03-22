@@ -99,7 +99,7 @@ const ProfileBtn = () => {
         );
       })}
       {/* {details && (
-        <h1 className="mb-3 text-sm text-[#95B4B3]">{`${details.city}, ${details.country_name}`}</h1>
+        <h1 className="mb-3 text-sm opacity-70">{`${details.city}, ${details.country_name}`}</h1>
       )} */}
 
       {usersInfo ? (
@@ -108,41 +108,41 @@ const ProfileBtn = () => {
             <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}`} key={profileIndex}>
               <form className="mb-8 mt-8 lg:grid-cols-2 lg:grid text-left items-start mx-auto">
                 <div className="pb-2 block lg:hidden">
-                  <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
+                  <label className="text-[1em] font-bold font-bold ml-8 mb-6">
                     USER NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold opacity-70 w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.userName}
                   </h1>
                 </div>
 
                 <div className="pb-2 lg:mr-4 lg:block hidden">
-                  <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
+                  <label className="text-[1em] font-bold font-bold ml-8 mb-6">
                     FIRST NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold opacity-70 w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.firstName}
                   </h1>
                 </div>
 
                 <div className="pb-2 lg:block hidden">
-                  <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
+                  <label className="text-[1em] font-bold font-bold ml-8 mb-6">
                     LAST NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold opacity-70 w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.lastName}
                   </h1>
                 </div>
 
                 <div className="pb-2 lg:mr-4">
-                  <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
+                  <label className="text-[1em] font-bold font-bold ml-8 mb-6">
                     PHONE NUMBER
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold opacity-70 w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.phoneNumber.length > 0
                       ? `+${info.phoneNumber}`
                       : info.phoneNumber}
@@ -150,21 +150,21 @@ const ProfileBtn = () => {
                 </div>
 
                 <div className="pb-2">
-                  <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
+                  <label className="text-[1em] font-bold font-bold ml-8 mb-6">
                     GENDER
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold opacity-70 w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.gender}
                   </h1>
                 </div>
 
                 <div className="pb-2">
-                  <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
+                  <label className="text-[1em] font-bold font-bold ml-8 mb-6">
                     USER'S COUNTRY
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold opacity-70 w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.userCountry}
                   </h1>
                 </div>
@@ -176,7 +176,7 @@ const ProfileBtn = () => {
         <div>Loading...</div>
       )}
       <Link to="/editprofile" >
-        <button className="bg-[#95B4B3] flex flex-row items-center space-x-2  w-fit rounded-lg p-2">
+        <button className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 flex flex-row items-center gap-2 rounded-[20px] cursor-pointer`}>
           Go to Edit Profile <MdArrowForward />
         </button>
       </Link>

@@ -170,7 +170,7 @@ const UploadAlbum = () => {
       setIsUpdating(false); // Hide the "Updating" message
     }
   };
-    
+
   const { isDark } = useColorTheme();
 
   return (
@@ -269,7 +269,7 @@ const UploadAlbum = () => {
 
         <button
           onClick={addTrack}
-          className="bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer"
+          className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
         >
           Add Track
         </button>
@@ -277,7 +277,7 @@ const UploadAlbum = () => {
 
       <button
         onClick={handleUpload}
-        className="bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer"
+        className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
       >
         Upload Album
       </button>

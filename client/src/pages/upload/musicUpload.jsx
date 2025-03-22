@@ -217,7 +217,7 @@ const UploadMusic = () => {
         </select>
       </div>
 
-      <button onClick={handleUpload} className="bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer">
+      <button onClick={handleUpload} className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}>
         Upload Music
       </button>
 

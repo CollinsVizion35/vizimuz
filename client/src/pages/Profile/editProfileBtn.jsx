@@ -302,7 +302,7 @@ const ProfileEditBtn = () => {
             +
           </label>
         ) : (
-          <label htmlFor="select-img" className="cursor-pointer text-[#95B4B3]">
+          <label htmlFor="select-img" className="cursor-pointer opacity-70">
             Upload A Profile Pic
           </label>
         )}
@@ -315,7 +315,7 @@ const ProfileEditBtn = () => {
                 User information
               </label>
               <div>
-                <label className="mb-3 text-sm text-[#95B4B3] font-bold">
+                <label className="mb-3 text-sm opacity-70 font-bold">
                   FIRST NAME
                 </label>
                 <br />
@@ -329,7 +329,7 @@ const ProfileEditBtn = () => {
               </div>
 
               <div>
-                <label className="mb-3 text-sm text-[#95B4B3] font-bold">
+                <label className="mb-3 text-sm opacity-70 font-bold">
                   LAST NAME
                 </label>
                 <br />
@@ -343,7 +343,7 @@ const ProfileEditBtn = () => {
               </div>
 
               <div>
-                <label className="mb-3 text-sm text-[#95B4B3] font-bold">
+                <label className="mb-3 text-sm opacity-70 font-bold">
                   USER NAME
                 </label>
                 <br />
@@ -357,7 +357,7 @@ const ProfileEditBtn = () => {
               </div>
 
               <div>
-                <label className="mb-3 text-sm text-[#95B4B3] font-bold">
+                <label className="mb-3 text-sm opacity-70 font-bold">
                   COUNTRY/ REGION
                 </label>
                 <br />
@@ -667,7 +667,7 @@ const ProfileEditBtn = () => {
               </div>
 
               <form className="flex flex-col space-y-2">
-                <label className="mb-3 text-sm text-[#95B4B3] font-bold">
+                <label className="mb-3 text-sm opacity-70 font-bold">
                   GENDER
                 </label>
                 <div className="flex flex-col lg:flex-row items-center justify-center space-x-3 space-y-3 lg:space-y-0">
@@ -708,7 +708,7 @@ const ProfileEditBtn = () => {
               </form>
 
               <div>
-                <label className="mb-3 text-sm text-[#95B4B3] font-bold">
+                <label className="mb-3 text-sm opacity-70 font-bold">
                   PHONE NUMBER
                 </label>
                 <br />
@@ -734,7 +734,7 @@ const ProfileEditBtn = () => {
           <div className="my-8 w-[90vw] flex items-center justify-center">
             <button
               onClick={handleEditBtn}
-              className="p-3 bg-[#95B4B3] text-[#0F1732] mb-8 flex items-center justify-center"
+              className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
             >
               Save
             </button>
@@ -748,7 +748,7 @@ const ProfileEditBtn = () => {
           >
             <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} w-[21rem] lg:w-[29.875rem] h-[18.6487rem] border-b border-[#2F3336] flex flex-col justify-center items-center rounded-md`}>
               <MdOutlineVerifiedUser className="p-3 text-[#42cf42] text-7xl" />
-              <h3 className="text-xl leading-[2.5rem] text-center font-medium text-[#95B4B3] mb-3">
+              <h3 className="text-xl leading-[2.5rem] text-center font-medium opacity-70 mb-3">
                 Are you sure you want to save new Informations
               </h3>
               <label>
@@ -768,7 +768,7 @@ const ProfileEditBtn = () => {
               <div className="flex flex-row">
                 <button
                   onClick={handleEditBtn3}
-                  className="p-3 w-[5em] mr-2 bg-[#95B4B3]  hover:bg-white hover:border hover:border-[#95B4B3] hover:text-[#95B4B3] rounded-lg py-2  my-5  justify-center items-center text-center"
+                  className="p-3 w-[5em] mr-2 bg-[#95B4B3]  hover:bg-white hover:border hover:border-[#95B4B3] hover:opacity-70 rounded-lg py-2  my-5  justify-center items-center text-center"
                 >
                   No
                 </button>
@@ -778,7 +778,7 @@ const ProfileEditBtn = () => {
                     //   handleContext();
                   }}
                   disabled={!isCheckboxCheckedTerms}
-                  className="p-3 w-[5em] mr-2 bg-[#95B4B3]  hover:bg-white hover:border hover:border-[#95B4B3] hover:text-[#95B4B3] rounded-lg py-2  my-5  justify-center items-center text-center"
+                  className="p-3 w-[5em] mr-2 bg-[#95B4B3]  hover:bg-white hover:border hover:border-[#95B4B3] hover:opacity-70 rounded-lg py-2  my-5  justify-center items-center text-center"
                 >
                   Yes
                 </button>
@@ -793,7 +793,7 @@ const ProfileEditBtn = () => {
             style={{ transform: "translate(-50%, -50%)", display: "none" }}
           >
             <div className="w-[21rem] lg:w-[29.875rem] h-[18.6487rem] bg-white flex flex-col justify-center items-center rounded-md">
-              <GiConfirmed className="p-3 text-[#95B4B3] text-7xl" />
+              <GiConfirmed className="p-3 opacity-70 text-7xl" />
               <h3 className="text-2xl leading-[2.5rem] text-center font-medium text-[#000000A6]">
                 Successful
               </h3>

@@ -115,7 +115,7 @@ const { isDark } = useColorTheme();
           >
             {popular.map((populae, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <>
                     <div
                       key={index}
