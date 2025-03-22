@@ -195,7 +195,7 @@ function Sidebar() {
 
   return (
     <>
-     <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between border-b border-t border-[#2F3336] w-screen z-[99999999999]`}>
+     <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between border-b border-t border-[#2F3336] w-screen z-[99999999999]`}>
            
            <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { collection, query, where, getDocs, documentId } from "firebase/firestore";
 import { db } from "../../firebase";
 import { MdArrowForward } from "react-icons/md";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 // import defaultImg from '../../imgs/No-Photo-Available.jpg'
 
 const ProfileBtn = () => {
@@ -83,6 +84,8 @@ const ProfileBtn = () => {
   // useEffect(() => {
   //   getUserGeolocationDetails();
   // }, []);
+    
+      const { isDark } = useColorTheme();
 
   return (
     <>
@@ -102,14 +105,14 @@ const ProfileBtn = () => {
       {usersInfo ? (
         usersInfo.map((info, profileIndex) => {
           return (
-            <div key={profileIndex}>
+            <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}`} key={profileIndex}>
               <form className="mb-8 mt-8 lg:grid-cols-2 lg:grid text-left items-start mx-auto">
                 <div className="pb-2 block lg:hidden">
                   <label className="text-[1em] font-bold text-[#fcfcfc] font-bold ml-8 mb-6">
                     USER NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.userName}
                   </h1>
                 </div>
@@ -119,7 +122,7 @@ const ProfileBtn = () => {
                     FIRST NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.firstName}
                   </h1>
                 </div>
@@ -129,7 +132,7 @@ const ProfileBtn = () => {
                     LAST NAME
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.lastName}
                   </h1>
                 </div>
@@ -139,7 +142,7 @@ const ProfileBtn = () => {
                     PHONE NUMBER
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 mr-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.phoneNumber.length > 0
                       ? `+${info.phoneNumber}`
                       : info.phoneNumber}
@@ -151,7 +154,7 @@ const ProfileBtn = () => {
                     GENDER
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.gender}
                   </h1>
                 </div>
@@ -161,7 +164,7 @@ const ProfileBtn = () => {
                     USER'S COUNTRY
                   </label>
                   <br />
-                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-[#000000] border-b border-[#2F3336] flex items-center lg:p-2">
+                  <h1 className="mb-3 text-[1em] font-bold text-[#95B4B3] w-[16rem] whitespace-nowrap overflow-hidden overflow-ellipsis lg:h-[2em] p-3 ml-8 bg-inherit border-b border-[#2F3336] flex items-center lg:p-2">
                     {info.userCountry}
                   </h1>
                 </div>
@@ -173,7 +176,7 @@ const ProfileBtn = () => {
         <div>Loading...</div>
       )}
       <Link to="/editprofile" >
-        <button className="bg-[#95B4B3] flex flex-row items-center space-x-2 text-white w-fit rounded-lg p-2">
+        <button className="bg-[#95B4B3] flex flex-row items-center space-x-2  w-fit rounded-lg p-2">
           Go to Edit Profile <MdArrowForward />
         </button>
       </Link>

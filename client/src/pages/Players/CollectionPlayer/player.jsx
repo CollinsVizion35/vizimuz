@@ -3,6 +3,7 @@ import PlayerControls from "./playerControls";
 import PlayerDetails from "./playerDetails";
 import VolumeControls from "./volumeControls";
 import { AppPass } from "../../../contexts/AppContext";
+import { useColorTheme } from "../../../contexts/colorContext/useColorTheme";
 
 function Player() {
   const {
@@ -132,9 +133,11 @@ function Player() {
       });
     }
   };
+    
+  const { isDark } = useColorTheme();
 
   return (
-    <div className="flex flex-col z-[999999999] w-screen bg-[#000000] border-b border-[#2F3336] bg-opacity-[95%] px-2 mt-12 text-white">
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col z-[999999999] w-screen border-b border-[#2F3336] bg-opacity-[95%] px-2 mt-12 `}>
       <audio
         src={collections[currentSongIndex].audio}
         ref={playerAudio2Ref}

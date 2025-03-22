@@ -21,6 +21,7 @@ import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
 import { HiFilm } from "react-icons/hi";
 import { BsFillPersonFill } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 const options = [
   {
     id: 0,
@@ -132,25 +133,27 @@ const SignIn = ({ isOpen, setIsOpen }) => {
       console.error("Error signing in with Google:", error);
     }
   };
+    
+  const { isDark } = useColorTheme();
 
   return (
     <>
       <div
         ref={signInRef}
-        className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col min-h-screen overflow-x-hidden"
+        className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] flex flex-col min-h-screen overflow-x-hidden`}
         style={{ display: "none" }}
       >
         <div className="p-4 w-[40vw] pb-8 hidden lg:flex flex-row justify-between">
           <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
         </div>
 
-        <div className="bg-[#000000] border-b border-[#2F3336] text-white flex lg:flex-row flex-col">
+        <div className="bg-inherit border-b border-[#2F3336] flex lg:flex-row flex-col">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className="flex flex-col justify-between bg-inherit border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
               {options.map((option, index) => {
                 return (
                   <>
@@ -170,7 +173,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className="flex flex-col justify-between mt-3 bg-inherit border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
@@ -268,7 +271,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
                 <button
                   onClick={handleButtonClick}
                   type="submit"
-                  className="bg-[#E7E9EA] text-[#000000] rounded-md my-5 px-8 lg:px-12 py-3 md:py-4 w-[18rem] lg:w-[19.6875rem] text-white"
+                  className="bg-[#E7E9EA] text-[#000000] rounded-md my-5 px-8 lg:px-12 py-3 md:py-4 w-[18rem] lg:w-[19.6875rem]"
                 > {/* #95B4B3 */}
                   Sign in
                 </button>

@@ -39,6 +39,7 @@ import DialCode from "./dialCode";
 import { useMemo } from "react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import defaultPhoto from "../../imgs/profilePhoto.webp";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const ProfileEditBtn = () => {
   const { user, uploadPicture } = UseAuth();
@@ -274,7 +275,9 @@ const ProfileEditBtn = () => {
     
   
   console.log(image);
-  }, [image]);
+  }, [image]); 
+    
+  const { isDark } = useColorTheme();
 
 
   return (
@@ -743,7 +746,7 @@ const ProfileEditBtn = () => {
             className="fixed top-1/2 left-1/2 p-10 z-[1000]"
             style={{ transform: "translate(-50%, -50%)", display: "none" }}
           >
-            <div className="w-[21rem] lg:w-[29.875rem] h-[18.6487rem] bg-[#000000] border-b border-[#2F3336] flex flex-col justify-center items-center rounded-md">
+            <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} w-[21rem] lg:w-[29.875rem] h-[18.6487rem] border-b border-[#2F3336] flex flex-col justify-center items-center rounded-md`}>
               <MdOutlineVerifiedUser className="p-3 text-[#42cf42] text-7xl" />
               <h3 className="text-xl leading-[2.5rem] text-center font-medium text-[#95B4B3] mb-3">
                 Are you sure you want to save new Informations
@@ -765,7 +768,7 @@ const ProfileEditBtn = () => {
               <div className="flex flex-row">
                 <button
                   onClick={handleEditBtn3}
-                  className="p-3 w-[5em] mr-2 bg-[#95B4B3] text-white hover:bg-white hover:border hover:border-[#95B4B3] hover:text-[#95B4B3] rounded-lg py-2  my-5  justify-center items-center text-center"
+                  className="p-3 w-[5em] mr-2 bg-[#95B4B3]  hover:bg-white hover:border hover:border-[#95B4B3] hover:text-[#95B4B3] rounded-lg py-2  my-5  justify-center items-center text-center"
                 >
                   No
                 </button>
@@ -775,7 +778,7 @@ const ProfileEditBtn = () => {
                     //   handleContext();
                   }}
                   disabled={!isCheckboxCheckedTerms}
-                  className="p-3 w-[5em] mr-2 bg-[#95B4B3] text-white hover:bg-white hover:border hover:border-[#95B4B3] hover:text-[#95B4B3] rounded-lg py-2  my-5  justify-center items-center text-center"
+                  className="p-3 w-[5em] mr-2 bg-[#95B4B3]  hover:bg-white hover:border hover:border-[#95B4B3] hover:text-[#95B4B3] rounded-lg py-2  my-5  justify-center items-center text-center"
                 >
                   Yes
                 </button>

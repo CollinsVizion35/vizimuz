@@ -3,6 +3,7 @@ import PlayerControls from "./playerControls";
 import PlayerDetails from "./playerDetails";
 import VolumeControls from "./volumeControls";
 import { AppPass } from "../../../contexts/AppContext";
+import { useColorTheme } from "../../../contexts/colorContext/useColorTheme";
 
 function Player() {
   const {
@@ -22,11 +23,11 @@ function Player() {
   useEffect(() => {
     if (isPlaying) {
       setTimeout(() => {
-      playerAudio6Ref.current.play();
-    }, 500);
+        playerAudio6Ref.current.play();
+      }, 500);
     } else {
-      
-        playerAudio6Ref.current.pause();
+
+      playerAudio6Ref.current.pause();
     }
   });
 
@@ -133,8 +134,10 @@ function Player() {
     }
   };
 
+  const { isDark } = useColorTheme();
+
   return (
-    <div className="flex flex-col z-[999999999] w-screen bg-[#000000] border-b border-[#2F3336] bg-opacity-[95%] px-2 mt-12 text-white">
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col z-[999999999] w-screen border-b border-t border-[#2F3336] bg-opacity-[95%] px-2 mt-12 pb-4`}>
       <audio
         src={golden[currentSongIndex].audio}
         ref={playerAudio6Ref}

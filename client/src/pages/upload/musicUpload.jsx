@@ -6,6 +6,7 @@ import { serverTimestamp } from "firebase/firestore";
 import PlayMusic from "./uploaded"; // Import the PlayMusic component
 import { UseAuth } from "../../contexts/AuthContext";
 import { Audio, ColorRing } from 'react-loader-spinner'
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const UploadMusic = () => {
   const { user } = UseAuth();
@@ -131,6 +132,8 @@ const UploadMusic = () => {
       setIsUpdating(false); // Hide the "Updating" message
     }
   };
+      
+    const { isDark } = useColorTheme();
 
 
   return (
@@ -188,29 +191,29 @@ const UploadMusic = () => {
           value={musicDetails.category}
           name="category"
           onChange={handleInputChange}
-          className="bg-[#000000] border-b border-[#2F3336] border-[#E7E9EA] border-[1px] p-3 rounded-[20px]"
+          className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] border-[#E7E9EA] border-[1px] p-3 rounded-[20px]`}
         >
-          <option className="bg-[#000000] border-b border-[#2F3336]" selected disabled>Select a music category</option>
-          <option value="AfroBeats" className="bg-[#000000] border-b border-[#2F3336]">AfroBeats</option>
-          <option value="R & B" className="bg-[#000000] border-b border-[#2F3336]">R & B</option>
-          <option value="Hip Hop" className="bg-[#000000] border-b border-[#2F3336]">Hip Hop</option>
-          <option value="Pop" className="bg-[#000000] border-b border-[#2F3336]">Pop</option>
-          <option value="Gospel" className="bg-[#000000] border-b border-[#2F3336]">Gospel</option>
-          <option value="Jazz" className="bg-[#000000] border-b border-[#2F3336]">Jazz</option>
-          <option value="Reggae" className="bg-[#000000] border-b border-[#2F3336]">Reggae</option>
-          <option value="Rock" className="bg-[#000000] border-b border-[#2F3336]">Rock</option>
-          <option value="K-Pop" className="bg-[#000000] border-b border-[#2F3336]">K-Pop</option>
-          <option value="Soul" className="bg-[#000000] border-b border-[#2F3336]">Soul</option>
-          <option value="EDM" className="bg-[#000000] border-b border-[#2F3336]">Electronics Dance Music</option>
-          <option value="Classical" className="bg-[#000000] border-b border-[#2F3336]">Classical</option>
-          <option value="Dancehall" className="bg-[#000000] border-b border-[#2F3336]">Dancehall</option>
-          <option value="Latin" className="bg-[#000000] border-b border-[#2F3336]">Latin</option>
-          <option value="Country" className="bg-[#000000] border-b border-[#2F3336]">Country</option>
-          <option value="Blues" className="bg-[#000000] border-b border-[#2F3336]">Blues</option>
-          <option value="Folk" className="bg-[#000000] border-b border-[#2F3336]">Folk</option>
-          <option value="Punk" className="bg-[#000000] border-b border-[#2F3336]">Punk</option>
-          <option value="Classical crossover" className="bg-[#000000] border-b border-[#2F3336]">Classical crossover</option>
-          <option value="Indie" className="bg-[#000000] border-b border-[#2F3336]">Indie</option>
+          <option className="bg-inherit border-b border-[#2F3336]" selected disabled>Select a music category</option>
+          <option value="AfroBeats" className="bg-inherit border-b border-[#2F3336]">AfroBeats</option>
+          <option value="R & B" className="bg-inherit border-b border-[#2F3336]">R & B</option>
+          <option value="Hip Hop" className="bg-inherit border-b border-[#2F3336]">Hip Hop</option>
+          <option value="Pop" className="bg-inherit border-b border-[#2F3336]">Pop</option>
+          <option value="Gospel" className="bg-inherit border-b border-[#2F3336]">Gospel</option>
+          <option value="Jazz" className="bg-inherit border-b border-[#2F3336]">Jazz</option>
+          <option value="Reggae" className="bg-inherit border-b border-[#2F3336]">Reggae</option>
+          <option value="Rock" className="bg-inherit border-b border-[#2F3336]">Rock</option>
+          <option value="K-Pop" className="bg-inherit border-b border-[#2F3336]">K-Pop</option>
+          <option value="Soul" className="bg-inherit border-b border-[#2F3336]">Soul</option>
+          <option value="EDM" className="bg-inherit border-b border-[#2F3336]">Electronics Dance Music</option>
+          <option value="Classical" className="bg-inherit border-b border-[#2F3336]">Classical</option>
+          <option value="Dancehall" className="bg-inherit border-b border-[#2F3336]">Dancehall</option>
+          <option value="Latin" className="bg-inherit border-b border-[#2F3336]">Latin</option>
+          <option value="Country" className="bg-inherit border-b border-[#2F3336]">Country</option>
+          <option value="Blues" className="bg-inherit border-b border-[#2F3336]">Blues</option>
+          <option value="Folk" className="bg-inherit border-b border-[#2F3336]">Folk</option>
+          <option value="Punk" className="bg-inherit border-b border-[#2F3336]">Punk</option>
+          <option value="Classical crossover" className="bg-inherit border-b border-[#2F3336]">Classical crossover</option>
+          <option value="Indie" className="bg-inherit border-b border-[#2F3336]">Indie</option>
         </select>
       </div>
 
@@ -219,7 +222,7 @@ const UploadMusic = () => {
       </button>
 
       <div>
-        {isUpdating ? <div className="fixed top-1/2 left-1/2 p-10 z-[1000] bg-[#000000] border-b border-[#2F3336] opacity-60"
+        {isUpdating ? <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} fixed top-1/2 left-1/2 p-10 z-[1000] border-b border-[#2F3336] opacity-60`}
             style={{ transform: "translate(-50%, -50%)" }}>
           <ColorRing
             visible={true}

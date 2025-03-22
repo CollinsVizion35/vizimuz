@@ -8,6 +8,7 @@ import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
 import { FaXTwitter } from "react-icons/fa6";
 
 import logo from "../imgs/vizimuz_logo.png";
+import { useColorTheme } from "../contexts/colorContext/useColorTheme";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -22,17 +23,19 @@ const Welcome = () => {
       navigate("/home");
     }, 3000);
   }, [navigate]);
+    
+  const { isDark } = useColorTheme();
 
   return (
     <>
-      <div className="welcome bg-[#000000] border-b border-[#2F3336] text-white">
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} welcome border-b border-[#2F3336]`}>
         <div className="h-screen w-screen flex flex-col items-center justify-center mx-auto my-auto">
           <div className="flex flex-col items-center justify-center">
             <JackInTheBox triggerOnce={false}>
               <img
                 src={logo} className="w-[35px] h-[35px]"
                 alt="home icon"
-                className="bg-[#000] p-4 rounded-[50%] bg-opacity-[30%]"
+                className="bg-inherit p-4 rounded-[50%] bg-opacity-[30%]"
               />
             </JackInTheBox>
 

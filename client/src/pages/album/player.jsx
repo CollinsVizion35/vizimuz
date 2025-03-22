@@ -5,6 +5,7 @@ import VolumeControls from "./volumeControls";
 import { AppPass } from '../../contexts/AppContext';
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 function Player() {
   const [musicList, setMusicList] = useState([]);
@@ -175,11 +176,13 @@ useEffect(() => {
     
 
   };
+    
+  const { isDark } = useColorTheme();
 
   return (
     <>
     {musicList ? (
-    <div className="flex flex-col z-[999999999] w-[90vw] max-w-[1440px] mx-auto my-0 bg-[#000000] border-b border-[#2F3336] bg-opacity-[95%] mt-3 text-white">
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col z-[999999999] w-[90vw] max-w-[1440px] mx-auto my-0 border-b border-[#2F3336] bg-opacity-[95%] mt-3 `}>
       <audio
   src={musicList[currentSongIndex]?.audio}  // Use optional chaining
   ref={playerAudioRef}

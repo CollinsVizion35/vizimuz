@@ -5,6 +5,7 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { HiFilm } from "react-icons/hi";
 import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const options = [
   {
@@ -35,10 +36,12 @@ const options = [
 
 function LgSidebar() {
   const [showLogoutModal, setShowLogoutModal] = useState(false);
+    
+  const { isDark } = useColorTheme();
 
   return (
-    <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-      <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} sidebar-lg fixed hidden lg:flex flex-col mt-[2em]`}>
+      <div className="flex flex-col justify-between bg-inherit border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
         {options.map((option, index) => {
           return (
             <>
@@ -58,7 +61,7 @@ function LgSidebar() {
         })}
       </div>
 
-      <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+      <div className="flex flex-col justify-between mt-3 bg-inherit border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
         <Link to="/profile">
           <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
             <BsFillPersonFill

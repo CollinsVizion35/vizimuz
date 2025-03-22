@@ -4,6 +4,7 @@ import axios from "axios";
 // import { AppPass } from '../contexts/AppContext';
 
 import searchIcon from "../../imgs/search.svg";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const MusicVideoSearch = () => {
   // const {token} = AppPass()
@@ -45,10 +46,12 @@ const MusicVideoSearch = () => {
     const timer = setTimeout(() => setCanShow(true), 5000);
     return () => clearTimeout(timer);
   });
+      
+      const { isDark } = useColorTheme();
 
   return (
     <>
-      <div className="bg-[#000000] border-b border-[#2F3336] text-white">
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] `}>
         <div>
           {/* {token ? */}
           <form
@@ -59,7 +62,7 @@ const MusicVideoSearch = () => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search music video"
-              className=" bg-[#000000] border-b border-[#2F3336] lg:px-20 w-[75vw] lg:w-[60vw] lg:ml-[1.5vw] px-12 py-2 rounded-[50px] lg:border border-2 border-[#040C25]"
+              className=" bg-inherit border-b border-[#2F3336] lg:px-20 w-[75vw] lg:w-[60vw] lg:ml-[1.5vw] px-12 py-2 rounded-[50px] lg:border border-2 border-[#040C25]"
             />
             <img
               src={searchIcon}

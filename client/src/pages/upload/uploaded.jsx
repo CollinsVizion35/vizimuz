@@ -196,7 +196,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} flex flex-col border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right  mb-10`}>
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right  mb-10`}>
       <div className="flex flex-row justify-between w-[100%] lg:w-[90%] pt-4 items-baseline">
         <h1 className="font-black">New jams</h1>
         <Link to="/newest_jams">

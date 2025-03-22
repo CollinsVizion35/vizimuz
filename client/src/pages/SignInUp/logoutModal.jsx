@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import HankoLogOut from "./HankoAuth/hankoLogOut";
 import Logout from "./logout";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const LogoutModal = ({ open }) => {
 
@@ -31,6 +32,8 @@ const LogoutModal = ({ open }) => {
       setShowLogoutModal(false)
     }
   }
+    
+  const { isDark } = useColorTheme();
   
 
   return ReactDOM.createPortal(
@@ -43,7 +46,7 @@ const LogoutModal = ({ open }) => {
         className="fixed top-1/2 left-1/2 p-10 z-[10000]"
         style={{ transform: "translate(-50%, -50%)" }}
       >
-        <div className="w-[17rem] h-[15rem] lg:w-[28rem] lg:h-[16.5rem]  bg-[#000000] border-b border-[#2F3336] flex flex-col justify-center items-center">
+        <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} w-[17rem] h-[15rem] lg:w-[28rem] lg:h-[16.5rem]  border-b border-[#2F3336] flex flex-col justify-center items-center`}>
           {/* <div className='flex justify-items-end justify-end cursor-pointer'>
                   <img className='text-[#777] h-4' onClick={() => setShowLogoutModal(false)} src={closeModalIcon} alt="close icon"/>
                 </div> */}
@@ -56,7 +59,7 @@ const LogoutModal = ({ open }) => {
           <div className="mt-6">
             <button
               onClick={() => handleHideModal()}
-              className="mr-4 rounded-md bg-[#95B4B3] px-7 py-2 text-white"
+              className="mr-4 rounded-md bg-[#95B4B3] px-7 py-2"
             >
               No
             </button>

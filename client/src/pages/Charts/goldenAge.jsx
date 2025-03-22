@@ -31,6 +31,7 @@ import { MdHomeFilled, MdLibraryMusic } from "react-icons/md";
 import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
 import { HiFilm } from "react-icons/hi";
 import { BsFillPersonFill } from "react-icons/bs";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const options = [
   {
@@ -240,6 +241,8 @@ const GoldenAge = () => {
 
   
   const navigate = useNavigate();
+    
+  const { isDark } = useColorTheme();
 
   return (
     <div
@@ -251,8 +254,8 @@ const GoldenAge = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="bg-[#000000] border-b border-[#2F3336] bg-opacity-[50%] text-white flex flex-col min-h-screen">
-      <div className="bg-[#000000] border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] bg-opacity-[50%] flex flex-col min-h-screen`}>
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]`}>
           <div className="flex flex-row items-center justify-between w-[40vw]">
             <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
@@ -260,19 +263,19 @@ const GoldenAge = () => {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className="w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer"
+            className={`${isDark ? "bg-white " : "bg-[#272C30] text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>
         </div>
 
-        <div className="bg-inherit text-white flex flex-col lg:flex-row w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
+        <div className="bg-inherit flex flex-col lg:flex-row w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col justify-between border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4`}>
               {options.map((option, index) => {
                 return (
                   <>
@@ -292,7 +295,7 @@ const GoldenAge = () => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col justify-between mt-3 border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4`}>
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
@@ -422,16 +425,16 @@ const GoldenAge = () => {
                       <div className="lg:w-[60%] w-[80%] flex flex-col text-left lg:flex-row lg:text-center">
                         <h2
                           ref={musicNameToEl}
-                          className="lg:w-[50%] text-left lg:text-center text-white text-[.6em] md:text-[.7em] opacity-[70%]"
+                          className="lg:w-[50%] text-left lg:text-center text-[.6em] md:text-[.7em] opacity-[70%]"
                         >
                           {release.name} - {release.artist}
                         </h2>
-                        <h2 className="lg:w-[50%] text-left lg:text-center text-white text-[.6em] md:text-[.7em] opacity-[70%]">
+                        <h2 className="lg:w-[50%] text-left lg:text-center text-[.6em] md:text-[.7em] opacity-[70%]">
                           {release.album}
                         </h2>
                       </div>
                       <div className="lg:w-[21%] w-[10%] flex flex-col lg:flex-row text-center items-center">
-                        <h2 className="lg:w-[50%] text-center text-white text-[.6em] md:text-[.7em] opacity-[70%]">
+                        <h2 className="lg:w-[50%] text-center text-[.6em] md:text-[.7em] opacity-[70%]">
                           {release.durration}
                         </h2>
 

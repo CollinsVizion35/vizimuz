@@ -146,7 +146,7 @@ function Player() {
       const { isDark } = useColorTheme();
 
   return (
-    <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} flex flex-col z-[999999999] w-screen border-b border-t border-[#2F3336] bg-opacity-[95%] px-2 mt-12 pb-4`}>
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col z-[999999999] w-screen border-b border-t border-[#2F3336] bg-opacity-[95%] px-2 mt-12 pb-4`}>
       <audio
         src={releases[currentSongIndex].audio}
         ref={playerAudioRef}

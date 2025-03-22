@@ -60,7 +60,7 @@ const Header = () => {
   const { isDark } = useColorTheme();
 
   return (
-    <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} lg:px-4 w-[95vw] lg:w-[50%] h-[200px] lg:h-[40vh] mb-12 lg:mb-24`}>
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} lg:px-4 w-[95vw] lg:w-[50%] h-[200px] lg:h-[40vh] mb-12 lg:mb-24`}>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -75,7 +75,7 @@ const Header = () => {
         }}
         modules={[EffectCoverflow]}
         autoplay={true}
-        className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"}mySwiper mt-6 lg:mt-16 lg:mx-auto`}
+        className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}mySwiper mt-6 lg:mt-16 lg:mx-auto`}
       >
         {playlists.map((playlist, playlistIndex) => {
           return (

@@ -808,7 +808,7 @@ function DialCode() {
       <select
         name="countryCode"
         value={countryCode} onChange={handleSelectChange}
-        className="max-w-[100px] text-sm border-b border-[#95B4B3] rounded-[5px] text-[#0F1732]"
+        className="max-w-[100px] text-sm border-b border-[#95B4B3] rounded-[5px] "
       >
         {countries.map((country) => (
           <option key={country.name} value={country.code}>

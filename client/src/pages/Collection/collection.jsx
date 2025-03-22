@@ -36,6 +36,7 @@ import indie from "/indie.jpg";
 import latin from "/latin.webp";
 import classicalCross from "/classicalCross.webp";
 import blues from "/blues.jpg";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const Genres = [
   {
@@ -258,11 +259,13 @@ const Collection = () => {
 
   
   const navigate = useNavigate();
+      
+        const { isDark } = useColorTheme();
 
   return (
     <>
-      <div className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col min-h-screen">
-      <div className="bg-[#000000] border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]">
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] flex flex-col min-h-screen`}>
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] p-8 pt-8 pb-8 hidden fixed top-0 lg:flex flex-row items-center justify-between w-screen z-[999999999999]`}>
           <div className="flex flex-row items-center justify-between w-[40vw]">
             <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
@@ -270,19 +273,19 @@ const Collection = () => {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className="w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer"
+            className={`${isDark ? "bg-white " : "bg-[#272C30] text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>
         </div>
 
-        <div className="bg-[#000000] border-b border-[#2F3336] text-white flex flex-col lg:flex-row w-[95vw] mx-auto max-w-[1440px] my-0 lg:mt-32 mt-24">
+        <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] flex flex-col lg:flex-row w-[95vw] mx-auto max-w-[1440px] my-0 lg:mt-32 mt-24`}>
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
 
           <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
-            <div className="flex flex-col justify-between bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
+            <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col justify-between border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4`}>
               {options.map((option, index) => {
                 return (
                   <>
@@ -302,7 +305,7 @@ const Collection = () => {
               })}
             </div>
 
-            <div className="flex flex-col justify-between mt-3 bg-[#000000] border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4">
+            <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col justify-between mt-3 border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] my-4 py-4`}>
               <Link to="/profile">
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
@@ -340,7 +343,7 @@ const Collection = () => {
 
           <div className="Body w-[95vw] max-w-[1440px] flex flex-col lg:ml-[5vw] mx-auto lg:pl-8 mb-12">
             <div className="flex w-[95vw] max-w-[1440px] items-center justify-center">
-                <div className="items-center  px-3 py-2 rounded-[20px] font-bold text-[1.2em] text-[#fcfcfc] mr-2">
+                <div className="items-center  px-3 py-2 rounded-[20px] font-bold text-[1.2em] mr-2">
                   Genre
                 </div>
             </div>
@@ -364,11 +367,11 @@ const Collection = () => {
 
                         <h2
                           ref={musicNameToEl}
-                          className="absolute text-white text-[0.9em] xl:left-16 left-8 bottom-2 opacity-80"
+                          className="absolute text-[0.9em]  xl:left-16 left-8 bottom-2 opacity-80"
                         >
                           {genre.category}
                         </h2>
-                        <div className="border border-[#fcfcfc] p-1 rounded-[50%] absolute xl:left-16 left-8 top-2 opacity-80">
+                        <div className="border  border-[#fcfcfc] p-1 rounded-[50%] absolute xl:left-16 left-8 top-2 opacity-80">
                           <MdArrowForward/>
                         </div>
                     </div>

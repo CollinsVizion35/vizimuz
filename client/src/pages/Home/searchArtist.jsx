@@ -195,7 +195,7 @@ const audioSignToEl = (el) => {
   const renderArtists = () => {
     return (
       
-      <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} border-[#2F3336] flex flex-col mb-40 fixed h-0 w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32`}
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} border-[#2F3336] flex flex-col mb-40 fixed h-0 w-[100vw] lg:w-[95vw] max-w-[1440px] mx-auto left-1/2 top-1/2 z-[100000000] mt-24 lg:mt-32`}
         
       style={{ transform: "translate(-50%, -50%)"}}
       >
@@ -256,13 +256,13 @@ const audioSignToEl = (el) => {
                                   <div>
                                       <h2
                                           ref={musicNameToEl}
-                                          className="text-white text-[1em]"
+                                          className=" text-[1em]"
                                       >
                                           {newMusic.musicName}
                                       </h2>
                                       <h5
                                           ref={artistNameToEl}
-                                          className="text-white text-[.6em]"
+                                          className=" text-[.6em]"
                                       >
                                           {newMusic.artist}
                                       </h5>
@@ -288,7 +288,7 @@ const audioSignToEl = (el) => {
 
   return (
     <>
-      <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} border-[#2F3336] text-white relative`}>
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} border-[#2F3336]  relative`}>
         <div>
           <form
             className="relative lg:w-[30vw] w-[40vw] lg:mx-auto items-center justify-center"
@@ -298,7 +298,7 @@ const audioSignToEl = (el) => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search "
-              className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} bg-[#000000] border-[#2F3336] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border`}
+              className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} bg-[#000000] border-[#2F3336] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border`}
             />
             <img
               src={searchIcon}
@@ -310,7 +310,7 @@ const audioSignToEl = (el) => {
           </form>
         </div>
 
-        <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} border-[#2F3336]`}>
+        <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} border-[#2F3336]`}>
           {renderArtists()}
         </div>
       </div>
