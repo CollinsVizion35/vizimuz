@@ -149,7 +149,7 @@ const Home = () => {
           </div>
 
           <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] mx-auto">
-            <div className="flex flex-col lg:flex-row w-[90vw] m-auto max-w-[1440px]">
+            <div className="flex flex-col lg:flex-row lg:w-[90vw] w-[95vw] m-auto max-w-[1440px]">
               <Header />
               <TopChart />
             </div>
