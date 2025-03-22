@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { AppPass } from '../contexts/AppContext';
-import { FaRegHeart, FaHeart } from "react-icons/fa/index";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 

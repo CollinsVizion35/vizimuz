@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaVolumeUp } from "react-icons/fa/index";
+import { FaVolumeUp } from "react-icons/fa";
 
-// import {SiSpotify} from 'react-icons/si/index'
+// import {SiSpotify} from 'react-icons/si';
 // import axios from 'axios'
 import { AppPass } from "../../contexts/AppContext";
 import { Swiper, SwiperSlide } from "swiper/react";

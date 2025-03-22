@@ -9,8 +9,8 @@ import {
   BsHeart,
   BsFillPlayCircleFill,
   BsHeartFill,
-} from "react-icons/bs/index";
-import { MdClose, MdCollectionsBookmark, MdSettings } from "react-icons/md/index";
+} from "react-icons/bs";
+import { MdClose, MdCollectionsBookmark, MdSettings } from "react-icons/md";
 
 import { Link, useNavigate } from "react-router-dom";
 import Sidebar from "../Home/sidebar";
@@ -29,10 +29,10 @@ import JonTHC from "../../imgs/jonBellionTHC.jpg";
 import adhd from "../../imgs/adhdJoyner.jpg";
 import astroworld from "../../imgs/Travis Scott_Astroworld.webp";
 
-import { MdHomeFilled, MdLibraryMusic } from "react-icons/md/index";
-import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-import { HiFilm } from "react-icons/hi/index";
-import { BsFillPersonFill } from "react-icons/bs/index";
+import { MdHomeFilled, MdLibraryMusic } from "react-icons/md";
+import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+import { HiFilm } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
 
 const options = [
   {

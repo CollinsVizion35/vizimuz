@@ -28,9 +28,9 @@ import {
 import { HiOutlineDotsVertical, HiOutlineTable } from "react-icons/hi";
 import { FaPowerOff, FaRegUser } from "react-icons/fa";
 
-import { FaChild, FaSchool } from "react-icons/fa/index";
-import { GiConfirmed, GiSoccerKick } from "react-icons/gi/index";
-import { HiMenuAlt2 } from "react-icons/hi/index";
+import { FaChild, FaSchool } from "react-icons/fa";
+import { GiConfirmed, GiSoccerKick } from "react-icons/gi";
+import { HiMenuAlt2 } from "react-icons/hi";
 
 import { UseAuth } from "../../contexts/AuthContext";
 import { updateProfile } from "firebase/auth";

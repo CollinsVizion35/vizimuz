@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { SiSpotify } from "react-icons/si/index";
+import { SiSpotify } from "react-icons/si";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 // import axios from 'axios'
 // import notAvailable from '../imgs/No-Photo-Available.jpg'
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
-import { FaXTwitter } from "react-icons/fa6/index";
+import { FaXTwitter } from "react-icons/fa6";
 
 import logo from "../imgs/vizimuz_logo.png";
 

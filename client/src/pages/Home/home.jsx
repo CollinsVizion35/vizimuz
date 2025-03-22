@@ -14,10 +14,10 @@ import Header from "./header";
 import TopChart from "../Charts/topCharts";
 import LogoutModal from "../SignInUp/logoutModal";
 
-import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
-import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-import { HiFilm } from "react-icons/hi/index";
-import { BsFillPersonFill } from "react-icons/bs/index";
+import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md";
+import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+import { HiFilm } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
 import NewMusic from "../upload/uploaded";
 
 const options = [

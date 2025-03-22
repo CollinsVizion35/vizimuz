@@ -10,10 +10,10 @@ import Sidebar from "../Home/sidebar";
 import "../../index.css";
 import LogoutModal from "../SignInUp/logoutModal";
 
-import { MdArrowForward, MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
-import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-import { HiFilm } from "react-icons/hi/index";
-import { BsFillPersonFill } from "react-icons/bs/index";
+import { MdArrowForward, MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md";
+import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+import { HiFilm } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
 
 import a from "/afrobeat.jpg";
 import b from "/reggae.jpg";

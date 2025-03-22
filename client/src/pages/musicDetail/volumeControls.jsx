@@ -1,5 +1,5 @@
 import React from "react";
-import { FaVolumeUp, FaVolumeMute, FaVolumeDown } from "react-icons/fa/index";
+import { FaVolumeUp, FaVolumeMute, FaVolumeDown } from "react-icons/fa";
 import VolumeSlider from "./volumeSlider";
 import { AppPass } from '../../contexts/AppContext';
 

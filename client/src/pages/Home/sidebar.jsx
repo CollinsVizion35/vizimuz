@@ -8,16 +8,16 @@
 // import logoutIcon from "../../imgs/Logout.svg";
 // import logo from "../../imgs/vizimuz_logo.png";
 
-// import { TbMenu, TbSearch } from "react-icons/tb/index";
+// import { TbMenu, TbSearch } from "react-icons/tb";
 
 // import Logout from "../SignInUp/logout";
 // import { Link, useNavigate } from "react-router-dom";
 // import SearchArtist from "../Home/searchArtist";
 
-// import { MdHomeFilled, MdLibraryMusic } from "react-icons/md/index";
-// import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-// import { HiFilm } from "react-icons/hi/index";
-// import { BsFillPersonFill } from "react-icons/bs/index";
+// import { MdHomeFilled, MdLibraryMusic } from "react-icons/md";
+// import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+// import { HiFilm } from "react-icons/hi";
+// import { BsFillPersonFill } from "react-icons/bs";
 
 // const options = [
 //   {

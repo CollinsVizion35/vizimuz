@@ -4,9 +4,9 @@ import {
   FaPause,
   FaStepBackward,
   FaStepForward,
-} from "react-icons/fa/index";
-import { BsShuffle } from "react-icons/bs/index";
-import { TbRepeatOnce } from "react-icons/tb/index";
+} from "react-icons/fa";
+import { BsShuffle } from "react-icons/bs";
+import { TbRepeatOnce } from "react-icons/tb";
 import Slider from "./slider";
 import { AppPass } from "../../../contexts/AppContext";
 

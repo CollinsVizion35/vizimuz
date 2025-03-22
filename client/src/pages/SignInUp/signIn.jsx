@@ -8,7 +8,7 @@ import { AppPass } from "../../contexts/AppContext";
 
 import logo from "../../imgs/vizimuz_logo.png";
 
-import { FaEye, FaEyeSlash } from "react-icons/fa/index";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import Sidebar from "../Home/sidebar";
 import "../../index.css";
@@ -16,11 +16,11 @@ import SuccessModal from "../Modals/success-modal";
 import ErrorModal from "../Modals/error-modal";
 import LogoutModal from "./logoutModal";
 
-import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
-import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-import { HiFilm } from "react-icons/hi/index";
-import { BsFillPersonFill } from "react-icons/bs/index";
-import { FcGoogle } from "react-icons/fc/index";
+import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md";
+import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+import { HiFilm } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 const options = [
   {
     id: 0,

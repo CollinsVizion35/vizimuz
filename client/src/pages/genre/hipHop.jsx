@@ -13,10 +13,10 @@ import logo from "../../imgs/vizimuz_logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import "../../index.css";
 
-import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
-import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-import { HiDotsVertical, HiFilm } from "react-icons/hi/index";
-import { BsFillPersonFill } from "react-icons/bs/index";
+import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md";
+import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+import { HiDotsVertical, HiFilm } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
 import SearchArtist from "../Home/searchArtist";
 import Sidebar from "../Home/sidebar";
 import LogoutModal from "../SignInUp/logoutModal";

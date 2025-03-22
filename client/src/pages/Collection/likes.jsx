@@ -15,10 +15,10 @@ import dangerous from "../../imgs/dangerous.jpg";
 import sheriff from "../../imgs/I_Shot_the_Sheriff_by_Bob_Marley_and_the_Wailers_German_vinyl.jpg";
 import pSquare from "../../imgs/p-square.jpeg";
 
-import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md/index";
-import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri/index";
-import { HiFilm } from "react-icons/hi/index";
-import { BsFillPersonFill } from "react-icons/bs/index";
+import { MdHomeFilled, MdLibraryMusic, MdSettings } from "react-icons/md";
+import { RiRadio2Fill, RiLogoutBoxRFill } from "react-icons/ri";
+import { HiFilm } from "react-icons/hi";
+import { BsFillPersonFill } from "react-icons/bs";
 
 const options = [
   {

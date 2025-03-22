@@ -52,8 +52,8 @@ import {
   WorkplaceIcon
 } from 'react-share'
 
-import { MdOutlineShare, MdOutlineDownload } from 'react-icons/md/index'
-import { PiHeartBold } from 'react-icons/pi/index'
+import { MdOutlineShare, MdOutlineDownload } from 'react-icons/md';
+import { PiHeartBold } from 'react-icons/pi';
 
 const AlbumMusicDetails = () => {
   const { id } = useParams();
