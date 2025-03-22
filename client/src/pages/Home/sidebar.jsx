@@ -109,7 +109,7 @@
 //         className={
 //           !isActive
 //             ? "hidden"
-//             : "block absolute top-0 left-0 w-[100vw] h-screen mt-[4em] bg-[#000000] border-b border-t border-[#2F3336] text-white z-[999999]"
+//             : "block absolute top-0 left-0 w-[100vw] h-screen mt-[4em] border-b border-t border-[#2F3336] text-white z-[999999]"
 //         }
 //       >
 //         {options.map((option) => {
@@ -145,7 +145,7 @@
 //           )}
 //         </div>
 
-//         <button  onClick={() => navigate('/upload_music')} className="w-fit ml-4 mt-16 bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer">
+//         <button  onClick={() => navigate('/upload_music')} className="w-fit ml-4 mt-16  text-[#000000] p-3 rounded-[20px] cursor-pointer">
 //             Upload Music
 //           </button>
 //       </div>
@@ -174,6 +174,7 @@ import { GiSoccerKick } from "react-icons/gi";
 import logo from "../../imgs/vizimuz_logo.png";
 import { RiMovieFill } from "react-icons/ri";
 import SearchArtist from "./searchArtist";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 function Sidebar() {
   
@@ -189,10 +190,12 @@ function Sidebar() {
 
   
   const navigate = useNavigate();
+    
+      const { isDark } = useColorTheme();
 
   return (
     <>
-     <div className="fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between bg-[#000000] border-b border-t border-[#2F3336] w-screen z-[99999999999]">
+     <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} fixed top-0 left-0 p-3 py-6 flex flex-row items-center justify-between border-b border-t border-[#2F3336] w-screen z-[99999999999]`}>
            
            <img src={logo} className="w-[35px] h-[35px]" alt="home icon" />
 
@@ -202,7 +205,7 @@ function Sidebar() {
            </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className="w-fit relative bg-[#E7E9EA] text-[#000000] p-2 rounded-[20px] cursor-pointer"
+            className={`${isDark ? " text-black" : "bg-black text-white"} w-fit relative  text-[#000000] p-2 rounded-[20px] cursor-pointer`}
           >
             Upload
           </button>
@@ -210,10 +213,10 @@ function Sidebar() {
          </div>
 
 
-      <div className="lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw]  bg-[#000000] border-b border-t border-[#2F3336]  py-4 z-[99999999999]">
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} lg:hidden flex flex-row justify-around fixed bottom-0 left-0 w-[100vw]  border-b border-t border-[#2F3336]  py-4 z-[99999999999]`}>
         <Link to="/home">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
+            className={`flex flex-col text-[1em] items-center space-y-1 ${
               isPageInRoute("/home") ||
               isPageInRoute("/music/:artist/:text/:id")
                 ? "font-black"
@@ -228,7 +231,7 @@ function Sidebar() {
 
         <Link to="/collection">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
+            className={`flex flex-col text-[1em] items-center space-y-1 ${
               isPageInRoute("/collection") ||
               isPageInRoute("/likes")
                 ? "font-black"
@@ -243,7 +246,7 @@ function Sidebar() {
 
         <Link to="/radio">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
+            className={`flex flex-col text-[1em] items-center space-y-1 ${
               isPageInRoute("/radio") 
                 ? "font-black"
                 : "font-light"
@@ -258,7 +261,7 @@ function Sidebar() {
         
         <Link to="/musicvideos">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
+            className={`flex flex-col text-[1em] items-center space-y-1 ${
               isPageInRoute("/musicvideos") 
                 ? "font-black"
                 : "font-light"
@@ -273,7 +276,7 @@ function Sidebar() {
 
 <Link to="/profile">
   <div 
-    className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
+    className={`flex flex-col text-[1em] items-center space-y-1 ${
       isPageInRoute("/profile") ||
       isPageInRoute("/editprofile") ||
       isPageInRoute("/signup") ||
@@ -291,7 +294,7 @@ function Sidebar() {
 
         <Link to="/settings">
           <div 
-            className={`flex flex-col text-[1em] items-center space-y-1 text-[#E7E9EA] ${
+            className={`flex flex-col text-[1em] items-center space-y-1 ${
               isPageInRoute("/settings") 
                 ? "font-black"
                 : "font-light"

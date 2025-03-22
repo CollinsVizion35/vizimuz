@@ -9,6 +9,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import disc from "../../imgs/disc.png";
 import { AppPass } from "../../contexts/AppContext";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const TopChart = () => {
   const { currentAlbumIndex, setCurrentAlbumIndex } = AppPass();
@@ -74,9 +75,12 @@ const TopChart = () => {
     };
   }, []);
 
+  
+  const { isDark } = useColorTheme();
+
   return (
     <>
-      <div className="w-[95vw] lg:w-[40%] flex flex-col ">
+      <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} w-[95vw] lg:w-[40%] flex flex-col `}>
         <div className="flex flex-row justify-between pt-4 w-[100%] items-baseline">
         <h1 className="font-black">Top Album</h1>
         <h1 className=" opacity-70 text-[0.8em]">View more</h1>

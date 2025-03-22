@@ -6,6 +6,7 @@ import { FaVolumeUp } from "react-icons/fa";
 import { AppPass } from "../../contexts/AppContext";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const NewReleases = () => {
   const {
@@ -97,9 +98,11 @@ useEffect(() => {
 }, []);
 
 
+const { isDark } = useColorTheme();
+
   return (
     <>
-      <div className="flex flex-col bg-[#000000] border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px] lg:px-4 float-right text-white">
+      <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} flex flex-col  border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px] lg:px-4 float-right `}>
       <div className="flex flex-row justify-between w-[100%] lg:w-[90%] pt-4 items-baseline">
         <h1 className="font-black">Trends</h1>
         <h1 className="opacity-70 text-[0.8em]">View more</h1>
@@ -165,13 +168,13 @@ useEffect(() => {
                       />
                       <h2
                         ref={musicNameToEl}
-                        className="text-white text-[1em]"
+                        className=" text-[1em]"
                       >
                         {release.name}
                       </h2>
                       <h5
                         ref={artistNameToEl}
-                        className="text-white text-[.6em] opacity-70"
+                        className=" text-[.6em] opacity-70"
                       >
                         {release.artist}
                       </h5>

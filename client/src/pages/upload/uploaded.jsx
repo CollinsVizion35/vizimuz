@@ -7,6 +7,7 @@ import "swiper/css";
 import { FaVolumeUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HiDotsVertical } from "react-icons/hi";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const NewMusic = () => {
   const [musicList, setMusicList] = useState([]);
@@ -191,9 +192,11 @@ useEffect(() => {
     console.log("currentSongIndex2:", currentSongIndex);
   }, [currentSongIndex]);
 
+  const { isDark } = useColorTheme();
+
   return (
     <>
-      <div className="flex flex-col bg-[#000000] border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right text-white mb-10">
+      <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} flex flex-col border-b border-[#2F3336] lg:w-[90vw] w-[95vw] max-w-[1440px]  lg:px-4 float-right  mb-10`}>
       <div className="flex flex-row justify-between w-[100%] lg:w-[90%] pt-4 items-baseline">
         <h1 className="font-black">New jams</h1>
         <Link to="/newest_jams">
@@ -270,13 +273,13 @@ useEffect(() => {
                           <div>
                             <h2
                               ref={musicNameToEl}
-                              className="text-white text-[1em]"
+                              className=" text-[1em]"
                             >
                               {newMusic.musicName}
                             </h2>
                             <h5
                               ref={artistNameToEl}
-                              className="text-white text-[.6em] opacity-70"
+                              className=" text-[.6em] opacity-70"
                             >
                               {newMusic.artist}
                             </h5>
@@ -370,13 +373,13 @@ useEffect(() => {
                         <div>
                             <h2
                                 ref={musicNameToEl}
-                                className="text-white text-[1em]"
+                                className=" text-[1em]"
                             >
                                 {newMusic.musicName}
                             </h2>
                             <h5
                                 ref={artistNameToEl}
-                                className="text-white text-[.6em] opacity-70"
+                                className=" text-[.6em] opacity-70"
                             >
                                 {newMusic.artist}
                             </h5>

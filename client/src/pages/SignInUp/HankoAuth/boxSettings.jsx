@@ -13,6 +13,7 @@ import logo from "../../../imgs/vizimuz_logo.png";
 import SignUpFooter from "../../others/signUpFooter";
 import HankoProfile from "./settings";
 import Logout from "../logout";
+import { ThemeToggleButton } from "../../settings/toggleTheme";
 
 const options = [
   {
@@ -139,6 +140,7 @@ function SettingsBox() {
             <div className="Body w-[90vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] h-[100vh]">
               {/* <HankoProfile /> */}
               <Logout/>
+              <ThemeToggleButton/>
 
               <SignUpFooter />
             </div>

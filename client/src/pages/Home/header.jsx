@@ -18,6 +18,7 @@ import user4 from "../../imgs/Ellipse 5.svg";
 import user5 from "../../imgs/Ellipse 6.svg";
 import vectorImg from "../../imgs/Vector.svg";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { useColorTheme } from "../../contexts/colorContext/useColorTheme";
 
 const playlists = [
   {
@@ -52,11 +53,14 @@ const playlists = [
   },
 ];
 
-function Header() {
+
+
+const Header = () => {
   SwiperCore.use([Autoplay]);
+  const { isDark } = useColorTheme();
 
   return (
-    <div className=" lg:px-4 w-[95vw] lg:w-[50%] h-[200px] lg:h-[40vh] mb-12 lg:mb-24">
+    <div className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"} lg:px-4 w-[95vw] lg:w-[50%] h-[200px] lg:h-[40vh] mb-12 lg:mb-24`}>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -71,7 +75,7 @@ function Header() {
         }}
         modules={[EffectCoverflow]}
         autoplay={true}
-        className="mySwiper mt-6 lg:mt-16 lg:mx-auto"
+        className={`${isDark ? "bg-black " : "bg-white text-[#0F1419]"}mySwiper mt-6 lg:mt-16 lg:mx-auto`}
       >
         {playlists.map((playlist, playlistIndex) => {
           return (
