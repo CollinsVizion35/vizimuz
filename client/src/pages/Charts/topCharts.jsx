@@ -80,7 +80,7 @@ const TopChart = () => {
 
   return (
     <>
-      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} w-[95vw] lg:w-[40%] flex flex-col `}>
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} border-b border-[#2F3336] w-[95vw] lg:w-[40%] flex flex-col `}>
         <div className="flex flex-row justify-between pt-4 w-[100%] items-baseline">
         <h1 className="font-black">Top Album</h1>
         <h1 className=" opacity-70 text-[0.8em]">View more</h1>
