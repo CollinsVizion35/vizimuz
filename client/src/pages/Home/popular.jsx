@@ -102,13 +102,13 @@ const { isDark } = useColorTheme();
 
   return (
     <>
-      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col bg-[#000000] border-b border-[#2F3336] lg:w-[90vw]  w-[95vw] m-auto max-w-[1440px]  lg:px-4 float-right `}>
+      <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} flex flex-col border-b border-[#2F3336] lg:w-[90vw]  w-[95vw] m-auto max-w-[1440px]  lg:px-4 float-right `}>
       <div className="flex flex-row justify-between w-[100%]  pt-4 items-baseline">
         <h1 className="font-black">Popular in your area</h1>
         <h1 className=" opacity-70 text-[0.8em]">View more</h1>
         </div>
 
-        <div className="flex flex-row justify-between py-4 pt-2 lg:w-[90%] w-[95vw]">
+        <div className="flex flex-row justify-between py-4 pt-2 lg:w-[90%] w-[95vw]"> 
           <Swiper
             spaceBetween={20}
             slidesPerView={slidesPerView}

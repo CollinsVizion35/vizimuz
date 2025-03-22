@@ -113,7 +113,7 @@ function Radio() {
           </button>
         </div>
 
-        <div className="bg-inherit border-b border-[#2F3336]  flex lg:flex-row flex-col w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
+        <div className="bg-inherit border-b border-[#2F3336]  flex lg:flex-row flex-col max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
@@ -175,7 +175,7 @@ function Radio() {
             </div>
           </div>
 
-          <div className="flex flex-col lg:ml-[5vw] lg:pl-8 items-center justify-center text-center float-right  w-[90%] relative bg-inherit border-b border-[#2F3336] ">
+          <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] mx-auto ">
             <div className="text-3xl p-2 text-[#E7E9EA] flex w-screen items-center justify-center">
               VizMuz <span className="text-[#95B4B3]">Radio</span>
             </div>

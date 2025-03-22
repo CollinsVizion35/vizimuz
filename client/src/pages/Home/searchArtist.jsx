@@ -298,7 +298,7 @@ const audioSignToEl = (el) => {
               type="text"
               onChange={(e) => setSearchKey(e.target.value)}
               placeholder="search "
-              className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} bg-[#000000] border-[#2F3336] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border`}
+              className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} border-[#2F3336] w-[45vw] lg:w-auto lg:px-20 px-10 py-2 rounded-[50px] lg:border border`}
             />
             <img
               src={searchIcon}

@@ -279,7 +279,7 @@ const Collection = () => {
           </button>
         </div>
 
-        <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] flex flex-col lg:flex-row w-[95vw] mx-auto max-w-[1440px] my-0 lg:mt-32 mt-24`}>
+        <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  border-b border-[#2F3336] flex flex-col lg:flex-row mx-auto max-w-[1440px] my-0 lg:mt-32 mt-24`}>
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
@@ -341,7 +341,7 @@ const Collection = () => {
             </div>
           </div>
 
-          <div className="Body w-[95vw] max-w-[1440px] flex flex-col lg:ml-[5vw] mx-auto lg:pl-8 mb-12">
+          <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] mx-auto">
             <div className="flex w-[95vw] max-w-[1440px] items-center justify-center">
                 <div className="items-center  px-3 py-2 rounded-[20px] font-bold text-[1.2em] mr-2">
                   Genre

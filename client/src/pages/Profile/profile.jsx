@@ -112,7 +112,7 @@ const Profile = () => {
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
                     className="mx-auto w-[40px] hover:scale-[1.2]"
-                    style={{ color: "#E7E9EA" }}
+                    style={{ color: "#000" }}
                   />
                 </div>
               </Link>
@@ -143,7 +143,7 @@ const Profile = () => {
             </div>
           </div>
 
-          <div className="flex items-center mx-auto lg:mt-[0em] mt-[2em] lg:pl-8 max-w-[1440px] w-[90vw] mb-[8em] lg:ml-[5vw]">
+          <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] mx-auto">
             <div className="w-full text-left py-8 px-12 md:px-14">
               <h2 className="font-Poppins text-[#95B4B3] text-2xl font-bold hidden lg:block mb-[5em] lg:mb-6">
                 Profile

@@ -161,7 +161,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
 
       <footer className="fixed lg:bottom-0 bottom-12 z-[99999] w-screen left-0">
         {canShow ? (

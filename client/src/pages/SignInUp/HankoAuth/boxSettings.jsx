@@ -72,7 +72,7 @@ function SettingsBox() {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className={`${isDark ? "bg-white " : "bg-[#272C30] "} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
+            className={`${isDark ? "bg-white " : "bg-black text-white"}  w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>
@@ -83,7 +83,7 @@ function SettingsBox() {
               <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
             </div>
 
-            <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em]">
+            <div className="sidebar-lg fixed hidden lg:flex flex-col mt-[2em] z-[99999]">
               <div className="flex flex-col justify-between bg-inherit border border-[#2F3336] mx-4 w-[4vw] rounded-[50px] py-4">
                 {options.map((option, index) => {
                   return (
@@ -118,7 +118,7 @@ function SettingsBox() {
                   <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                     <MdSettings
                       className="mx-auto w-[40px] hover:scale-[1.2]"
-                      style={{ color: "#E7E9EA" }}
+                      style={{ color: "#000" }}
                     />
                   </div>
                 </Link>
@@ -140,7 +140,7 @@ function SettingsBox() {
               </div>
             </div>
 
-            <div className="Body w-[90vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] h-[100vh]">
+            <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] h-[100vh]">
               {/* <HankoProfile /> */}
               <Logout/>
               <ThemeToggleButton/>

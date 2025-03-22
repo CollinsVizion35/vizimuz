@@ -178,7 +178,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
                 <div className="flex my-3 w-1/2 mx-auto items-center cursor-pointer">
                   <BsFillPersonFill
                     className="mx-auto w-[40px] hover:scale-[1.2]"
-                    style={{ color: "#E7E9EA" }}
+                    style={{ color: "#000" }}
                   />
                 </div>
               </Link>

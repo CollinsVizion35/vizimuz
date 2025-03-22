@@ -71,7 +71,7 @@ const MusicVideos = () => {
           </button>
         </div>
 
-        <div className="bg-inherit border-b border-[#2F3336]  flex  lg:flex-row flex-col w-[90vw] max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
+        <div className="bg-inherit border-b border-[#2F3336]  flex  lg:flex-row flex-col max-w-[1440px] mx-auto my-0 lg:mt-32 mt-20">
           <div className="sidebar-sm lg:hidden">
             <Sidebar pageWrapId={"page-wrap"} outerContainerId={"App"} />
           </div>
@@ -133,7 +133,7 @@ const MusicVideos = () => {
             </div>
           </div>
 
-          <div className="Body w-[90vw] lg:mt-[-4em] lg:ml-[5vw] lg:pl-8">
+          <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] mx-auto">
             <MusicVideoSearch />
           </div>
         </div>
