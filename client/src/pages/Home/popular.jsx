@@ -171,7 +171,7 @@ useEffect(() => {
                       </h2>
                       <h5
                         ref={artistNameToEl}
-                        className="text-white text-[.6em]"
+                        className="text-white text-[.6em] opacity-70"
                       >
                         {populae.artist}
                       </h5>

@@ -276,7 +276,7 @@ useEffect(() => {
                             </h2>
                             <h5
                               ref={artistNameToEl}
-                              className="text-white text-[.6em]"
+                              className="text-white text-[.6em] opacity-70"
                             >
                               {newMusic.artist}
                             </h5>
@@ -376,7 +376,7 @@ useEffect(() => {
                             </h2>
                             <h5
                                 ref={artistNameToEl}
-                                className="text-white text-[.6em]"
+                                className="text-white text-[.6em] opacity-70"
                             >
                                 {newMusic.artist}
                             </h5>

@@ -168,7 +168,7 @@ const TopChart = () => {
                             </div>
                             <div className="flex flex-col">
                               <div className="text-[1em]">{newAlbum.name}</div>
-                              <div className="text-[.6em] opacity-[70%]">
+                              <div className="text-[.6em] opacity-70">
                                 {newAlbum.artist}
                               </div>
                             </div>
