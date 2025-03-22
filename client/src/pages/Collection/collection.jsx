@@ -172,7 +172,7 @@ const options = [
     id: 1,
     img: MdLibraryMusic,
     navigate: "/collection",
-    color: "#E7E9EA",
+    color: "#000"
   },
   {
     id: 2,
@@ -273,7 +273,7 @@ const Collection = () => {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className={`${isDark ? "bg-white " : "bg-[#272C30] text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
+            className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>
@@ -367,11 +367,11 @@ const Collection = () => {
 
                         <h2
                           ref={musicNameToEl}
-                          className="absolute text-[0.9em]  xl:left-16 left-8 bottom-2 opacity-80"
+                          className="absolute text-[0.9em]  text-white xl:left-16 left-8 bottom-2 opacity-80"
                         >
                           {genre.category}
                         </h2>
-                        <div className="border  border-[#fcfcfc] p-1 rounded-[50%] absolute xl:left-16 left-8 top-2 opacity-80">
+                        <div className="border  border-[#fcfcfc] p-1 rounded-[50%]  text-white absolute xl:left-16 left-8 top-2 opacity-80">
                           <MdArrowForward/>
                         </div>
                     </div>

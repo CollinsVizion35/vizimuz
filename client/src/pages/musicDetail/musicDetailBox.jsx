@@ -17,7 +17,7 @@ const options = [
     id: 0,
     img: MdHomeFilled,
     navigate: "/home",
-    color: "#E7E9EA",
+    color: "#000"
   },
   {
     id: 1,
@@ -68,7 +68,7 @@ function MusicDetailBox() {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className={`${isDark ? "bg-white " : "bg-[#272C30] text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
+            className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>

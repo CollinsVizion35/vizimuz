@@ -26,7 +26,7 @@ const options = [
     id: 0,
     img: MdHomeFilled,
     navigate: "/home",
-    color: "#E7E9EA",
+    color: "#000"
   },
   {
     id: 1,
@@ -80,7 +80,7 @@ const Home = () => {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className={`${isDark ? "bg-white " : "bg-[#272C30] text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
+            className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>
@@ -149,7 +149,7 @@ const Home = () => {
           </div>
 
           <div className="Body w-[95vw] max-w-[1440px] mb-[8em] lg:ml-[5vw] mx-auto">
-            <div className="flex flex-col lg:flex-row w-[90vw] max-w-[1440px]">
+            <div className="flex flex-col lg:flex-row w-[90vw] m-auto max-w-[1440px]">
               <Header />
               <TopChart />
             </div>

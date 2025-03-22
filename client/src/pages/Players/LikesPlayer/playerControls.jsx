@@ -9,6 +9,7 @@ import { BsShuffle } from "react-icons/bs";
 import { TbRepeatOnce } from "react-icons/tb";
 import Slider from "./slider";
 import { AppPass } from "../../../contexts/AppContext";
+import { useColorTheme } from "../../../contexts/colorContext/useColorTheme";
 
 function PlayerControls(props) {
   const {
@@ -27,6 +28,8 @@ function PlayerControls(props) {
     audio.currentTime = (audio.duration / 100) * e.target.value;
     setPercentage(e.target.value);
   };
+      
+    const { isDark } = useColorTheme();
 
   return (
     <div className="flex flex-col items-center w-[60vw]">
@@ -49,7 +52,7 @@ function PlayerControls(props) {
           <FaStepBackward />
         </button>
         <button
-          className="p-3 bg-[#E7E9EA] text-[#000000] rounded-[50%] mr-3 lg:mr-[0px]"
+          className={`${isDark ? "bg-white text-[#0F1419]" : "bg-black text-white"} p-3 bg-[#E7E9EA] text-[#000000] rounded-[50%] mr-3 lg:mr-[0px]`}
           onClick={() => props.setIsPlaying(!props.isPlaying)}
         >
           {props.isPlaying ? <FaPause /> : <FaPlay />}

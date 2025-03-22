@@ -27,7 +27,7 @@ const options = [
         id: 0,
         img: MdHomeFilled,
         navigate: "/home",
-        color: "#E7E9EA",
+        color: "#000"
     },
     {
         id: 1,

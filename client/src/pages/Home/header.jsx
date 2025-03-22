@@ -60,7 +60,7 @@ const Header = () => {
   const { isDark } = useColorTheme();
 
   return (
-    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"} pb-4 border-b border-[#2F3336] lg:px-4 w-[95vw] lg:w-[50%] h-[200px] lg:h-[40vh] mb-12 lg:mb-24`}>
+    <div className={`${isDark ? "bg-black text-white" : "bg-white text-[#0F1419]"}  lg:px-4 w-[95vw] lg:w-[50%] h-[200px] lg:h-[40vh] mb-12 lg:mb-24`}>
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -85,8 +85,8 @@ const Header = () => {
           <div className="relative rounded-[5px]">
           <img className="lg:w-[30vw] w-[200px] lg:h-[40vh] h-[200px] rounded-[5px]" src={playlist.img} />
           <div className="absolute bottom-2 left-0 p-2">
-          <div className="text-[0.8em]">{playlist.name}</div>
-          <div className="text-[0.5em] w-[80%]">{playlist.desc}</div>
+          <div className="text-[0.8em] text-white">{playlist.name}</div>
+          <div className="text-[0.5em] text-white w-[80%]">{playlist.desc}</div>
           </div>
           </div>
         </SwiperSlide>

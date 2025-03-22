@@ -10,7 +10,7 @@
 /* Background */
 .slider-container::before {
   content: "";
-  background-color: gray;
+  background-color: #2F3336;
   /* border: 1px solid white; */
   width: 99%;
   height: calc(var(--progress-bar-height) - 1px);
@@ -25,7 +25,7 @@
 
 /* Custom Progress Bar */
 .progress-bar-cover {
-  background-color: #E7E9EA;
+  background-color: #2F3336;
   width: 0%;
   height: var(--progress-bar-height);
   display: block;

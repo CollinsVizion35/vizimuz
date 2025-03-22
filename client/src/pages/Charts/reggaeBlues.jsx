@@ -266,7 +266,7 @@ const ReggaeBlues = () => {
           </div>
           <button
             onClick={() => navigate("/upload_music")}
-            className={`${isDark ? "bg-white " : "bg-[#272C30] text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
+            className={`${isDark ? "bg-white " : "bg-black text-white"} w-fit  bg-[#E7E9EA] text-[#000000] p-3 rounded-[20px] cursor-pointer`}
           >
             Upload Music
           </button>
